@@ -24,9 +24,7 @@ file.write("//\n")
 file.write("//  Created by nonplus on 12/18/21.\n")
 file.write("//\n")
 file.write("\n")
-file.write("import UIKit\n")
-file.write("\n")
-file.write("public enum SFSymbols: CaseIterable {\n")
+file.write("public enum SFSymbols: String, CaseIterable {\n")
 file.write("\n")
 
 with open('SFSymbols.txt') as topo_file:

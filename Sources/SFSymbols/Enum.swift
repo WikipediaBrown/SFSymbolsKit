@@ -5,9 +5,7 @@
 //  Created by nonplus on 12/18/21.
 //
 
-import UIKit
-
-public enum SFSymbols: CaseIterable {
+public enum SFSymbols: String, CaseIterable {
 
     case squareAndArrowUp = "square.and.arrow.up"
     case squareAndArrowUpFill = "square.and.arrow.up.fill"
