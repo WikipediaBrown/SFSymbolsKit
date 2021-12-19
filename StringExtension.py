@@ -15,7 +15,7 @@ numbers = {
   "9": "nine"
 }
 
-file = open("Sources/SFSymbols/SFSymbols.swift", "w")
+file = open("Sources/SFSymbols/String+Extension.swift", "w")
 
 file.write("//\n")
 file.write("//  SFSymbols.swift\n")
@@ -26,7 +26,7 @@ file.write("//\n")
 file.write("\n")
 file.write("import UIKit\n")
 file.write("\n")
-file.write("public extension UIImage {\n")
+file.write("public extension String {\n")
 file.write("\n")
 
 with open('SFSymbols.txt') as topo_file:
@@ -47,15 +47,15 @@ with open('SFSymbols.txt') as topo_file:
                 continue
             camelCaseName += part.capitalize()
             
-        result = "    static let {} = getSystemImage(named: \"{}\")\n".format(camelCaseName.rstrip(), line.rstrip())
+        result = "    static let {} = \"{}\"\n".format(camelCaseName.rstrip(), line.rstrip())
         file.write(result)
         
-file.write("\n")
-file.write("    static func getSystemImage(named: String) -> UIImage {\n")
-file.write("        guard let image = UIImage(systemName: named)\n")
-file.write("        else { fatalError(\"Could Not Find System Image\") }\n")
-file.write("        return image\n")
-file.write("    }\n")
-file.write("\n")
+# file.write("\n")
+# file.write("    static func getSystemImage(named: String) -> UIImage {\n")
+# file.write("        guard let image = UIImage(systemName: named)\n")
+# file.write("        else { fatalError(\"Could Not Find System Image\") }\n")
+# file.write("        return image\n")
+# file.write("    }\n")
+# file.write("\n")
 file.write("}\n")
 file.close()
