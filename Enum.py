@@ -47,5 +47,12 @@ with open('SFSymbols.txt') as topo_file:
             
         result = "    case {} = \"{}\"\n".format(camelCaseName.rstrip(), line.rstrip())
         file.write(result)
+file.write("\n")
+file.write("    var image: UIImage {\n")
+file.write("        guard let image = UIImage(systemName: self.rawValue)\n")
+file.write("        else { fatalError(\"Could Not Find System Image\") }\n")
+file.write("        return image\n")
+file.write("    }\n")
+file.write("\n")
 file.write("}\n")
 file.close()

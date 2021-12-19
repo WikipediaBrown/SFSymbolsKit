@@ -3301,4 +3301,11 @@ public enum SFSymbols: String, CaseIterable {
     case five0Square = "50.square"
     case five0SquareFill = "50.square.fill"
     case applelogo = "applelogo"
+
+    var image: UIImage {
+        guard let image = UIImage(systemName: self.rawValue)
+        else { fatalError("Could Not Find System Image") }
+        return image
+    }
+
 }
