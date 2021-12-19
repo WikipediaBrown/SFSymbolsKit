@@ -26,7 +26,7 @@ file.write("//\n")
 file.write("\n")
 file.write("import UIKit\n")
 file.write("\n")
-file.write("extension UIImage {\n")
+file.write("public extension UIImage {\n")
 file.write("\n")
 
 with open('SFSymbols.txt') as topo_file:

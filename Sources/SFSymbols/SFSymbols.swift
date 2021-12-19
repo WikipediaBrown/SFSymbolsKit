@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 
     static let squareAndArrowUp = getSystemImage(named: "square.and.arrow.up")
     static let squareAndArrowUpFill = getSystemImage(named: "square.and.arrow.up.fill")
