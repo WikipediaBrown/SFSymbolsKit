@@ -1,0 +1,61 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+require 'fileutils'
+
+default_platform(:ios)
+
+project_name = "SFSymbols"
+
+platform :ios do
+
+  before_all do
+    FileUtils.remove_dir './CodeCoverage', true
+    FileUtils.remove_dir './UnitTests', true
+  end
+
+  after_all do
+    FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
+  end
+
+  desc "Description of what the lane does"
+  lane :release do
+    add_git_tag(tag: "#{version}")
+  end
+
+  desc "Description of what the lane does"
+  lane :unit_test do
+    spm(
+        command: 'generate-xcodeproj',
+        enable_code_coverage: true
+    )
+    run_tests(
+              project: "#{project_name}.xcodeproj",
+              scheme: "#{project_name}-Package",
+              device: 'iPhone 12',
+              output_directory: './fastlane/UnitTests',
+              output_types: 'html',
+              clean: true
+    )
+    xcov(
+          project: "#{project_name}.xcodeproj",
+          scheme: "#{project_name}-Package",
+          output_directory: './fastlane/CodeCoverage',
+          include_targets: "#{project_name}.framework",
+          minimum_coverage_percentage: 50.0
+    )
+  end
+  
+end

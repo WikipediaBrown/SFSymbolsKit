@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches:
+    - master
+jobs:
+  tests:
+    name: Unit Tests
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Bundler
+        run: bundle install
+      # - name: Unit Tests
+      #   run: bundle exec fastlane release
+      - name: Create tag
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ steps.date.outputs.date }}',
+              sha: context.sha
+            })
