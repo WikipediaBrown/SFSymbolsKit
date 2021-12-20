@@ -32,7 +32,8 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :release do
-    add_git_tag(tag: "#{version}")
+    increment_version_number(bump_type: "minor")
+    add_git_tag(tag: "#{ lane_context[SharedValues:VERSION_NUMBER] }")
   end
 
   desc "Description of what the lane does"
