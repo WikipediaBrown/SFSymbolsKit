@@ -8,10 +8,10 @@ jobs:
     name: Unit Tests
     runs-on: macOS-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Install Bundler
-        run: bundle install
+      # - name: Checkout
+      #   uses: actions/checkout@v1
+      # - name: Install Bundler
+      #   run: bundle install
       # - name: Unit Tests
       #   run: bundle exec fastlane release
       - name: Create tag
