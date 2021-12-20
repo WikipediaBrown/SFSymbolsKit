@@ -15,9 +15,31 @@
 
 default_platform(:ios)
 
+project_name = "SFSymbols"
+
 platform :ios do
   desc "Description of what the lane does"
   lane :release do
     # add actions here: https://docs.fastlane.tools/actions
+    spm(
+        command: 'generate-xcodeproj',
+        enable_code_coverage: true
+    )
+    run_tests(
+              project: "#{project_name}.xcodeproj",
+              scheme: "#{project_name}-Package",
+              device: 'iPhone 12',
+              output_directory: './fastlane/UnitTests',
+              clean: true
+    )
+  end
+  
+  before_all do
+      FileUtils.remove_dir './CodeCoverage', true
+      FileUtils.remove_dir './UnitTests', true
+  end
+  
+  after_all do
+      FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 end
