@@ -53,7 +53,7 @@ with open('SFSymbols.txt') as topo_file:
 file.write("\n")
 file.write("    static func getSystemImage(named: String) -> UIImage {\n")
 file.write("        guard let image = UIImage(systemName: named)\n")
-file.write("        else { UIImage() }\n")
+file.write("        else { return UIImage() }\n")
 file.write("        return image\n")
 file.write("    }\n")
 file.write("\n")

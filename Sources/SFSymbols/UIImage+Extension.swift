@@ -3306,7 +3306,7 @@ public extension UIImage {
 
     static func getSystemImage(named: String) -> UIImage {
         guard let image = UIImage(systemName: named)
-        else { UIImage() }
+        else { return UIImage() }
         return image
     }
 

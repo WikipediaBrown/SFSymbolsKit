@@ -3306,7 +3306,7 @@ public enum SFSymbols: String, CaseIterable {
 
     var image: UIImage {
         guard let image = UIImage(systemName: self.rawValue)
-        else { UIImage() }
+        else { return UIImage() }
         return image
     }
 
