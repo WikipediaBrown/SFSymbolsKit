@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<testsuites name='SFSymbolsTests.xctest' tests='1' failures='0'>
-  <testsuite name='SFSymbolsTests.SFSymbolsTests' tests='1' failures='0'>
-    <testcase classname='SFSymbolsTests.SFSymbolsTests' name='test_SFSymbols_Enum_image_found' time='0.285'/>
-  </testsuite>
-</testsuites>
