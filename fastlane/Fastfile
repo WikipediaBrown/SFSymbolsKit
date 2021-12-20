@@ -32,6 +32,10 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :release do
+    spm(
+        command: 'generate-xcodeproj',
+        enable_code_coverage: true
+    )
     increment_version_number(bump_type: "minor")
     add_git_tag(tag: "#{ lane_context[SharedValues:VERSION_NUMBER] }")
   end
