@@ -34,7 +34,7 @@ platform :ios do
   lane :release do
     spm(
         command: 'generate-xcodeproj',
-        enable_code_coverage: true
+        enable_code_coverage: false
     )
     increment_version_number(bump_type: "patch")
     add_git_tag(tag: "#{ lane_context[SharedValues:VERSION_NUMBER] }")
