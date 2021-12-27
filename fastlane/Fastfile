@@ -33,7 +33,6 @@ platform :ios do
   desc "Description of what the lane does"
   lane :release do
     add_git_tag(tag: "0.1.0")
-    push_to_git_remote
   end
 
   desc "Description of what the lane does"

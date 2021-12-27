@@ -14,7 +14,7 @@ jobs:
         run: bundle install
       - name: Create Release Tag
         run: bundle exec fastlane release
-      - name: Commit report
+      - name: Push Release Tag
         run: |
           # git config --global user.name 'Your Name'
           # git config --global user.email 'your-username@users.noreply.github.com'
