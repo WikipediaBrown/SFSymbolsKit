@@ -39,6 +39,14 @@ platform :ios do
   lane :release do
     add_git_tag(tag: "#{version}", message: "poop")
     push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
+    github_release = set_github_release(
+      # repository_name: "fastlane/fastlane",
+      api_token: ENV["GITHUB_TOKEN"],
+      name: "Super New actions",
+      tag_name: "#{version}",
+      description: (File.read("changelog") rescue "No changelog provided"),
+      # upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
+    )
   end
 
   desc "Description of what the lane does"
