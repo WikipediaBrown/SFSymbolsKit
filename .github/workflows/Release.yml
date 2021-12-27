@@ -14,7 +14,3 @@ jobs:
         run: bundle install
       - name: Create Release Tag
         run: bundle exec fastlane release
-      - name: Push Release Tag
-        run: |
-          git commit -am "Automated report"
-          git push
