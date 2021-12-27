@@ -4,8 +4,8 @@ on:
     branches:
     - master
 jobs:
-  tests:
-    name: Unit Tests
+  release:
+    name: Release SFSymbols
     runs-on: macOS-latest
     steps:
       - name: Checkout

@@ -32,11 +32,7 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :release do
-    spm(
-        command: 'generate-xcodeproj',
-        enable_code_coverage: false
-    )
-    add_git_tag(tag: "0.1")
+    add_git_tag(tag: "0.1.0")
   end
 
   desc "Description of what the lane does"
