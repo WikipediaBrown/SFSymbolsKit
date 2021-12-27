@@ -13,7 +13,11 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+# Uncomment the line if you don't want to share usage statistics with fastlane
+# opt_out_usage 
+
 require 'fileutils'
+
 
 default_platform(:ios)
 
@@ -32,7 +36,7 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :release do
-    add_git_tag(tag: "0.1.0", sign: true)
+    add_git_tag(tag: "0.1.0")
     push_to_git_remote(tags: true)
   end
 
