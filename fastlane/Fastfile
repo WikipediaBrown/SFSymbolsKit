@@ -36,8 +36,7 @@ platform :ios do
         command: 'generate-xcodeproj',
         enable_code_coverage: false
     )
-#    increment_version_number(bump_type: "patch")
-    add_git_tag(tag: "#{ lane_context[SharedValues:VERSION_NUMBER] }")
+    add_git_tag(tag: "0.1")
   end
 
   desc "Description of what the lane does"
