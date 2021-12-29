@@ -22,7 +22,8 @@ require 'fileutils'
 default_platform(:ios)
 
 project_name = "SFSymbols"
-version = "0.1.1"
+repository_name = "WikipediaBrown/SFSymbols"
+version = "0.1.0"
 
 platform :ios do
 
@@ -37,13 +38,13 @@ platform :ios do
 
   desc "Description of what the lane does"
   lane :release do
-    add_git_tag(tag: "#{version}", message: "poop")
+    # add_git_tag(tag: "#{version}", message: "poop")
     # push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
     github_release = set_github_release(
-      # repository_name: "fastlane/fastlane",
+      repository_name: repository_name,
       api_token: ENV["GITHUB_TOKEN"],
       name: "Super New actions",
-      tag_name: "#{version}",
+      tag_name: version,
       description: (File.read("changelog") rescue "No changelog provided"),
       # upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
     )
