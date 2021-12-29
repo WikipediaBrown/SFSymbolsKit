@@ -22,24 +22,14 @@ require 'fileutils'
 default_platform(:ios)
 
 project_name = "SFSymbols"
-repository_name = "WikipediaBrown/SFSymbols"
-version = "0.1.0"
 
 platform :ios do
 
-  before_all do
-    FileUtils.remove_dir './CodeCoverage', true
-    FileUtils.remove_dir './UnitTests', true
-  end
-
-  after_all do
-    FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
-  end
-
   desc "Create Release for GitHub"
   lane :release_to_github do
-    create_tag
-    changelog_from_git_commits(
+    new_version = create_next_version
+    day = Time.now.strftime("%A")
+    changelog = changelog_from_git_commits(
       date_format: "short",
       merge_commit_filtering: "exclude_merges",
       pretty: "- (%ae) %s"
@@ -47,22 +37,24 @@ platform :ios do
     github_release = set_github_release(
       repository_name: ENV["REPOSITORY_NAME"],
       api_bearer: ENV["GITHUB_TOKEN"],
-      name: "Super New actions",
+      name: "#{new_version} - This #{day}'s Version",
       tag_name: version,
-      description: (File.read("changelog") rescue "No changelog provided"),
-      # upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
+      description: changelog
     )
   end
 
   desc "Create tag with version written in file"
-  lane :create_tag do
-    add_git_tag(tag: "#{version}", message: "poop")
-    push_git_tags
-    # push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
+  lane :create_next_version do
+    new_version = increment_version
+    add_git_tag(tag: new_version, message: "poop")
+    push_to_git_remote(tags: true, remote_branch: "refs/tags/#{new_version}")
+    new_version
   end
 
   desc "Run Unit Tests"
   lane :unit_test do
+    FileUtils.remove_dir './CodeCoverage', true
+    FileUtils.remove_dir './UnitTests', true
     spm(
         command: 'generate-xcodeproj',
         enable_code_coverage: true
@@ -82,6 +74,25 @@ platform :ios do
           include_targets: "#{project_name}.framework",
           minimum_coverage_percentage: 50.0
     )
+    FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
+  end
+
+  # Increments and returns version of last tag.
+  def increment_version(bump="")
+    major, minor, patch = last_git_tag.split('.').map(&:to_i)
+
+    case bump.downcase
+    when "major" 
+       major += 1
+       minor = 0
+       patch = 0
+    when "minor"
+       minor += 1
+       patch = 0
+    else patch += 1
+    end
+
+    return [major, minor, patch].join('.')
   end
   
 end
