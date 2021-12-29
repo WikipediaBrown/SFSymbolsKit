@@ -56,24 +56,24 @@ platform :ios do
     FileUtils.remove_dir './CodeCoverage', true
     FileUtils.remove_dir './UnitTests', true
     spm(
-        command: 'generate-xcodeproj',
-        enable_code_coverage: true
+      command: 'generate-xcodeproj',
+      enable_code_coverage: true
     )
     run_tests(
-              project: "#{project_name}.xcodeproj",
-              scheme: "#{project_name}-Package",
-              device: 'iPhone 12',
-              output_directory: './fastlane/UnitTests',
-              output_types: 'html',
-              clean: true
+      project: "#{project_name}.xcodeproj",
+      scheme: "#{project_name}-Package",
+      device: 'iPhone 12',
+      output_directory: './fastlane/UnitTests',
+      output_types: 'html',
+      clean: true
     )
-    xcov(
-          project: "#{project_name}.xcodeproj",
-          scheme: "#{project_name}-Package",
-          output_directory: './fastlane/CodeCoverage',
-          include_targets: "#{project_name}.framework",
-          minimum_coverage_percentage: 50.0
-    )
+    # xcov(
+    #   project: "#{project_name}.xcodeproj",
+    #   scheme: "#{project_name}-Package",
+    #   output_directory: './fastlane/CodeCoverage',
+    #   include_targets: "#{project_name}.framework",
+    #   minimum_coverage_percentage: 50.0
+    # )
     FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 
