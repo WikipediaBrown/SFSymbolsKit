@@ -57,7 +57,7 @@ platform :ios do
     FileUtils.remove_dir './UnitTests', true
     spm(
       command: 'generate-xcodeproj',
-      enable_code_coverage: true
+#      enable_code_coverage: true
     )
     run_tests(
       project: "#{project_name}.xcodeproj",
