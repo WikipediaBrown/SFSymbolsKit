@@ -1,16 +1,16 @@
 name: CI
 on:
-  pull_request:
+  push:
     branches:
-    - develop
+    - master
 jobs:
-  tests:
-    name: Unit Tests
+  release:
+    name: Release SFSymbols
     runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install Bundler
         run: bundle install
-      - name: Unit Tests
-        run: bundle exec fastlane unit_test
+      - name: Create Release Tag
+        run: bundle exec fastlane release

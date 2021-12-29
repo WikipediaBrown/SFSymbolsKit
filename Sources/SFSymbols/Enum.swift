@@ -5,6 +5,8 @@
 //  Created by nonplus on 12/18/21.
 //
 
+import UIKit
+
 public enum SFSymbols: String, CaseIterable {
 
     case squareAndArrowUp = "square.and.arrow.up"
@@ -3304,7 +3306,7 @@ public enum SFSymbols: String, CaseIterable {
 
     var image: UIImage {
         guard let image = UIImage(systemName: self.rawValue)
-        else { fatalError("Could Not Find System Image") }
+        else { return UIImage() }
         return image
     }
 

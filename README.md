@@ -1,3 +1,4 @@
+
 # SFSymbols
 
 SFSymbols is a tiny package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
@@ -63,7 +64,7 @@ Image(systemName: SFSymbols.plusApp.rawValue)
 ## Generation
 
 ### Get List of Names
-Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it from Apple.com) and paste it into the SFSymbols.txt file.
+Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it from Apple.com) and paste it into the SFSymbols.txt file. Check out this [StackOverflow](https://stackoverflow.com/a/63310093/5863650) post.
 
 ### Run Python Scripts
 Run the command `python UIImageExtension.py && python StringExtension.py && python Enum.py` and the python scripts will regenerate the extension and enum.
