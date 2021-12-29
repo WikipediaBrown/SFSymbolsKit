@@ -36,12 +36,16 @@ platform :ios do
     FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 
-  desc "Description of what the lane does"
-  lane :release do
-    # add_git_tag(tag: "#{version}", message: "poop")
-    # push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
+  desc "Create Release for GitHub"
+  lane :release_to_github do
+    create_tag
+    changelog_from_git_commits(
+      date_format: "short",
+      merge_commit_filtering: "exclude_merges",
+      pretty: "- (%ae) %s"
+    )
     github_release = set_github_release(
-      repository_name: repository_name,
+      repository_name: ENV["REPOSITORY_NAME"],
       api_bearer: ENV["GITHUB_TOKEN"],
       name: "Super New actions",
       tag_name: version,
@@ -50,7 +54,14 @@ platform :ios do
     )
   end
 
-  desc "Description of what the lane does"
+  desc "Create tag with version written in file"
+  lane :create_tag do
+    add_git_tag(tag: "#{version}", message: "poop")
+    push_git_tags
+    # push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
+  end
+
+  desc "Run Unit Tests"
   lane :unit_test do
     spm(
         command: 'generate-xcodeproj',
