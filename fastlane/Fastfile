@@ -38,7 +38,7 @@ platform :ios do
   desc "Description of what the lane does"
   lane :release do
     add_git_tag(tag: "#{version}", message: "poop")
-    push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
+    # push_to_git_remote(tags: true, remote_branch: "refs/tags/#{version}")
     github_release = set_github_release(
       # repository_name: "fastlane/fastlane",
       api_token: ENV["GITHUB_TOKEN"],
