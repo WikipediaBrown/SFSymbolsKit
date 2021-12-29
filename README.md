@@ -72,12 +72,18 @@ Run the command `python UIImageExtension.py && python StringExtension.py && pyth
 
 ## Test
 
-Run `command+u` to run the unit tests.
+Run `command+u` to run the unit tests. Test are run automatically for all pull requests.
+
+
+## Versioning
+
+SFSymbols releases a [new version on GitHub](https://github.com/WikipediaBrown/SFSymbols/releases) automatically when a pull request is approved from the `develop` branch to the `master` branch.
 
 
 ## Contribute
 
 Send a pull request my dude.
+
 
 ## Author
 
@@ -87,3 +93,5 @@ Wikipedia Brown
 ## License
 
 **SFSymbols** is available under the MIT license. See the LICENSE file for more info.
+
+Made with 🌲🌲🌲 in Cascadia
