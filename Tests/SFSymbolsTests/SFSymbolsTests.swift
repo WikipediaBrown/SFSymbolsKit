@@ -2,10 +2,9 @@ import XCTest
 @testable import SFSymbols
 
 final class SFSymbolsTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-//        XCTAssertEqual(SFSymbols.text, "Hello, World!")
+    func test_SFSymbols_Enum_image_found() {
+        for symbol in SFSymbols.allCases {
+            XCTAssertNotEqual(symbol.image, UIImage(), "SFSymbol (\(symbol.rawValue)) Image not found.")
+        }
     }
 }

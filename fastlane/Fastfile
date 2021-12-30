@@ -1,0 +1,101 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+# Uncomment the line if you don't want to share usage statistics with fastlane
+# opt_out_usage
+
+require 'fileutils'
+
+
+default_platform(:ios)
+
+project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory and
+
+platform :ios do
+
+  desc "Create Release for GitHub"
+  lane :release_to_github do
+    new_version = create_next_version
+    day = Time.now.strftime("%A")
+    changelog = changelog_from_git_commits(
+      date_format: "short",
+      merge_commit_filtering: "exclude_merges",
+      pretty: "- (%ae) %s"
+    )
+    github_release = set_github_release(
+      repository_name: ENV["REPOSITORY_NAME"],
+      api_bearer: ENV["GITHUB_TOKEN"],
+      name: "#{new_version} - This #{day}'s Version",
+      tag_name: version,
+      description: changelog
+    )
+  end
+
+  desc "Create tag with version written in file"
+  lane :create_next_version do
+    new_version = increment_version
+    add_git_tag(tag: new_version, message: "poop")
+    push_to_git_remote(tags: true, remote_branch: "refs/tags/#{new_version}")
+    new_version
+  end
+
+  desc "Run Unit Tests"
+  lane :unit_test do
+    # FileUtils.remove_dir './CodeCoverage', true
+    # FileUtils.remove_dir './UnitTests', true
+    # run_tests(
+    #   package_path: ".",
+    #   scheme: "#{project_name}",
+    #   device: 'iPhone 12',
+    #   code_coverage: true,
+    #   output_directory: './fastlane/UnitTests',
+    #   output_types: 'html',
+    #   clean: true
+    # )
+    danger(
+      danger_id: "unit-tests",
+      dangerfile: "DangerFile",
+      github_api_token: ENV["GITHUB_TOKEN"],
+      verbose: true
+    )
+    # xcov(
+    #   is_swift_package: true,
+    #   scheme: "#{project_name}-Package",
+    #   output_directory: './fastlane/CodeCoverage',
+      # include_targets: "#{project_name}.framework",
+    #   minimum_coverage_percentage: 50.0
+    # )
+    # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
+  end
+
+  # Increments and returns version of last tag.
+  def increment_version(bump="")
+    major, minor, patch = last_git_tag.split('.').map(&:to_i)
+
+    case bump.downcase
+    when "major"
+       major += 1
+       minor = 0
+       patch = 0
+    when "minor"
+       minor += 1
+       patch = 0
+    else patch += 1
+    end
+
+    return [major, minor, patch].join('.')
+  end
+
+end
