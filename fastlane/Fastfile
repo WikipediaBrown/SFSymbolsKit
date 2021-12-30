@@ -64,11 +64,11 @@ platform :ios do
       output_types: 'html',
       clean: true
     )
-    danger(
-      danger_id: "unit-tests",
-      dangerfile: "DangerFile",
-      verbose: true
-    )
+    # danger(
+    #   danger_id: "unit-tests",
+    #   dangerfile: "DangerFile",
+    #   verbose: true
+    # )
     # xcov(
     #   is_swift_package: true,
     #   scheme: "#{project_name}-Package",
