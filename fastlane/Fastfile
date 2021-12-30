@@ -53,28 +53,18 @@ platform :ios do
 
   desc "Run Unit Tests"
   lane :unit_test do
-    FileUtils.remove_dir './CodeCoverage', true
-    FileUtils.remove_dir './UnitTests', true
-    spm(
-      command: 'generate-xcodeproj',
-      enable_code_coverage: true
-    )
+    # FileUtils.remove_dir './CodeCoverage', true
+    # FileUtils.remove_dir './UnitTests', true
     run_tests(
-      project: "#{project_name}.xcodeproj",
-      scheme: "#{project_name}-Package",
+      package_path: ".",
+      scheme: "#{project_name}",
       device: 'iPhone 12',
+      code_coverage: true,
       output_directory: './fastlane/UnitTests',
       output_types: 'html',
       clean: true
     )
-    # xcov(
-    #   project: "#{project_name}.xcodeproj",
-    #   scheme: "#{project_name}-Package",
-    #   output_directory: './fastlane/CodeCoverage',
-    #   include_targets: "#{project_name}.framework",
-    #   minimum_coverage_percentage: 50.0
-    # )
-    FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
+    # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 
   # Increments and returns version of last tag.
