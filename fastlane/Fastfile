@@ -67,7 +67,7 @@ platform :ios do
     danger(
       danger_id: "unit-tests",
       dangerfile: "DangerFile",
-      github_api_token: ENV["GITHUB_TOKEN"],
+      # github_api_token: ENV["GITHUB_TOKEN"],
       verbose: true
     )
     # xcov(
