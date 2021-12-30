@@ -64,6 +64,13 @@ platform :ios do
       output_types: 'html',
       clean: true
     )
+    xcov(
+      project: "#{project_name}.xcodeproj",
+      scheme: "#{project_name}-Package",
+      output_directory: './fastlane/CodeCoverage',
+      include_targets: "#{project_name}.framework",
+      minimum_coverage_percentage: 50.0
+    )
     # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 
