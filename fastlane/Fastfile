@@ -55,19 +55,18 @@ platform :ios do
   lane :unit_test do
     # FileUtils.remove_dir './CodeCoverage', true
     # FileUtils.remove_dir './UnitTests', true
-    # run_tests(
-    #   package_path: ".",
-    #   scheme: "#{project_name}",
-    #   device: 'iPhone 12',
-    #   code_coverage: true,
-    #   output_directory: './fastlane/UnitTests',
-    #   output_types: 'html',
-    #   clean: true
-    # )
+    run_tests(
+      package_path: ".",
+      scheme: "#{project_name}",
+      device: 'iPhone 12',
+      code_coverage: true,
+      output_directory: './fastlane/UnitTests',
+      output_types: 'html',
+      clean: true
+    )
     danger(
       danger_id: "unit-tests",
       dangerfile: "DangerFile",
-      github_api_token: ENV["GITHUB_TOKEN"],
       verbose: true
     )
     # xcov(
