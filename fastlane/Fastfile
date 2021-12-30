@@ -21,7 +21,7 @@ require 'fileutils'
 
 default_platform(:ios)
 
-project_name = "SFSymbols"
+project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory and 
 
 platform :ios do
 
@@ -64,13 +64,19 @@ platform :ios do
       output_types: 'html',
       clean: true
     )
-    xcov(
-      project: "#{project_name}.xcodeproj",
-      scheme: "#{project_name}-Package",
-      output_directory: './fastlane/CodeCoverage',
-      include_targets: "#{project_name}.framework",
-      minimum_coverage_percentage: 50.0
+    danger(
+      danger_id: "unit-tests",
+      dangerfile: "DangerFile",
+      github_api_token: ENV["GITHUB_TOKEN"],
+      verbose: true
     )
+    # xcov(
+    #   is_swift_package: true,
+    #   scheme: "#{project_name}-Package",
+    #   output_directory: './fastlane/CodeCoverage',
+      # include_targets: "#{project_name}.framework",
+    #   minimum_coverage_percentage: 50.0
+    # )
     # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
   end
 
