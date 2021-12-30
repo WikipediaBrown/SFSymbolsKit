@@ -14,14 +14,14 @@
 # update_fastlane
 
 # Uncomment the line if you don't want to share usage statistics with fastlane
-# opt_out_usage 
+# opt_out_usage
 
 require 'fileutils'
 
 
 default_platform(:ios)
 
-project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory and 
+project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory and
 
 platform :ios do
 
@@ -55,19 +55,19 @@ platform :ios do
   lane :unit_test do
     # FileUtils.remove_dir './CodeCoverage', true
     # FileUtils.remove_dir './UnitTests', true
-    run_tests(
-      package_path: ".",
-      scheme: "#{project_name}",
-      device: 'iPhone 12',
-      code_coverage: true,
-      output_directory: './fastlane/UnitTests',
-      output_types: 'html',
-      clean: true
-    )
+    # run_tests(
+    #   package_path: ".",
+    #   scheme: "#{project_name}",
+    #   device: 'iPhone 12',
+    #   code_coverage: true,
+    #   output_directory: './fastlane/UnitTests',
+    #   output_types: 'html',
+    #   clean: true
+    # )
     danger(
       danger_id: "unit-tests",
       dangerfile: "DangerFile",
-      # github_api_token: ENV["GITHUB_TOKEN"],
+      github_api_token: ENV["GITHUB_TOKEN"],
       verbose: true
     )
     # xcov(
@@ -85,7 +85,7 @@ platform :ios do
     major, minor, patch = last_git_tag.split('.').map(&:to_i)
 
     case bump.downcase
-    when "major" 
+    when "major"
        major += 1
        minor = 0
        patch = 0
@@ -97,5 +97,5 @@ platform :ios do
 
     return [major, minor, patch].join('.')
   end
-  
+
 end
