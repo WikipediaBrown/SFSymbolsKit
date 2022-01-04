@@ -58,7 +58,7 @@ platform :ios do
     run_tests(
       package_path: ".",
       scheme: "#{project_name}",
-      device: 'iPhone 12',
+      device: 'iPhone 13',
       code_coverage: true,
       output_directory: './fastlane/UnitTests',
       output_types: 'html',
