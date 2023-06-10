@@ -46,7 +46,7 @@ platform :ios do
   desc "Create tag with version written in file"
   lane :create_next_version do
     new_version = increment_version
-    add_git_tag(tag: new_version, message: "poop")
+    add_git_tag(tag: new_version, message: "new poop")
     push_to_git_remote(tags: true, remote_branch: "refs/tags/#{new_version}")
     new_version
   end
