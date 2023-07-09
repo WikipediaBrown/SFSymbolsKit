@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Switch to Xcode Beta
-        run: xcrun simctl list
+        run: xcodebuild -downloadPlatform iOS
       - name: Install Dependenies with Bundler
         run: bundle install
       - name: Unit Tests

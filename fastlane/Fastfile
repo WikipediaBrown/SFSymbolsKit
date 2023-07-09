@@ -23,12 +23,6 @@ project_name = File.basename(Pathname.getwd.parent) # This just gets the name of
 platform :ios do
   desc "Run Unit Tests"
   lane :unit_test do
-      uuid_regex = /([0-9A-Z]{8}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{12})/
-      unavailable_iPhones = `xcrun simctl list | grep iPhone | grep "runtime profile not found"`.split("\n")
-      unavailable_iPhones.each do | row |
-          uuid = row.match(uuid_regex).captures.first
-          system("xcrun simctl upgrade #{uuid} \"com.apple.CoreSimulator.SimRuntime.iOS-17\"")
-      end
     FileUtils.remove_dir './CodeCoverage', true
     FileUtils.remove_dir './UnitTests', true
     run_tests(
