@@ -23,7 +23,7 @@ The preferred way of installing **SFSymbols** is via the [Swift Package Manager]
 ### String
 You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this
 ```
-Image(systemName: .plusApp)
+Image(systemName: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -33,7 +33,7 @@ Image(systemName: .plusApp)
 ### UIImage
 You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this
 ```
-Image(uiImage: .plusApp)
+Image(uiImage: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -43,7 +43,7 @@ Image(uiImage: .plusApp)
 ### Enum
 Additionally, there is an enum that is `CaseIterable` that provides access to all of the strings in the `String` extension and access to all of the images through an `image` property.
 ```
-Image(uiImage: SFSymbols.plusApp.image)
+Image(uiImage: SFSymbol.plusApp.image)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -53,7 +53,7 @@ Image(uiImage: SFSymbols.plusApp.image)
 or 
 
 ```
-Image(systemName: SFSymbols.plusApp.rawValue)
+Image(systemName: SFSymbol.plusApp.string)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -63,11 +63,16 @@ Image(systemName: SFSymbols.plusApp.rawValue)
 
 ## Generation
 
+The scripts used to generate the extensions and enum are written in `Python 2.7.18`. Which means you'll need Python. 
+
+### Get Python
+Assuming you're running macOS, you should first install [Homebrew](https://brew.sh) and then use Homebrew to install Python by running the command `brew install python`.
+
 ### Get List of Names
 Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it from Apple.com) and paste it into the SFSymbols.txt file. Check out this [StackOverflow](https://stackoverflow.com/a/63310093/5863650) post.
 
 ### Run Python Scripts
-Run the command `python UIImageExtension.py && python StringExtension.py && python Enum.py` and the python scripts will regenerate the extension and enum.
+Run the command `python UIImageExtension.py && python UIImageExtensionTests.py && python StringExtension.py && python StringExtensionTests.py && python Enum.py` and the python scripts will regenerate the extension and enum.
 
 
 ## Test
