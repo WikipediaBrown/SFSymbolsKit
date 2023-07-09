@@ -1,13 +1,13 @@
 //
-//  SFSymbols.swift
-//  Missions
+//  SFSymbol.swift
+//  SFSymbols
 //
 //  Created by nonplus on 12/18/21.
 //
 
 import UIKit
 
-public enum SFSymbols: String, CaseIterable {
+public enum SFSymbol: String, CaseIterable {
 
     case squareAndArrowUp = "square.and.arrow.up"
     case squareAndArrowUpFill = "square.and.arrow.up.fill"
@@ -5185,6 +5185,10 @@ public enum SFSymbols: String, CaseIterable {
         guard let image = UIImage(systemName: self.rawValue)
         else { return UIImage() }
         return image
+    }
+
+    var string: String {
+        return self.rawValue
     }
 
 }

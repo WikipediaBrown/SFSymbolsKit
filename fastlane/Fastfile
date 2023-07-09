@@ -10,20 +10,43 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 # Uncomment the line if you don't want to share usage statistics with fastlane
-# opt_out_usage
+opt_out_usage
 
 require 'fileutils'
 
 
 default_platform(:ios)
 
-project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory and
+project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory
 
 platform :ios do
+  desc "Run Unit Tests"
+  lane :unit_test do
+    FileUtils.remove_dir './CodeCoverage', true
+    FileUtils.remove_dir './UnitTests', true
+    run_tests(
+      package_path: ".",
+      scheme: "#{project_name}",
+      device: 'iPhone 14 Pro',
+      code_coverage: true,
+      output_directory: './fastlane/UnitTests',
+      output_types: 'html',
+      result_bundle: true,
+      clean: true
+    )
+    danger(
+      danger_id: "unit-tests",
+      dangerfile: "DangerFile",
+      github_api_token: ENV["GITHUB_TOKEN"],
+      verbose: true
+    )
+    xcov(
+      is_swift_package: true,
+      output_directory: './fastlane/CodeCoverage',
+      minimum_coverage_percentage: 100.0
+    )
+  end
 
   desc "Create Release for GitHub"
   lane :release_to_github do
@@ -51,37 +74,9 @@ platform :ios do
     new_version
   end
 
-  desc "Run Unit Tests"
-  lane :unit_test do
-     FileUtils.remove_dir './CodeCoverage', true
-     FileUtils.remove_dir './UnitTests', true
-     run_tests(
-       package_path: ".",
-       scheme: "#{project_name}",
-       device: 'iPhone 14',
-       code_coverage: true,
-       output_directory: './fastlane/UnitTests',
-       output_types: 'html',
-       result_bundle: true,
-       clean: true
-     )
-#    danger(
-#      danger_id: "unit-tests",
-#      dangerfile: "DangerFile",
-#      github_api_token: ENV["GITHUB_TOKEN"],
-#      verbose: true
-#    )
-    # xcov(
-    #   is_swift_package: true,
-    #   scheme: "#{project_name}-Package",
-    #   output_directory: './fastlane/CodeCoverage',
-      # include_targets: "#{project_name}.framework",
-    #   minimum_coverage_percentage: 50.0
-    # )
-    # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
-  end
-
-  # Increments and returns version of last tag.
+  # Increments and returns version of last tag. Pass the string `major
+  # or `minor` to increment major or minor version. Otherwise a the
+  # patch is incremented.
   def increment_version(bump="")
     major, minor, patch = last_git_tag.split('.').map(&:to_i)
 
