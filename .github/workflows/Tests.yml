@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Switch to Xcode Beta
-        run: xcode-select -switch /Applications/Xcode_15.0.app
+        run: sudo xcode-select -switch /Applications/Xcode_15.0.app
       - name: Install Dependenies with Bundler
         run: bundle install
       - name: Unit Tests
