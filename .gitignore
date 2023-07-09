@@ -18,3 +18,9 @@ Package.resolved
 *.pyc
 .docc-build
 .vscode
+
+fastlane/CodeCoverage
+fastlane/test_output
+fastlane/UnitTests
+fastlane/xcov_report
+fastlane/report
