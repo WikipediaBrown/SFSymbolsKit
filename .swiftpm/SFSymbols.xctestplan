@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "4BA23EB1-8BE2-43CD-9BDD-D123FE934E3D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SFSymbolsTests",
+        "name" : "SFSymbolsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

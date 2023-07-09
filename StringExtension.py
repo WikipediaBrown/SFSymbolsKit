@@ -18,8 +18,8 @@ numbers = {
 file = open("Sources/SFSymbols/String+Extension.swift", "w")
 
 file.write("//\n")
-file.write("//  SFSymbols.swift\n")
-file.write("//  Missions\n")
+file.write("//  String+Extension.swift\n")
+file.write("//  SFSymbols\n")
 file.write("//\n")
 file.write("//  Created by nonplus on 12/18/21.\n")
 file.write("//\n")
@@ -27,7 +27,7 @@ file.write("\n")
 file.write("import UIKit\n")
 file.write("\n")
 file.write("public extension String {\n")
-file.write("\n")
+file.write("    enum SFSymbols {\n")
 
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
@@ -47,7 +47,8 @@ with open('SFSymbols.txt') as topo_file:
                 continue
             camelCaseName += part.capitalize()
             
-        result = "    static let {} = \"{}\"\n".format(camelCaseName.rstrip(), line.rstrip())
+        result = "        static let {}: String = SFSymbol.{}.rawValue\n".format(camelCaseName.rstrip(), camelCaseName.rstrip())
         file.write(result)
+file.write("    }\n")
 file.write("}\n")
 file.close()
