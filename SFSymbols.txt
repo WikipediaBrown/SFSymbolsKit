@@ -1740,8 +1740,6 @@ bubble.left.and.bubble.right
 bubble.left.and.bubble.right.fill
 bubble.left.and.exclamationmark.bubble.right
 bubble.left.and.exclamationmark.bubble.right.fill
-text.bubble.left.and.bubble.right
-text.bubble.left.and.bubble.right.fill
 phone
 phone.fill
 phone.circle

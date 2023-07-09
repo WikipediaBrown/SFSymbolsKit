@@ -1751,8 +1751,6 @@ public enum SFSymbols: String, CaseIterable {
     case bubbleLeftAndbubbleRightFill = "bubble.left.and.bubble.right.fill"
     case bubbleLeftAndExclamationmarkbubbleRight = "bubble.left.and.exclamationmark.bubble.right"
     case bubbleLeftAndExclamationmarkbubbleRightFill = "bubble.left.and.exclamationmark.bubble.right.fill"
-    case textBubbleLeftAndBubbleRight = "text.bubble.left.and.bubble.right"
-    case textBubbleLeftAndBubbleRightFill = "text.bubble.left.and.bubble.right.fill"
     case phone = "phone"
     case phoneFill = "phone.fill"
     case phoneCircle = "phone.circle"

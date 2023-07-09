@@ -47,7 +47,7 @@ with open('SFSymbols.txt') as topo_file:
                 continue
             camelCaseName += part.capitalize()
             
-        result = "    static let {} = getSystemImage(named: \"{}\")\n".format(camelCaseName.rstrip(), line.rstrip())
+        result = "    static let {} = getSystemImage(named: SFSymbols.{}.rawValue)\n".format(camelCaseName.rstrip(), camelCaseName.rstrip())
         file.write(result)
         
 file.write("\n")
