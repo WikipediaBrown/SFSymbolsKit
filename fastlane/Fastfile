@@ -27,7 +27,7 @@ platform :ios do
       unavailable_iPhones = `xcrun simctl list | grep iPhone | grep "runtime profile not found"`.split("\n")
       unavailable_iPhones.each do | row |
           uuid = row.match(uuid_regex).captures.first
-          system("xcrun simctl upgrade #{uuid} \"com.apple.CoreSimulator.SimRuntime.iOS-13-1\"")
+          system("xcrun simctl upgrade #{uuid} \"com.apple.CoreSimulator.SimRuntime.iOS-17\"")
       end
     FileUtils.remove_dir './CodeCoverage', true
     FileUtils.remove_dir './UnitTests', true
