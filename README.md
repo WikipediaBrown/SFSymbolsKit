@@ -23,7 +23,7 @@ The preferred way of installing **SFSymbols** is via the [Swift Package Manager]
 ### String
 You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this
 ```
-Image(systemName: .plusApp)
+Image(systemName: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -33,7 +33,7 @@ Image(systemName: .plusApp)
 ### UIImage
 You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this
 ```
-Image(uiImage: .plusApp)
+Image(uiImage: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -43,7 +43,7 @@ Image(uiImage: .plusApp)
 ### Enum
 Additionally, there is an enum that is `CaseIterable` that provides access to all of the strings in the `String` extension and access to all of the images through an `image` property.
 ```
-Image(uiImage: SFSymbols.plusApp.image)
+Image(uiImage: SFSymbol.plusApp.image)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -53,7 +53,7 @@ Image(uiImage: SFSymbols.plusApp.image)
 or 
 
 ```
-Image(systemName: SFSymbols.plusApp.rawValue)
+Image(systemName: SFSymbol.plusApp.string)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
