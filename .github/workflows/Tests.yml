@@ -1,4 +1,4 @@
-name: Pull Request Against Develop
+name: Beta Pull Request Against Develop
 run-name: ${{ github.actor }} is creating a change.
 on:
   pull_request:
@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Switch to Xcode Beta
+      - name: Download Beta iOS Simulators
         run: xcodebuild -downloadPlatform iOS
       - name: Install Dependenies with Bundler
         run: bundle install
-      - name: Unit Tests
+      - name: Run Unit Tests
         run: bundle exec fastlane unit_test
