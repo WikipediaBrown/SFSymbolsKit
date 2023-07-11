@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cat << EOF > .git/.commit-message-template
 ########50 characters############################
 Subject
