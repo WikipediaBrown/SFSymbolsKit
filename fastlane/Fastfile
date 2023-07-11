@@ -15,7 +15,6 @@ opt_out_usage
 
 require 'fileutils'
 
-
 default_platform(:ios)
 
 project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory
@@ -28,19 +27,21 @@ platform :ios do
     run_tests(
       package_path: ".",
       scheme: "#{project_name}",
-      device: 'iPhone 14 Pro',
+      devices: ['iPhone 14 Pro','iPhone 14'],
       code_coverage: true,
       output_directory: './fastlane/UnitTests',
       output_types: 'html',
       result_bundle: true,
       clean: true
     )
-    danger(
-      danger_id: "unit-tests",
-      dangerfile: "DangerFile",
-      github_api_token: ENV["GITHUB_TOKEN"],
-      verbose: true
-    )
+    if ENV['CI']
+      danger(
+        danger_id: "unit-tests",
+        dangerfile: "DangerFile",
+        github_api_token: ENV["GITHUB_TOKEN"],
+        verbose: true
+      )
+    end
     xcov(
       is_swift_package: true,
       output_directory: './fastlane/CodeCoverage',

@@ -17,9 +17,9 @@ We will measure <metric> to confirm or reject our hypothesis.
 
 
 **Acceptance Criteria**
-[ ] - criterion one
-[ ] - criterion two
-[ ] - criterion three
+- [ ] criterion one
+- [ ] criterion two
+- [ ] criterion three
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
