@@ -77,7 +77,12 @@ Assuming you're running macOS, you should first install [Homebrew](https://brew.
 Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it from Apple.com) and paste it into the SFSymbols.txt file. Check out this [StackOverflow](https://stackoverflow.com/a/63310093/5863650) post.
 
 ### :runner: Run Python Scripts
-Run the command `python UIImageExtension.py && python UIImageExtensionTests.py && python StringExtension.py && python StringExtensionTests.py && python Enum.py` and the python scripts will regenerate the extension and enum.
+Run the command 
+```
+python UIImageExtension.py && python UIImageExtensionTests.py && python StringExtension.py && python StringExtensionTests.py && python Enum.py
+```
+
+The python scripts will regenerate the extension and enum.
 
 
 ## :microscope: Test
