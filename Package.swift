@@ -10,10 +10,7 @@ let package = Package(
         .macOS(.v10_15)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "SFSymbols", targets: ["SFSymbols"]),
-//        .library(name: "SFSymbols", type: .static, targets: ["SFSymbols"]),
-//        .library(name: "SFSymbols", type: .dynamic, targets: ["SFSymbols"]),
+        .library(name: "SFSymbols", targets: ["SFSymbols"])
     ],
     targets: [
         .target( name: "SFSymbols", dependencies: []),

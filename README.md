@@ -79,10 +79,17 @@ Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it fr
 ### 🏃🏽 Run Python Scripts
 Run the command:
 ```
-bash generate.sh
+bash generate-files.sh
 ```
 
 The python scripts will regenerate the enum & extensions.
+
+Run the command:
+```
+bash generate-documentation.sh
+```
+
+The python scripts will regenerate the documentation.
 
 
 ## 🔬 Test

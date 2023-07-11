@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cat << EOF > .git/.commit-message-template
 ########50 characters############################

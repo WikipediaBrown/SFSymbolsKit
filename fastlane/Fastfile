@@ -47,7 +47,6 @@ platform :ios do
       output_directory: './fastlane/CodeCoverage',
       minimum_coverage_percentage: 100.0
     )
-    sh('swift package generate-documentation')
   end
 
   desc "Create Release for GitHub"
