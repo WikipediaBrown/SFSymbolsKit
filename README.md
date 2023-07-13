@@ -27,7 +27,7 @@ The preferred way of installing **SFSymbols** is via the [Swift Package Manager]
 
 ### 🧶 String
 You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this
-```
+```swift
 Image(systemName: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
@@ -37,7 +37,7 @@ Image(systemName: .SFSymbols.plusApp)
 
 ### 🏞️ UIImage
 You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this
-```
+```swift
 Image(uiImage: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
@@ -47,7 +47,7 @@ Image(uiImage: .SFSymbols.plusApp)
 
 ### 🗄️ Enum
 Additionally, there is an enum that is `CaseIterable` that provides access to all of the strings in the `String` extension and access to all of the images through an `image` property.
-```
+```swift
 Image(uiImage: SFSymbol.plusApp.image)
     .resizable()
     .scaledToFit()
@@ -57,7 +57,7 @@ Image(uiImage: SFSymbol.plusApp.image)
 
 or 
 
-```
+```swift
 Image(systemName: SFSymbol.plusApp.string)
     .resizable()
     .scaledToFit()
@@ -78,14 +78,14 @@ Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it fr
 
 ### 🏃🏽 Run Python Scripts
 Run the command:
-```
+```shell
 bash generate-files.sh
 ```
 
 The python scripts will regenerate the enum & extensions.
 
 Run the command:
-```
+```shell
 bash generate-documentation.sh
 ```
 
@@ -94,7 +94,7 @@ The python scripts will regenerate the documentation.
 
 ## 🔬 Test
 
-Run `command+u` to run the unit tests. Test are run automatically for all pull requests.
+Press `command+u` to run the unit tests from Xcode. Test are run automatically for all pull requests inn a GitHub Action.
 
 
 ## 🔢 Versioning
@@ -105,7 +105,7 @@ SFSymbols releases a [new version on GitHub](https://github.com/WikipediaBrown/S
 ## 👩🏽‍💻 Contribute
 
 Send a pull request my dude. The commit template can be added to this repo by running the command:
-```
+```shell
 bash setup.sh
 ```
 
