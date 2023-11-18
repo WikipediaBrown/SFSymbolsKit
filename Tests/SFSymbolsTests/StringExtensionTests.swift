@@ -1540,6 +1540,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_pencilAndListClipboard_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.pencilAndListClipboard
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_docRichtext_returnsImage() {
         // Arrange
         let string = String.SFSymbols.docRichtext
@@ -1606,6 +1615,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_docTextBelowEcgFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.docTextBelowEcgFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_docQuestionmark_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.docQuestionmark
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_docQuestionmarkFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.docQuestionmarkFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -3169,6 +3196,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_person2BadgeKey_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.person2BadgeKey
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_person2BadgeKeyFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.person2BadgeKeyFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_shareplay_returnsImage() {
         // Arrange
         let string = String.SFSymbols.shareplay
@@ -3196,9 +3241,18 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_rectangleInsetBadgeRecord_returnsImage() {
+    func test_StringExtension_rectangleInsetFilledBadgeRecord_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.rectangleInsetBadgeRecord
+        let string = String.SFSymbols.rectangleInsetFilledBadgeRecord
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_rectangleInsetFilledAndCursorarrow_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.rectangleInsetFilledAndCursorarrow
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -3208,6 +3262,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_sharedWithYou_returnsImage() {
         // Arrange
         let string = String.SFSymbols.sharedWithYou
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_sharedWithYouCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.sharedWithYouCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_sharedWithYouCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.sharedWithYouCircleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -3619,6 +3691,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_personCropCircleDashedCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.personCropCircleDashedCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_personCropCircleDashedCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.personCropCircleDashedCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_personCropSquare_returnsImage() {
         // Arrange
         let string = String.SFSymbols.personCropSquare
@@ -3946,6 +4036,78 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_figureAndChildHoldinghands_returnsImage() {
         // Arrange
         let string = String.SFSymbols.figureAndChildHoldinghands
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_figure_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.figure
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_accessibility_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.accessibility
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_accessibilityFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.accessibilityFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_voiceover_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.voiceover
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_accessibilityBadgeArrowUpRight_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.accessibilityBadgeArrowUpRight
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_figure2_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.figure2
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_figure2Circle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.figure2Circle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_figure2CircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.figure2CircleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -6097,6 +6259,15 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_cursorarrowAndSquareOnSquareDashed_returnsImage() {
         // Arrange
         let string = String.SFSymbols.cursorarrowAndSquareOnSquareDashed
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_rectangleOnrectangleBadgeGearshape_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.rectangleOnrectangleBadgeGearshape
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -9523,6 +9694,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_swiftdata_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.swiftdata
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_magnifyingglass_returnsImage() {
         // Arrange
         let string = String.SFSymbols.magnifyingglass
@@ -9562,6 +9742,15 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_minusMagnifyingglass_returnsImage() {
         // Arrange
         let string = String.SFSymbols.minusMagnifyingglass
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_exclamationmarkMagnifyingglass_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.exclamationmarkMagnifyingglass
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -14194,6 +14383,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_bellBadgeSlash_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bellBadgeSlash
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bellBadgeSlashFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bellBadgeSlashFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_bellAndWavesLeftAndRight_returnsImage() {
         // Arrange
         let string = String.SFSymbols.bellAndWavesLeftAndRight
@@ -14779,6 +14986,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowTriangle2CirclepathIcloud_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowTriangle2CirclepathIcloud
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowTriangle2CirclepathIcloudFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowTriangle2CirclepathIcloudFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_icloudAndArrowDown_returnsImage() {
         // Arrange
         let string = String.SFSymbols.icloudAndArrowDown
@@ -15220,6 +15445,42 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_bubble_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubble
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bubbleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubbleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bubbleCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubbleCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bubbleCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubbleCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_bubbleRight_returnsImage() {
         // Arrange
         let string = String.SFSymbols.bubbleRight
@@ -15508,18 +15769,18 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_rectangle3GroupBubbleLeft_returnsImage() {
+    func test_StringExtension_rectangle3GroupBubble_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.rectangle3GroupBubbleLeft
+        let string = String.SFSymbols.rectangle3GroupBubble
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_rectangle3GroupBubbleLeftFill_returnsImage() {
+    func test_StringExtension_rectangle3GroupBubbleFill_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.rectangle3GroupBubbleLeftFill
+        let string = String.SFSymbols.rectangle3GroupBubbleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -15562,54 +15823,72 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_phoneBubbleLeft_returnsImage() {
+    func test_StringExtension_phoneBubble_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.phoneBubbleLeft
+        let string = String.SFSymbols.phoneBubble
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_phoneBubbleLeftFill_returnsImage() {
+    func test_StringExtension_phoneBubbleFill_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.phoneBubbleLeftFill
+        let string = String.SFSymbols.phoneBubbleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_videoBubbleLeft_returnsImage() {
+    func test_StringExtension_videoBubble_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.videoBubbleLeft
+        let string = String.SFSymbols.videoBubble
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_videoBubbleLeftFill_returnsImage() {
+    func test_StringExtension_videoBubbleFill_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.videoBubbleLeftFill
+        let string = String.SFSymbols.videoBubbleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_speakerWave2BubbleLeft_returnsImage() {
+    func test_StringExtension_speakerWave2Bubble_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.speakerWave2BubbleLeft
+        let string = String.SFSymbols.speakerWave2Bubble
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_speakerWave2BubbleLeftFill_returnsImage() {
+    func test_StringExtension_speakerWave2BubbleFill_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.speakerWave2BubbleLeftFill
+        let string = String.SFSymbols.speakerWave2BubbleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_personBubble_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.personBubble
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_personBubbleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.personBubbleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -15682,6 +15961,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_bubbleLeftAndExclamationmarkbubbleRightFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.bubbleLeftAndExclamationmarkbubbleRightFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bubbleLeftAndTextbubbleRight_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubbleLeftAndTextbubbleRight
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bubbleLeftAndTextbubbleRightFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bubbleLeftAndTextbubbleRightFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -16330,6 +16627,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_envelopeBadgeFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.envelopeBadgeFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_envelopeBadgePersonCrop_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.envelopeBadgePersonCrop
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_envelopeBadgePersonCropFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.envelopeBadgePersonCropFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -20638,6 +20953,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_washerCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.washerCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_washerCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.washerCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_dryer_returnsImage() {
         // Arrange
         let string = String.SFSymbols.dryer
@@ -20656,6 +20989,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_dryerCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dryerCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dryerCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dryerCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_dishwasher_returnsImage() {
         // Arrange
         let string = String.SFSymbols.dishwasher
@@ -20668,6 +21019,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_dishwasherFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.dishwasherFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dishwasherCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dishwasherCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dishwasherCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dishwasherCircleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -21277,6 +21646,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_lockCircleDotted_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.lockCircleDotted
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_lockSquareStack_returnsImage() {
         // Arrange
         let string = String.SFSymbols.lockSquareStack
@@ -21421,6 +21799,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_lockBadgeClock_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.lockBadgeClock
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_lockBadgeClockFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.lockBadgeClockFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_lockOpen_returnsImage() {
         // Arrange
         let string = String.SFSymbols.lockOpen
@@ -21493,6 +21889,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_keySlash_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.keySlash
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_keySlashFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.keySlashFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_keyRadiowavesForward_returnsImage() {
         // Arrange
         let string = String.SFSymbols.keyRadiowavesForward
@@ -21505,6 +21919,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_keyRadiowavesForwardFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.keyRadiowavesForwardFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_keyRadiowavesForwardSlash_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.keyRadiowavesForwardSlash
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_keyRadiowavesForwardSlashFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.keyRadiowavesForwardSlashFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -22114,6 +22546,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_dotScopeDisplay_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dotScopeDisplay
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_displayTrianglebadgeExclamationmark_returnsImage() {
         // Arrange
         let string = String.SFSymbols.displayTrianglebadgeExclamationmark
@@ -22342,6 +22783,15 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_laptopcomputerTrianglebadgeExclamationmark_returnsImage() {
         // Arrange
         let string = String.SFSymbols.laptopcomputerTrianglebadgeExclamationmark
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dotScopeLaptopcomputer_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dotScopeLaptopcomputer
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -22942,6 +23392,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_iphoneAndArrowLeftAndArrowRight_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.iphoneAndArrowLeftAndArrowRight
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_lockIphone_returnsImage() {
         // Arrange
         let string = String.SFSymbols.lockIphone
@@ -23347,9 +23806,234 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_iphoneCase_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.iphoneCase
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_ipadCase_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.ipadCase
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_ipadCaseAndIphoneCase_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.ipadCaseAndIphoneCase
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_iphoneSizes_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.iphoneSizes
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_ipadSizes_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.ipadSizes
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_smartphone_returnsImage() {
         // Arrange
         let string = String.SFSymbols.smartphone
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionpro_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionpro
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproSlash_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproSlash
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproSlashFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproSlashFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproSlashCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproSlashCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproSlashCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproSlashCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproBadgeExclamationmark_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproBadgeExclamationmark
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproBadgeExclamationmarkFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproBadgeExclamationmarkFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproBadgePlay_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproBadgePlay
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproBadgePlayFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproBadgePlayFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproAndArrowForward_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproAndArrowForward
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_visionproAndArrowForwardFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.visionproAndArrowForwardFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_macbookAndVisionpro_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.macbookAndVisionpro
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_headProfileArrowForwardAndVisionpro_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.headProfileArrowForwardAndVisionpro
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_opticid_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.opticid
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_opticidFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.opticidFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_panoBadgePlay_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.panoBadgePlay
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_panoBadgePlayFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.panoBadgePlayFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -24202,45 +24886,90 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_beatsFitPro_returnsImage() {
+    func test_StringExtension_beatsStudiobudsplus_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.beatsFitPro
+        let string = String.SFSymbols.beatsStudiobudsplus
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_beatsFitProLeft_returnsImage() {
+    func test_StringExtension_beatsStudiobudsplusLeft_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.beatsFitProLeft
+        let string = String.SFSymbols.beatsStudiobudsplusLeft
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_beatsFitProRight_returnsImage() {
+    func test_StringExtension_beatsStudiobudsplusRight_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.beatsFitProRight
+        let string = String.SFSymbols.beatsStudiobudsplusRight
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_beatsFitProChargingcase_returnsImage() {
+    func test_StringExtension_beatsStudiobudsplusChargingcase_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.beatsFitProChargingcase
+        let string = String.SFSymbols.beatsStudiobudsplusChargingcase
         // Act
         let image = UIImage(systemName: string)
         // Assert
         XCTAssertNotEqual(image, UIImage())
     }
 
-    func test_StringExtension_beatsFitProChargingcaseFill_returnsImage() {
+    func test_StringExtension_beatsStudiobudsplusChargingcaseFill_returnsImage() {
         // Arrange
-        let string = String.SFSymbols.beatsFitProChargingcaseFill
+        let string = String.SFSymbols.beatsStudiobudsplusChargingcaseFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_beatsFitpro_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.beatsFitpro
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_beatsFitproLeft_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.beatsFitproLeft
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_beatsFitproRight_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.beatsFitproRight
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_beatsFitproChargingcase_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.beatsFitproChargingcase
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_beatsFitproChargingcaseFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.beatsFitproChargingcaseFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -24607,6 +25336,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_cableConnectorSlash_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.cableConnectorSlash
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_cableConnectorHorizontal_returnsImage() {
         // Arrange
         let string = String.SFSymbols.cableConnectorHorizontal
@@ -24763,6 +25501,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_photoTv_returnsImage() {
         // Arrange
         let string = String.SFSymbols.photoTv
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_tvBadgeWifi_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.tvBadgeWifi
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_tvBadgeWifiFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.tvBadgeWifiFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -32617,6 +33373,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_squaresLeadingRectangleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.squaresLeadingRectangleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_macwindow_returnsImage() {
         // Arrange
         let string = String.SFSymbols.macwindow
@@ -33301,6 +34066,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_sliderHorizontalBelowSunMax_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.sliderHorizontalBelowSunMax
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_sliderVertical3_returnsImage() {
         // Arrange
         let string = String.SFSymbols.sliderVertical3
@@ -33526,6 +34300,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_squareStack3dUpTrianglebadgeExclamationmark_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.squareStack3dUpTrianglebadgeExclamationmark
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_squareStack3dUpTrianglebadgeExclamationmarkFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.squareStack3dUpTrianglebadgeExclamationmarkFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_squareStack3dUpSlash_returnsImage() {
         // Arrange
         let string = String.SFSymbols.squareStack3dUpSlash
@@ -33598,9 +34390,45 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_fCursive_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.fCursive
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_fCursiveCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.fCursiveCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_fCursiveCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.fCursiveCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_scope_returnsImage() {
         // Arrange
         let string = String.SFSymbols.scope
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dotScope_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dotScope
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -33817,6 +34645,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_chartXyaxisLine_returnsImage() {
         // Arrange
         let string = String.SFSymbols.chartXyaxisLine
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_gaugeWithNeedle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.gaugeWithNeedle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_gaugeWithNeedleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.gaugeWithNeedleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -35749,6 +36595,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_circleDottedAndCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.circleDottedAndCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_cylinder_returnsImage() {
         // Arrange
         let string = String.SFSymbols.cylinder
@@ -35833,6 +36688,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_chartBarXaxis_returnsImage() {
         // Arrange
         let string = String.SFSymbols.chartBarXaxis
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_chartBarXaxisAscending_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.chartBarXaxisAscending
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_chartBarXaxisAscendingBadgeClock_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.chartBarXaxisAscendingBadgeClock
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -36397,6 +37270,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_hourglassAndLock_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.hourglassAndLock
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_hourglassBottomhalfFilled_returnsImage() {
         // Arrange
         let string = String.SFSymbols.hourglassBottomhalfFilled
@@ -36436,6 +37318,357 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_dollarsignArrowCirclepath_returnsImage() {
         // Arrange
         let string = String.SFSymbols.dollarsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_centsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.centsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_yensignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.yensignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_sterlingsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.sterlingsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_francsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.francsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_florinsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.florinsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_turkishlirasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.turkishlirasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_rublesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.rublesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_eurosignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.eurosignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_dongsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.dongsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_indianrupeesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.indianrupeesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_tengesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.tengesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_pesetasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.pesetasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_pesosignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.pesosignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_kipsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.kipsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_wonsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.wonsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_lirasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.lirasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_australsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.australsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_hryvniasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.hryvniasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_nairasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.nairasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_guaranisignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.guaranisignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_coloncurrencysignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.coloncurrencysignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_cedisignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.cedisignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_cruzeirosignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.cruzeirosignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_tugriksignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.tugriksignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_millsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.millsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_shekelsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.shekelsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_manatsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.manatsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_rupeesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.rupeesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bahtsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bahtsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_larisignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.larisignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_bitcoinsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.bitcoinsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_brazilianrealsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.brazilianrealsignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_chineseyuanrenminbisignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.chineseyuanrenminbisignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_polishzlotysignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.polishzlotysignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_norwegiankronesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.norwegiankronesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_swedishkronasignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.swedishkronasignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_danishkronesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.danishkronesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_eurozonesignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.eurozonesignArrowCirclepath
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_australiandollarsignArrowCirclepath_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.australiandollarsignArrowCirclepath
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -36571,6 +37804,15 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_squareResizeDown_returnsImage() {
         // Arrange
         let string = String.SFSymbols.squareResizeDown
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_squareResize_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.squareResize
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -37579,33 +38821,6 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_fx_returnsImage() {
         // Arrange
         let string = String.SFSymbols.fx
-        // Act
-        let image = UIImage(systemName: string)
-        // Assert
-        XCTAssertNotEqual(image, UIImage())
-    }
-
-    func test_StringExtension_fCursive_returnsImage() {
-        // Arrange
-        let string = String.SFSymbols.fCursive
-        // Act
-        let image = UIImage(systemName: string)
-        // Assert
-        XCTAssertNotEqual(image, UIImage())
-    }
-
-    func test_StringExtension_fCursiveCircle_returnsImage() {
-        // Arrange
-        let string = String.SFSymbols.fCursiveCircle
-        // Act
-        let image = UIImage(systemName: string)
-        // Assert
-        XCTAssertNotEqual(image, UIImage())
-    }
-
-    func test_StringExtension_fCursiveCircleFill_returnsImage() {
-        // Arrange
-        let string = String.SFSymbols.fCursiveCircleFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -39484,6 +40699,15 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowDownCircleDotted_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownCircleDotted
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowDownSquare_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowDownSquare
@@ -40546,6 +41770,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowUpToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpToLineSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowDownToLine_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowDownToLine
@@ -40576,6 +41818,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowDownToLineCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowDownToLineCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownToLineSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -40618,6 +41878,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowLeftToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowLeftToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowLeftToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowLeftToLineSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowBackwardToLine_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowBackwardToLine
@@ -40639,6 +41917,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowBackwardToLineCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowBackwardToLineCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowBackwardToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowBackwardToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowBackwardToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowBackwardToLineSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -40681,6 +41977,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowRightToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowRightToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowRightToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowRightToLineSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowForwardToLine_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowForwardToLine
@@ -40702,6 +42016,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowForwardToLineCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowForwardToLineCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowForwardToLineSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowForwardToLineSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowForwardToLineSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowForwardToLineSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -40771,6 +42103,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowClockwiseSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowClockwiseSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowClockwiseSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowClockwiseSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowCounterclockwise_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowCounterclockwise
@@ -40792,6 +42142,24 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowCounterclockwiseCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowCounterclockwiseCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowCounterclockwiseSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowCounterclockwiseSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowCounterclockwiseSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowCounterclockwiseSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -40825,6 +42193,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowUpLeftAndarrowDownRightSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpLeftAndarrowDownRightSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpLeftAndarrowDownRightSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpLeftAndarrowDownRightSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowUpBackwardAndarrowDownForward_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowUpBackwardAndarrowDownForward
@@ -40846,6 +42232,114 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowUpBackwardAndarrowDownForwardCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowUpBackwardAndarrowDownForwardCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpBackwardAndarrowDownForwardSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpBackwardAndarrowDownForwardSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpBackwardAndarrowDownForwardSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpBackwardAndarrowDownForwardSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownLeftAndarrowUpRight_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownLeftAndarrowUpRight
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownLeftAndarrowUpRightCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownLeftAndarrowUpRightCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownLeftAndarrowUpRightCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownLeftAndarrowUpRightCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownLeftAndarrowUpRightSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownLeftAndarrowUpRightSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownLeftAndarrowUpRightSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownLeftAndarrowUpRightSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownBackwardAndarrowUpForward_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownBackwardAndarrowUpForward
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownBackwardAndarrowUpForwardCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownBackwardAndarrowUpForwardCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownBackwardAndarrowUpForwardCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownBackwardAndarrowUpForwardCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownBackwardAndarrowUpForwardSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownBackwardAndarrowUpForwardSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownBackwardAndarrowUpForwardSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownBackwardAndarrowUpForwardSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert
@@ -40879,6 +42373,24 @@ final class StringExtensionTests: XCTestCase {
         XCTAssertNotEqual(image, UIImage())
     }
 
+    func test_StringExtension_arrowDownRightAndarrowUpLeftSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownRightAndarrowUpLeftSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownRightAndarrowUpLeftSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownRightAndarrowUpLeftSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
     func test_StringExtension_arrowDownForwardAndarrowUpBackward_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowDownForwardAndarrowUpBackward
@@ -40900,6 +42412,114 @@ final class StringExtensionTests: XCTestCase {
     func test_StringExtension_arrowDownForwardAndarrowUpBackwardCircleFill_returnsImage() {
         // Arrange
         let string = String.SFSymbols.arrowDownForwardAndarrowUpBackwardCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownForwardAndarrowUpBackwardSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownForwardAndarrowUpBackwardSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowDownForwardAndarrowUpBackwardSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowDownForwardAndarrowUpBackwardSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpRightAndarrowDownLeft_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpRightAndarrowDownLeft
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpRightAndarrowDownLeftCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpRightAndarrowDownLeftCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpRightAndarrowDownLeftCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpRightAndarrowDownLeftCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpRightAndarrowDownLeftSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpRightAndarrowDownLeftSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpRightAndarrowDownLeftSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpRightAndarrowDownLeftSquareFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpForwardAndarrowDownBackward_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpForwardAndarrowDownBackward
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpForwardAndarrowDownBackwardCircle_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpForwardAndarrowDownBackwardCircle
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpForwardAndarrowDownBackwardCircleFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpForwardAndarrowDownBackwardCircleFill
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpForwardAndarrowDownBackwardSquare_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpForwardAndarrowDownBackwardSquare
+        // Act
+        let image = UIImage(systemName: string)
+        // Assert
+        XCTAssertNotEqual(image, UIImage())
+    }
+
+    func test_StringExtension_arrowUpForwardAndarrowDownBackwardSquareFill_returnsImage() {
+        // Arrange
+        let string = String.SFSymbols.arrowUpForwardAndarrowDownBackwardSquareFill
         // Act
         let image = UIImage(systemName: string)
         // Assert

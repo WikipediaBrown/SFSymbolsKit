@@ -5,7 +5,7 @@ final class SFSymbolsEnumTests: XCTestCase {
     func test_SFSymbols_Enum_image_found() {
         SFSymbol.allCases.forEach {
             let image = $0.image
-            XCTAssertNotEqual(image, UIImage())
+            XCTAssertNotEqual(image, UIImage(), "Image named \($0.string).")
         }
     }
     func test_SFSymbols_Enum_string_found() {
