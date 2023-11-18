@@ -89,7 +89,7 @@ SFSymbols releases a [new version on GitHub](https://github.com/WikipediaBrown/S
 
 ## Contribute
 
-Send a pull request my dude.
+Send a pull request my dude... or make an issue.
 
 
 ## Author
