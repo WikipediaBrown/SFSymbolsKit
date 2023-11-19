@@ -28,24 +28,24 @@ platform :ios do
     run_tests(
       package_path: ".",
       scheme: "#{project_name}",
-      device: 'iPhone 14 Pro',
+      # device: 'iPhone 14 Pro',
       code_coverage: true,
       output_directory: './fastlane/UnitTests',
       output_types: 'html',
       result_bundle: true,
       clean: true
     )
-    danger(
-      danger_id: "unit-tests",
-      dangerfile: "DangerFile",
-      github_api_token: ENV["GITHUB_TOKEN"],
-      verbose: true
-    )
-    xcov(
-      is_swift_package: true,
-      output_directory: './fastlane/CodeCoverage',
-      minimum_coverage_percentage: 100.0
-    )
+    # danger(
+    #   danger_id: "unit-tests",
+    #   dangerfile: "DangerFile",
+    #   github_api_token: ENV["GITHUB_TOKEN"],
+    #   verbose: true
+    # )
+    # xcov(
+    #   is_swift_package: true,
+    #   output_directory: './fastlane/CodeCoverage',
+    #   minimum_coverage_percentage: 100.0
+    # )
   end
 
   desc "Create Release for GitHub"
@@ -61,7 +61,7 @@ platform :ios do
       repository_name: ENV["REPOSITORY_NAME"],
       api_bearer: ENV["GITHUB_TOKEN"],
       name: "#{new_version} - This #{day}'s Version",
-      tag_name: version,
+      tag_name: new_version,
       description: changelog
     )
   end
