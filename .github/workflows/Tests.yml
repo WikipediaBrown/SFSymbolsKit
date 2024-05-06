@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Switch to Correct Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode_15.3.app
       - name: Install Dependenies with Bundler
         run: bundle install
       - name: Unit Tests
