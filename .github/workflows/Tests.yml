@@ -7,15 +7,15 @@ on:
 jobs:
   tests:
     name: Unit Tests
-    runs-on: macOS-13
+    runs-on: macOS-latest
     env:
-      DANGER_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPOSITORY_NAME: ${{ github.event.repository.name }}
+      DANGER_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN }}
+      DEVELOPER_DIR: /Applications/Xcode_15.3.app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Switch to Xcode Beta
-        run: xcodebuild -downloadPlatform iOS
       - name: Install Dependenies with Bundler
         run: bundle install
       - name: Unit Tests

@@ -79,7 +79,7 @@ Run the command `python3 UIImageExtension.py && python3 UIImageExtensionTests.py
 
 ## Test
 
-Run `command+u` to run the unit tests. Test are run automatically for all pull requests.
+Run `command+u` to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later. Some symbols are not included in earlier builds.
 
 
 ## Versioning

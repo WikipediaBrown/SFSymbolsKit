@@ -13,6 +13,8 @@ public extension String {
         static let squareAndArrowUpFill: String = SFSymbol.squareAndArrowUpFill.rawValue
         static let squareAndArrowUpCircle: String = SFSymbol.squareAndArrowUpCircle.rawValue
         static let squareAndArrowUpCircleFill: String = SFSymbol.squareAndArrowUpCircleFill.rawValue
+        static let squareAndArrowUpBadgeClock: String = SFSymbol.squareAndArrowUpBadgeClock.rawValue
+        static let squareAndArrowUpBadgeClockFill: String = SFSymbol.squareAndArrowUpBadgeClockFill.rawValue
         static let squareAndArrowUpTrianglebadgeExclamationmark: String = SFSymbol.squareAndArrowUpTrianglebadgeExclamationmark.rawValue
         static let squareAndArrowDown: String = SFSymbol.squareAndArrowDown.rawValue
         static let squareAndArrowDownFill: String = SFSymbol.squareAndArrowDownFill.rawValue
@@ -422,6 +424,10 @@ public extension String {
         static let personCropCircleDashedCircleFill: String = SFSymbol.personCropCircleDashedCircleFill.rawValue
         static let personCropSquare: String = SFSymbol.personCropSquare.rawValue
         static let personCropSquareFill: String = SFSymbol.personCropSquareFill.rawValue
+        static let personCropSquareBadgeCamera: String = SFSymbol.personCropSquareBadgeCamera.rawValue
+        static let personCropSquareBadgeCameraFill: String = SFSymbol.personCropSquareBadgeCameraFill.rawValue
+        static let personCropSquareBadgeVideo: String = SFSymbol.personCropSquareBadgeVideo.rawValue
+        static let personCropSquareBadgeVideoFill: String = SFSymbol.personCropSquareBadgeVideoFill.rawValue
         static let personCropArtframe: String = SFSymbol.personCropArtframe.rawValue
         static let photoArtframe: String = SFSymbol.photoArtframe.rawValue
         static let photoArtframeCircle: String = SFSymbol.photoArtframeCircle.rawValue
@@ -4501,6 +4507,8 @@ public extension String {
         static let chevronCompactDown: String = SFSymbol.chevronCompactDown.rawValue
         static let chevronCompactLeft: String = SFSymbol.chevronCompactLeft.rawValue
         static let chevronCompactRight: String = SFSymbol.chevronCompactRight.rawValue
+        static let chevronCompactBackward: String = SFSymbol.chevronCompactBackward.rawValue
+        static let chevronCompactForward: String = SFSymbol.chevronCompactForward.rawValue
         static let arrowLeft: String = SFSymbol.arrowLeft.rawValue
         static let arrowLeftCircle: String = SFSymbol.arrowLeftCircle.rawValue
         static let arrowLeftCircleFill: String = SFSymbol.arrowLeftCircleFill.rawValue
