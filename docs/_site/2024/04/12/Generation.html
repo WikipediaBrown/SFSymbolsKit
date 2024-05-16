@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Generation</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SFSymbols" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Generation | SFSymbols</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Generation" />
+<meta name="author" content="Wikipedia Brown" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The scripts used to generate the extensions and enum are written in Python 2.7.18. Which means you’ll need Python." />
+<meta property="og:description" content="The scripts used to generate the extensions and enum are written in Python 2.7.18. Which means you’ll need Python." />
+<link rel="canonical" href="http://localhost:4000/2024/04/12/Generation.html" />
+<meta property="og:url" content="http://localhost:4000/2024/04/12/Generation.html" />
+<meta property="og:site_name" content="SFSymbols" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-04-12T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Generation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Wikipedia Brown"},"dateModified":"2024-04-12T00:00:00-07:00","datePublished":"2024-04-12T00:00:00-07:00","description":"The scripts used to generate the extensions and enum are written in Python 2.7.18. Which means you’ll need Python.","headline":"Generation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/04/12/Generation.html"},"url":"http://localhost:4000/2024/04/12/Generation.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <nav>
+    
+      <a href="/" >Home</a>
+    
+      <a href="/about.html" >About</a>
+    
+      <a href="/blog.html" >Blog</a>
+    
+      <a href="/staff.html" >Staff</a>
+    
+      <a href="/Coverage/report.html" >Tests</a>
+    
+</nav>
+    <h1>Generation</h1>
+
+<p>
+  12 Apr 2024
+  
+  
+    - <a href="/authors/WikipediaBrown.html">Wikipedia Brown</a>
+  
+</p>
+
+<p>The scripts used to generate the extensions and enum are written in <code class="language-plaintext highlighter-rouge">Python 2.7.18</code>. Which means you’ll need Python.</p>
+
+<h3 id="get-python">Get Python</h3>
+<p>Assuming you’re running macOS, you should first install <a href="https://brew.sh">Homebrew</a> and then use Homebrew to install Python by running the command <code class="language-plaintext highlighter-rouge">brew install python</code>.</p>
+
+<h3 id="get-list-of-names">Get List of Names</h3>
+<p>Get list of names of <code class="language-plaintext highlighter-rouge">SFSymbols</code> by opening the SFSymbols App (you can get it from <a href="https://developer.apple.com/sf-symbols/"> Developer</a>) and paste it into the SFSymbols.txt file. Check out this <a href="https://stackoverflow.com/a/63310093/5863650">StackOverflow</a> post.</p>
+
+<h3 id="run-python-scripts">Run Python Scripts</h3>
+<p>Run the command <code class="language-plaintext highlighter-rouge">python3 UIImageExtension.py &amp;&amp; python3 UIImageExtensionTests.py &amp;&amp; python3 StringExtension.py &amp;&amp; python3 StringExtensionTests.py &amp;&amp; python3 Enum.py</code> and the python scripts will regenerate the extension and enum.</p>
+
+  </body>
+</html>

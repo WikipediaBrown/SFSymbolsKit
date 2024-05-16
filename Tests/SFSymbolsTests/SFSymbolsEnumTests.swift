@@ -1,3 +1,10 @@
+//
+//  SFSymbol.swift
+//  SFSymbols
+//
+//  Created by Wikipedia Brown on 5/15/24.
+//
+
 import XCTest
 @testable import SFSymbols
 

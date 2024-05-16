@@ -1,14 +1,14 @@
 
 # SFSymbols
 
-# Now Supporting ***SFSymbols 5***
+# Now Supporting ***SFSymbols 5.2***
 
-SFSymbols is a tiny package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
+SFSymbols is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
 
 
 ## Installation
 **SFSymbols** can be installed with Swift Package Manager.
-### Swift Package Manager (Xcode 12 or higher)
+### Swift Package Manager (Xcode 15.3 or higher)
 
 The preferred way of installing **SFSymbols** is via the [Swift Package Manager](https://swift.org/package-manager/).
 
@@ -79,7 +79,7 @@ Run the command `python3 UIImageExtension.py && python3 UIImageExtensionTests.py
 
 ## Test
 
-Run `command+u` to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later. Some symbols are not included in earlier builds.
+Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later. Some symbols are not included in earlier builds.
 
 
 ## Versioning
@@ -89,7 +89,7 @@ SFSymbols releases a [new version on GitHub](https://github.com/WikipediaBrown/S
 
 ## Contribute
 
-Send a pull request my dude... or make an issue.
+Send a pull request my dude... or create an issue.
 
 
 ## Author

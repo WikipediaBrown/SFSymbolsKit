@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Usage</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SFSymbols" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Usage | SFSymbols</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Usage" />
+<meta name="author" content="Wikipedia Brown" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="String You can use the String extension to get the name of all of the SFSymbols available. You can add an image like this Image(systemName: .SFSymbols.plusApp) .resizable() .scaledToFit() .aspectRatio(contentMode: .fit) .foregroundColor(.primary)" />
+<meta property="og:description" content="String You can use the String extension to get the name of all of the SFSymbols available. You can add an image like this Image(systemName: .SFSymbols.plusApp) .resizable() .scaledToFit() .aspectRatio(contentMode: .fit) .foregroundColor(.primary)" />
+<link rel="canonical" href="http://localhost:4000/2024/04/13/Usage.html" />
+<meta property="og:url" content="http://localhost:4000/2024/04/13/Usage.html" />
+<meta property="og:site_name" content="SFSymbols" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-04-13T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Usage" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Wikipedia Brown"},"dateModified":"2024-04-13T00:00:00-07:00","datePublished":"2024-04-13T00:00:00-07:00","description":"String You can use the String extension to get the name of all of the SFSymbols available. You can add an image like this Image(systemName: .SFSymbols.plusApp) .resizable() .scaledToFit() .aspectRatio(contentMode: .fit) .foregroundColor(.primary)","headline":"Usage","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/04/13/Usage.html"},"url":"http://localhost:4000/2024/04/13/Usage.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <nav>
+    
+      <a href="/" >Home</a>
+    
+      <a href="/about.html" >About</a>
+    
+      <a href="/blog.html" >Blog</a>
+    
+      <a href="/staff.html" >Staff</a>
+    
+      <a href="/Coverage/report.html" >Tests</a>
+    
+</nav>
+    <h1>Usage</h1>
+
+<p>
+  13 Apr 2024
+  
+  
+    - <a href="/authors/WikipediaBrown.html">Wikipedia Brown</a>
+  
+</p>
+
+<h3 id="string">String</h3>
+<p>You can use the <code class="language-plaintext highlighter-rouge">String</code> extension to get the name of all of the <code class="language-plaintext highlighter-rouge">SFSymbols</code> available. You can add an image like this</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(systemName: .SFSymbols.plusApp)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<h3 id="uiimage">UIImage</h3>
+<p>You can use the <code class="language-plaintext highlighter-rouge">UIImage</code> extension to get the image of all of the <code class="language-plaintext highlighter-rouge">SFSymbols</code> available. You can add an image like this</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(uiImage: .SFSymbols.plusApp)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<h3 id="enum">Enum</h3>
+<p>Additionally, there is an enum that is <code class="language-plaintext highlighter-rouge">CaseIterable</code> that provides access to all of the strings in the <code class="language-plaintext highlighter-rouge">String</code> extension and access to all of the images through an <code class="language-plaintext highlighter-rouge">image</code> property.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(uiImage: SFSymbol.plusApp.image)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(systemName: SFSymbol.plusApp.string)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+  </body>
+</html>
