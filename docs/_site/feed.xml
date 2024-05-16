@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-15T19:27:25-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SFSymbols</title><subtitle>This is an extension to UIImage that provides all of the SF Symbols for you as a UIImage.</subtitle><entry><title type="html">Initial Commit</title><link href="http://localhost:4000/2024/04/15/Initial-Commit.html" rel="alternate" type="text/html" title="Initial Commit" /><published>2024-04-15T00:00:00-07:00</published><updated>2024-04-15T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/15/Initial-Commit</id><content type="html" xml:base="http://localhost:4000/2024/04/15/Initial-Commit.html"><![CDATA[<p>This is the first blog post about <strong>SFSymbols</strong>. SFSymbols is a tiny <strong><em>Swift</em></strong> package that provides extensions to <code class="language-plaintext highlighter-rouge">String</code> and <code class="language-plaintext highlighter-rouge">UIImage</code> to make using <strong>SFSymbols</strong> easy peasy. The extensions and the accompanying <code class="language-plaintext highlighter-rouge">Enum</code> are all generated using the python scripts included in this package along with a list of all of the <code class="language-plaintext highlighter-rouge">SFSymbols</code> names. The package is currently updated to support SFSymbols 5.2.</p>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[This is the first blog post about SFSymbols. SFSymbols is a tiny Swift package that provides extensions to String and UIImage to make using SFSymbols easy peasy. The extensions and the accompanying Enum are all generated using the python scripts included in this package along with a list of all of the SFSymbols names. The package is currently updated to support SFSymbols 5.2.]]></summary></entry><entry><title type="html">Installation</title><link href="http://localhost:4000/2024/04/14/Installation.html" rel="alternate" type="text/html" title="Installation" /><published>2024-04-14T00:00:00-07:00</published><updated>2024-04-14T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/14/Installation</id><content type="html" xml:base="http://localhost:4000/2024/04/14/Installation.html"><![CDATA[<p><strong>SFSymbols</strong> can be installed with Swift Package Manager.</p>
+<h3 id="swift-package-manager-xcode-153-or-higher">Swift Package Manager (Xcode 15.3 or higher)</h3>
+
+<p>The preferred way of installing <strong>SFSymbols</strong> is via the <a href="https://swift.org/package-manager/">Swift Package Manager</a>.</p>
+
+<ol>
+  <li>In Xcode, open your project and navigate to <strong>File</strong> → <strong>Swift Packages</strong> → <strong>Add Package Dependency…</strong></li>
+  <li>Paste the repository URL (<code class="language-plaintext highlighter-rouge">https://github.com/WikipediaBrown/SFSymbols.git</code>) and click <strong>Next</strong>.</li>
+  <li>For <strong>Rules</strong>, select <strong>Version (Up to Next Major)</strong> and click <strong>Next</strong>.</li>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+
+<p><a href="https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app">Adding Package Dependencies to Your App</a></p>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[SFSymbols can be installed with Swift Package Manager. Swift Package Manager (Xcode 15.3 or higher)]]></summary></entry><entry><title type="html">Usage</title><link href="http://localhost:4000/2024/04/13/Usage.html" rel="alternate" type="text/html" title="Usage" /><published>2024-04-13T00:00:00-07:00</published><updated>2024-04-13T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/13/Usage</id><content type="html" xml:base="http://localhost:4000/2024/04/13/Usage.html"><![CDATA[<h3 id="string">String</h3>
+<p>You can use the <code class="language-plaintext highlighter-rouge">String</code> extension to get the name of all of the <code class="language-plaintext highlighter-rouge">SFSymbols</code> available. You can add an image like this</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(systemName: .SFSymbols.plusApp)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<h3 id="uiimage">UIImage</h3>
+<p>You can use the <code class="language-plaintext highlighter-rouge">UIImage</code> extension to get the image of all of the <code class="language-plaintext highlighter-rouge">SFSymbols</code> available. You can add an image like this</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(uiImage: .SFSymbols.plusApp)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<h3 id="enum">Enum</h3>
+<p>Additionally, there is an enum that is <code class="language-plaintext highlighter-rouge">CaseIterable</code> that provides access to all of the strings in the <code class="language-plaintext highlighter-rouge">String</code> extension and access to all of the images through an <code class="language-plaintext highlighter-rouge">image</code> property.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(uiImage: SFSymbol.plusApp.image)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Image(systemName: SFSymbol.plusApp.string)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+</code></pre></div></div>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[String You can use the String extension to get the name of all of the SFSymbols available. You can add an image like this Image(systemName: .SFSymbols.plusApp) .resizable() .scaledToFit() .aspectRatio(contentMode: .fit) .foregroundColor(.primary)]]></summary></entry><entry><title type="html">Generation</title><link href="http://localhost:4000/2024/04/12/Generation.html" rel="alternate" type="text/html" title="Generation" /><published>2024-04-12T00:00:00-07:00</published><updated>2024-04-12T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/12/Generation</id><content type="html" xml:base="http://localhost:4000/2024/04/12/Generation.html"><![CDATA[<p>The scripts used to generate the extensions and enum are written in <code class="language-plaintext highlighter-rouge">Python 2.7.18</code>. Which means you’ll need Python.</p>
+
+<h3 id="get-python">Get Python</h3>
+<p>Assuming you’re running macOS, you should first install <a href="https://brew.sh">Homebrew</a> and then use Homebrew to install Python by running the command <code class="language-plaintext highlighter-rouge">brew install python</code>.</p>
+
+<h3 id="get-list-of-names">Get List of Names</h3>
+<p>Get list of names of <code class="language-plaintext highlighter-rouge">SFSymbols</code> by opening the SFSymbols App (you can get it from <a href="https://developer.apple.com/sf-symbols/"> Developer</a>) and paste it into the SFSymbols.txt file. Check out this <a href="https://stackoverflow.com/a/63310093/5863650">StackOverflow</a> post.</p>
+
+<h3 id="run-python-scripts">Run Python Scripts</h3>
+<p>Run the command <code class="language-plaintext highlighter-rouge">python3 UIImageExtension.py &amp;&amp; python3 UIImageExtensionTests.py &amp;&amp; python3 StringExtension.py &amp;&amp; python3 StringExtensionTests.py &amp;&amp; python3 Enum.py</code> and the python scripts will regenerate the extension and enum.</p>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[The scripts used to generate the extensions and enum are written in Python 2.7.18. Which means you’ll need Python.]]></summary></entry><entry><title type="html">Testing</title><link href="http://localhost:4000/2024/04/11/Testing.html" rel="alternate" type="text/html" title="Testing" /><published>2024-04-11T00:00:00-07:00</published><updated>2024-04-11T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/11/Testing</id><content type="html" xml:base="http://localhost:4000/2024/04/11/Testing.html"><![CDATA[<p>Run <code class="language-plaintext highlighter-rouge">command+u</code> in <strong><em>Xcode</em></strong> to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using <code class="language-plaintext highlighter-rouge">iOS 17.2</code> or later. Some symbols are not included in earlier builds.</p>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[Run command+u in Xcode to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using iOS 17.2 or later. Some symbols are not included in earlier builds.]]></summary></entry><entry><title type="html">Versioning</title><link href="http://localhost:4000/2024/04/10/Versioning.html" rel="alternate" type="text/html" title="Versioning" /><published>2024-04-10T00:00:00-07:00</published><updated>2024-04-10T00:00:00-07:00</updated><id>http://localhost:4000/2024/04/10/Versioning</id><content type="html" xml:base="http://localhost:4000/2024/04/10/Versioning.html"><![CDATA[<p>SFSymbols releases a <a href="https://github.com/WikipediaBrown/SFSymbols/releases">new version on GitHub</a> automatically when a pull request is approved from the <code class="language-plaintext highlighter-rouge">develop</code> branch to the <code class="language-plaintext highlighter-rouge">master</code> branch.</p>]]></content><author><name>Wikipedia Brown</name></author><summary type="html"><![CDATA[SFSymbols releases a new version on GitHub automatically when a pull request is approved from the develop branch to the master branch.]]></summary></entry></feed>

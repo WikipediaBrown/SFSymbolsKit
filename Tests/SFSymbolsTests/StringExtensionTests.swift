@@ -2,7 +2,7 @@
 //  StringExtensionTests.swift
 //  SFSymbols
 //
-//  Created by nonplus on 12/18/21.
+//  Created by Wikipedia Brown on 5/15/24.
 //
 
 import XCTest
