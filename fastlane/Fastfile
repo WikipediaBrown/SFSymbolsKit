@@ -35,17 +35,17 @@ platform :ios do
       result_bundle: true,
       clean: true
     )
+    xcov(
+       is_swift_package: true,
+       output_directory: './docs',
+       minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
+    )
     danger(
        danger_id: "unit-tests",
        dangerfile: "DangerFile",
        github_api_token: ENV["GITHUB_TOKEN"],
        verbose: true
     ) if ENV['CI']
-    xcov(
-       is_swift_package: true,
-       output_directory: './docs',
-       minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
-    )
   end
 
   desc "Create Release for GitHub"
