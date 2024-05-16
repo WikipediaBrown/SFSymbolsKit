@@ -37,7 +37,6 @@ platform :ios do
     )
     xcov(
        is_swift_package: true,
-       output_directory: './docs',
        minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
     )
     danger(
