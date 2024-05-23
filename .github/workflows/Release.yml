@@ -1,4 +1,4 @@
-name: CI
+name: Release
 on:
   push:
     branches:
@@ -8,12 +8,14 @@ jobs:
     name: Release SFSymbols
     runs-on: macOS-latest
     env:
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       REPOSITORY_NAME: ${{ github.event.repository.name }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install Bundler
+        uses: actions/checkout@v3
+      - name: Install Dependenies with Bundler
         run: bundle install
+      - name: Unit Tests
+        run: bundle exec fastlane unit_test
       - name: Create Release Tag
         run: bundle exec fastlane release_to_github

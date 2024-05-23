@@ -18,16 +18,16 @@ numbers = {
 file = open("Sources/SFSymbols/UIImage+Extension.swift", "w")
 
 file.write("//\n")
-file.write("//  SFSymbols.swift\n")
-file.write("//  Missions\n")
+file.write("//  UIImage+Extension.swift\n")
+file.write("//  SFSymbols\n")
 file.write("//\n")
-file.write("//  Created by nonplus on 12/18/21.\n")
+file.write("//  Created by Wikipedia Brown on 5/15/24.\n")
 file.write("//\n")
 file.write("\n")
 file.write("import UIKit\n")
 file.write("\n")
 file.write("public extension UIImage {\n")
-file.write("\n")
+file.write("    enum SFSymbols {\n")
 
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
@@ -47,15 +47,17 @@ with open('SFSymbols.txt') as topo_file:
                 continue
             camelCaseName += part.capitalize()
             
-        result = "    static let {} = getSystemImage(named: \"{}\")\n".format(camelCaseName.rstrip(), line.rstrip())
+        result = "        static let {} = getSystemImage(named: SFSymbol.{}.rawValue)\n".format(camelCaseName.rstrip(), camelCaseName.rstrip())
         file.write(result)
         
 file.write("\n")
-file.write("    static func getSystemImage(named: String) -> UIImage {\n")
-file.write("        guard let image = UIImage(systemName: named)\n")
-file.write("        else { return UIImage() }\n")
-file.write("        return image\n")
+file.write("        // Helper function for getting a basic `UIImage`.\n")
+file.write("        private static func getSystemImage(named: String) -> UIImage {\n")
+file.write("            guard let image = UIImage(systemName: named)\n")
+file.write("            else { return UIImage() }\n")
+file.write("            return image\n")
+file.write("        }\n")
 file.write("    }\n")
-file.write("\n")
 file.write("}\n")
 file.close()
+

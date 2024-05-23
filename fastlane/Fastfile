@@ -10,20 +10,42 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 # Uncomment the line if you don't want to share usage statistics with fastlane
-# opt_out_usage 
+opt_out_usage
 
 require 'fileutils'
 
 
 default_platform(:ios)
 
-project_name = "SFSymbols"
+project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory
 
 platform :ios do
+  desc "Run Unit Tests"
+  lane :unit_test do
+    FileUtils.remove_dir './CodeCoverage', true
+    FileUtils.remove_dir './UnitTests', true
+    run_tests(
+      package_path: ".",
+      scheme: "#{project_name}",
+      device: 'iPhone 15 Pro',
+      code_coverage: true,
+      output_directory: './docs/Coverage',
+      output_types: 'html',
+      result_bundle: true,
+      clean: true
+    )
+    xcov(
+       is_swift_package: true,
+       minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
+    )
+    danger(
+       danger_id: "unit-tests",
+       dangerfile: "DangerFile",
+       github_api_token: ENV["GITHUB_TOKEN"],
+       verbose: true
+    ) if ENV['CI']
+  end
 
   desc "Create Release for GitHub"
   lane :release_to_github do
@@ -38,7 +60,7 @@ platform :ios do
       repository_name: ENV["REPOSITORY_NAME"],
       api_bearer: ENV["GITHUB_TOKEN"],
       name: "#{new_version} - This #{day}'s Version",
-      tag_name: version,
+      tag_name: new_version,
       description: changelog
     )
   end
@@ -46,43 +68,19 @@ platform :ios do
   desc "Create tag with version written in file"
   lane :create_next_version do
     new_version = increment_version
-    add_git_tag(tag: new_version, message: "poop")
+    add_git_tag(tag: new_version, message: "Version 5.2")
     push_to_git_remote(tags: true, remote_branch: "refs/tags/#{new_version}")
     new_version
   end
 
-  desc "Run Unit Tests"
-  lane :unit_test do
-    FileUtils.remove_dir './CodeCoverage', true
-    FileUtils.remove_dir './UnitTests', true
-    spm(
-        command: 'generate-xcodeproj',
-        enable_code_coverage: true
-    )
-    run_tests(
-              project: "#{project_name}.xcodeproj",
-              scheme: "#{project_name}-Package",
-              device: 'iPhone 12',
-              output_directory: './fastlane/UnitTests',
-              output_types: 'html',
-              clean: true
-    )
-    xcov(
-          project: "#{project_name}.xcodeproj",
-          scheme: "#{project_name}-Package",
-          output_directory: './fastlane/CodeCoverage',
-          include_targets: "#{project_name}.framework",
-          minimum_coverage_percentage: 50.0
-    )
-    FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
-  end
-
-  # Increments and returns version of last tag.
+  # Increments and returns version of last tag. Pass the string `major
+  # or `minor` to increment major or minor version. Otherwise a the
+  # patch is incremented.
   def increment_version(bump="")
     major, minor, patch = last_git_tag.split('.').map(&:to_i)
 
     case bump.downcase
-    when "major" 
+    when "major"
        major += 1
        minor = 0
        patch = 0
@@ -94,5 +92,5 @@ platform :ios do
 
     return [major, minor, patch].join('.')
   end
-  
+
 end

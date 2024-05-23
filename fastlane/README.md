@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios unit_test
+
+```sh
+[bundle exec] fastlane ios unit_test
+```
+
+Run Unit Tests
+
 ### ios release_to_github
 
 ```sh
@@ -30,14 +38,6 @@ Create Release for GitHub
 ```
 
 Create tag with version written in file
-
-### ios unit_test
-
-```sh
-[bundle exec] fastlane ios unit_test
-```
-
-Run Unit Tests
 
 ----
 
