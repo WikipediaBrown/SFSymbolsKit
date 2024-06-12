@@ -1,21 +1,21 @@
 
-# SFSymbols
+# SFSymbolsKit
 
 # Now Supporting ***SFSymbols 5.1***
 
-![Release Workflow](https://github.com/WikipediaBrown/SFSymbols/actions/workflows/Release.yml/badge.svg)
+![Release Workflow](https://github.com/WikipediaBrown/SFSymbolsKit/actions/workflows/Release.yml/badge.svg)
 
-SFSymbols is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
+SFSymbolsKit is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
 
 
 ## Installation
-**SFSymbols** can be installed with Swift Package Manager.
+**SFSymbolsKit** can be installed with Swift Package Manager.
 ### Swift Package Manager (Xcode 15.3 or higher)
 
-The preferred way of installing **SFSymbols** is via the [Swift Package Manager](https://swift.org/package-manager/).
+The preferred way of installing **SFSymbolsKit** is via the [Swift Package Manager](https://swift.org/package-manager/).
 
 1. In Xcode, open your project and navigate to **File** → **Swift Packages** → **Add Package Dependency...**
-2. Paste the repository URL (`https://github.com/WikipediaBrown/SFSymbols.git`) and click **Next**.
+2. Paste the repository URL (`https://github.com/WikipediaBrown/SFSymbolsKit.git`) and click **Next**.
 3. For **Rules**, select **Version (Up to Next Major)** and click **Next**.
 4. Click **Finish**.
 
@@ -86,7 +86,7 @@ Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically
 
 ## Versioning
 
-SFSymbols releases a [new version on GitHub](https://github.com/WikipediaBrown/SFSymbols/releases) automatically when a pull request is approved from the `develop` branch to the `master` branch.
+SFSymbolsKit releases a [new version on GitHub](https://github.com/WikipediaBrown/SFSymbolsKit/releases) automatically when a pull request is approved from the `develop` branch to the `master` branch.
 
 
 ## Contribute
@@ -101,6 +101,6 @@ Wikipedia Brown
 
 ## License
 
-**SFSymbols** is available under the MIT license. See the LICENSE file for more info.
+**SFSymbolsKit** is available under the MIT license. See the LICENSE file for more info.
 
 Made with 🌲🌲🌲 in Cascadia

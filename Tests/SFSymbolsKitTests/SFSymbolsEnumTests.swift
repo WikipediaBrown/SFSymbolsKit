@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SFSymbols
+@testable import SFSymbolsKit
 
 final class SFSymbolsEnumTests: XCTestCase {
     func test_SFSymbols_Enum_image_found() {
