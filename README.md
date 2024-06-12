@@ -1,7 +1,9 @@
 
 # SFSymbols
 
-# Now Supporting ***SFSymbols 5.2***
+# Now Supporting ***SFSymbols 5.1***
+
+![example workflow](https://github.com/WikipediaBrown/SFSymbols/actions/workflows/Release.yml/badge.svg)
 
 SFSymbols is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
 
