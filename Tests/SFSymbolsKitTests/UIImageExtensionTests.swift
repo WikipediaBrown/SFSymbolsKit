@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SFSymbols
+@testable import SFSymbolsKit
 
 final class UIImageExtensionTests: XCTestCase {
 
