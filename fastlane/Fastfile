@@ -21,7 +21,7 @@ default_platform(:ios)
 project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory
 
 platform :ios do
-  desc "Run Unit Tests"
+  desc 'Run Unit Tests'
   lane :unit_test do
     FileUtils.remove_dir './CodeCoverage', true
     FileUtils.remove_dir './UnitTests', true
@@ -40,36 +40,36 @@ platform :ios do
        minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
     )
     danger(
-       danger_id: "unit-tests",
-       dangerfile: "DangerFile",
-       github_api_token: ENV["GITHUB_TOKEN"],
+       danger_id: 'unit-tests',
+       dangerfile: 'DangerFile',
+       github_api_token: ENV['GITHUB_TOKEN'],
        verbose: true
     ) if ENV['CI']
   end
 
-  desc "Create Release for GitHub"
+  desc 'Create Release for GitHub'
   lane :release_to_github do
     new_version = create_next_version
     day = Time.now.strftime("%A")
     changelog = changelog_from_git_commits(
-      date_format: "short",
-      merge_commit_filtering: "exclude_merges",
+      date_format: 'short',
+      merge_commit_filtering: 'exclude_merges',
       pretty: "- (%ae) %s"
     )
     github_release = set_github_release(
-      repository_name: ENV["REPOSITORY_NAME"],
-      api_bearer: ENV["GITHUB_TOKEN"],
+      repository_name: ENV['REPOSITORY_NAME'],
+      api_bearer: ENV['GITHUB_TOKEN'],
       name: "#{new_version} - This #{day}'s Version",
       tag_name: new_version,
       description: changelog
     )
   end
 
-  desc "Create tag with version written in file"
+  desc 'Create tag with version written in file'
   lane :create_next_version do
     sh('git fetch --tags')
     new_version = increment_version
-    add_git_tag(tag: new_version, message: "Version 5.2")
+    add_git_tag(tag: new_version, message: 'Version 5.1')
     push_to_git_remote(tags: true, remote_branch: "refs/tags/#{new_version}")
     new_version
   end
@@ -81,11 +81,11 @@ platform :ios do
     major, minor, patch = last_git_tag.split('.').map(&:to_i)
 
     case bump.downcase
-    when "major"
+    when 'major'
        major += 1
        minor = 0
        patch = 0
-    when "minor"
+    when 'minor'
        minor += 1
        patch = 0
     else patch += 1
