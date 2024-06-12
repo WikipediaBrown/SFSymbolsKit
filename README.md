@@ -1,7 +1,9 @@
 
 # SFSymbols
 
-# Now Supporting ***SFSymbols 5.2***
+# Now Supporting ***SFSymbols 5.1***
+
+![Release Workflow](https://github.com/WikipediaBrown/SFSymbols/actions/workflows/Release.yml/badge.svg)
 
 SFSymbols is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
 
@@ -24,7 +26,7 @@ The preferred way of installing **SFSymbols** is via the [Swift Package Manager]
 
 ### String
 You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this
-```
+``` Swift
 Image(systemName: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
@@ -34,7 +36,7 @@ Image(systemName: .SFSymbols.plusApp)
 
 ### UIImage
 You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this
-```
+``` Swift
 Image(uiImage: .SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
@@ -44,7 +46,7 @@ Image(uiImage: .SFSymbols.plusApp)
 
 ### Enum
 Additionally, there is an enum that is `CaseIterable` that provides access to all of the strings in the `String` extension and access to all of the images through an `image` property.
-```
+``` Swift
 Image(uiImage: SFSymbol.plusApp.image)
     .resizable()
     .scaledToFit()
@@ -54,7 +56,7 @@ Image(uiImage: SFSymbol.plusApp.image)
 
 or 
 
-```
+``` Swift
 Image(systemName: SFSymbol.plusApp.string)
     .resizable()
     .scaledToFit()
