@@ -21,7 +21,23 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios unit_test
 ```
 
-Run Unit Tests
+Run iOS & macOS Unit Tests
+
+### ios unit_test_iOS
+
+```sh
+[bundle exec] fastlane ios unit_test_iOS
+```
+
+Run iOS Unit Tests
+
+### ios unit_test_macOS
+
+```sh
+[bundle exec] fastlane ios unit_test_macOS
+```
+
+Run macOS Unit Tests
 
 ### ios release_to_github
 

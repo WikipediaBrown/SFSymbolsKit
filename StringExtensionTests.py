@@ -15,7 +15,7 @@ numbers = {
   "9": "nine"
 }
 
-file = open("Tests/SFSymbolsTests/StringExtensionTests.swift", "w")
+file = open("Tests/SFSymbolsKitTests/StringExtensionTests.swift", "w")
 
 file.write("//\n")
 file.write("//  StringExtensionTests.swift\n")
@@ -25,7 +25,7 @@ file.write("//  Created by Wikipedia Brown on 5/15/24.\n")
 file.write("//\n")
 file.write("\n")
 file.write("import XCTest\n")
-file.write("@testable import SFSymbols\n")
+file.write("@testable import SFSymbolsKit\n")
 file.write("\n")
 file.write("final class StringExtensionTests: XCTestCase {\n\n")
 
@@ -48,6 +48,7 @@ with open('SFSymbols.txt') as topo_file:
             camelCaseName += part.capitalize()
 
         result = "    func test_StringExtension_{}_returnsImage() ".format(camelCaseName.rstrip())
+        file.write("#if canImport(UIKit)\n")
         file.write(result)
         file.write("{\n")
 
@@ -58,6 +59,20 @@ with open('SFSymbols.txt') as topo_file:
         file.write("        let image = UIImage(systemName: string)\n")
         file.write("        // Assert\n")
         file.write("        XCTAssertNotEqual(image, UIImage())\n")
-        file.write("    }\n\n")
+        file.write("    }\n")
+        file.write("#endif\n\n")
+        file.write("#if canImport(AppKit)\n")
+        file.write(result)
+        file.write("{\n")
+
+        file.write("        // Arrange\n")
+        arrange = "        let string = String.SFSymbols.{}\n".format(camelCaseName.rstrip())
+        file.write(arrange)
+        file.write("        // Act\n")
+        file.write("        let image = NSImage(systemSymbolName: string, accessibilityDescription:  \"This is the symbole for\\(string)\")\n")
+        file.write("        // Assert\n")
+        file.write("        XCTAssertNotEqual(image, NSImage())\n")
+        file.write("    }\n")
+        file.write("#endif\n\n")
 file.write("}\n")
 file.close()

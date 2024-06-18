@@ -15,7 +15,7 @@ numbers = {
   "9": "nine"
 }
 
-file = open("Sources/SFSymbols/UIImage+Extension.swift", "w")
+file = open("Sources/SFSymbolsKit/UIImage+Extension.swift", "w")
 
 file.write("//\n")
 file.write("//  UIImage+Extension.swift\n")
@@ -24,8 +24,10 @@ file.write("//\n")
 file.write("//  Created by Wikipedia Brown on 5/15/24.\n")
 file.write("//\n")
 file.write("\n")
+file.write("#if canImport(UIKit)\n")
 file.write("import UIKit\n")
 file.write("\n")
+file.write("@available(iOS 13, *)\n")
 file.write("public extension UIImage {\n")
 file.write("    enum SFSymbols {\n")
 
@@ -59,5 +61,6 @@ file.write("            return image\n")
 file.write("        }\n")
 file.write("    }\n")
 file.write("}\n")
+file.write("#endif\n")
 file.close()
 

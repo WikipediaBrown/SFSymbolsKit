@@ -15,7 +15,7 @@ numbers = {
   "9": "nine"
 }
 
-file = open("Sources/SFSymbols/String+Extension.swift", "w")
+file = open("Sources/SFSymbolsKit/String+Extension.swift", "w")
 
 file.write("//\n")
 file.write("//  String+Extension.swift\n")
@@ -23,8 +23,6 @@ file.write("//  SFSymbols\n")
 file.write("//\n")
 file.write("//  Created by Wikipedia Brown on 5/15/24.\n")
 file.write("//\n")
-file.write("\n")
-file.write("import UIKit\n")
 file.write("\n")
 file.write("public extension String {\n")
 file.write("    enum SFSymbols {\n")

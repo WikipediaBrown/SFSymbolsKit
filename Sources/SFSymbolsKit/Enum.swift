@@ -5,7 +5,12 @@
 //  Created by Wikipedia Brown on 5/15/24.
 //
 
+#if canImport(AppKit)
+import AppKit
+#endif
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public enum SFSymbol: String, CaseIterable {
 
@@ -5369,11 +5374,23 @@ public enum SFSymbol: String, CaseIterable {
     case five0SquareFill = "50.square.fill"
     case appleLogo = "apple.logo"
 
+#if canImport(UIKit)
+    @available(iOS 13, *)
     var image: UIImage {
         guard let image = UIImage(systemName: self.rawValue)
         else { return UIImage() }
         return image
     }
+#endif
+
+#if canImport(AppKit)
+    @available(macOS 11.0, *)
+    var image: NSImage {
+        guard let image = NSImage(systemSymbolName: self.rawValue, accessibilityDescription:  "This is the symbole for\(self.rawValue)")
+        else { return NSImage() }
+        return image
+    }
+#endif
 
     var string: String {
         return self.rawValue
