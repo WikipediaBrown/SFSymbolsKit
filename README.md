@@ -76,7 +76,7 @@ Assuming you're running macOS, you should first install [Homebrew](https://brew.
 Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it from [ Developer](https://developer.apple.com/sf-symbols/)) and paste it into the SFSymbols.txt file. Check out this [StackOverflow](https://stackoverflow.com/a/63310093/5863650) post.
 
 ### Run Python Scripts
-Run the command `python3 UIImageExtension.py && python3 UIImageExtensionTests.py && python3 StringExtension.py && python3 StringExtensionTests.py && python3 Enum.py` and the python scripts will regenerate the extension and enum.
+Run the command `bash generateSymbols.sh`. This command runs a bash script that in turn runs the command `brew install python` and then the command `python3 UIImageExtension.py && python3 UIImageExtensionTests.py && python3 StringExtension.py && python3 StringExtensionTests.py && python3 Enum.py`. This runs the python scripts will regenerate the `String` and `UIImage` extensions and enum.
 
 
 ## Test
