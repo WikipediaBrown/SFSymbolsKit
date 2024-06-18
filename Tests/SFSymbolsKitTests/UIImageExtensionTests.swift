@@ -5,6 +5,7 @@
 //  Created by Wikipedia Brown on 5/15/24.
 //
 
+#if canImport(UIKit)
 import XCTest
 @testable import SFSymbolsKit
 
@@ -37524,3 +37525,4 @@ final class UIImageExtensionTests: XCTestCase {
     }
 
 }
+#endif

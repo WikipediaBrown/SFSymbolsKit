@@ -15,7 +15,7 @@ numbers = {
   "9": "nine"
 }
 
-file = open("Tests/SFSymbolsTests/UIImageExtensionTests.swift", "w")
+file = open("Tests/SFSymbolsKitTests/UIImageExtensionTests.swift", "w")
 
 file.write("//\n")
 file.write("//  UIImageExtensionTests.swift\n")
@@ -24,8 +24,9 @@ file.write("//\n")
 file.write("//  Created by Wikipedia Brown on 5/15/24.\n")
 file.write("//\n")
 file.write("\n")
+file.write("#if canImport(UIKit)\n")
 file.write("import XCTest\n")
-file.write("@testable import SFSymbols\n")
+file.write("@testable import SFSymbolsKit\n")
 file.write("\n")
 file.write("final class UIImageExtensionTests: XCTestCase {\n\n")
 
@@ -58,4 +59,5 @@ with open('SFSymbols.txt') as topo_file:
         file.write("        XCTAssertNotEqual(image, UIImage())\n")
         file.write("    }\n\n")
 file.write("}\n")
+file.write("#endif\n")
 file.close()

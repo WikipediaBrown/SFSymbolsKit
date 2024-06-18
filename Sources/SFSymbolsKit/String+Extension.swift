@@ -5,8 +5,6 @@
 //  Created by Wikipedia Brown on 5/15/24.
 //
 
-import UIKit
-
 public extension String {
     enum SFSymbols {
         static let squareAndArrowUp: String = SFSymbol.squareAndArrowUp.rawValue

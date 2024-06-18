@@ -21,26 +21,63 @@ default_platform(:ios)
 project_name = File.basename(Pathname.getwd.parent) # This just gets the name of the projects directory
 
 platform :ios do
-  desc 'Run Unit Tests'
+
+  desc 'Run iOS & macOS Unit Tests'
   lane :unit_test do
-    FileUtils.remove_dir './CodeCoverage', true
-    FileUtils.remove_dir './UnitTests', true
+    unit_test_iOS
+    unit_test_macOS
+  end
+
+  desc 'Run iOS Unit Tests'
+  lane :unit_test_iOS do
+    COVERAGE_OUTPUT_PATH = './docs/iOS-Coverage'
+    clear_derived_data(derived_data_path: COVERAGE_OUTPUT_PATH)
     run_tests(
       package_path: ".",
       scheme: "#{project_name}",
       device: 'iPhone 15 Pro',
       code_coverage: true,
-      output_directory: './docs/Coverage',
+      output_directory: COVERAGE_OUTPUT_PATH,
       output_types: 'html',
       result_bundle: true,
       clean: true
     )
     xcov(
        is_swift_package: true,
+       output_directory: COVERAGE_OUTPUT_PATH,
+       markdown_report: true,
        minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
     )
     danger(
-       danger_id: 'unit-tests',
+       danger_id: 'unit-tests-iOS',
+       dangerfile: 'DangerFile',
+       github_api_token: ENV['GITHUB_TOKEN'],
+       verbose: true
+    ) if ENV['CI']
+  end
+
+  desc 'Run macOS Unit Tests'
+  lane :unit_test_macOS do
+    COVERAGE_OUTPUT_PATH = './docs/macOS-Coverage'
+    clear_derived_data(derived_data_path: COVERAGE_OUTPUT_PATH)
+    run_tests(
+      package_path: ".",
+      scheme: "#{project_name}",
+      destination: 'platform=macOS',
+      code_coverage: true,
+      output_directory: COVERAGE_OUTPUT_PATH,
+      output_types: 'html',
+      result_bundle: true,
+      clean: true
+    )
+    xcov(
+       is_swift_package: true,
+       output_directory: COVERAGE_OUTPUT_PATH,
+       markdown_report: true,
+       minimum_coverage_percentage: 99.999 # Cannot be 100% because xcov has a bug where it wont support total code coverage.
+    )
+    danger(
+       danger_id: 'unit-tests-macOS',
        dangerfile: 'DangerFile',
        github_api_token: ENV['GITHUB_TOKEN'],
        verbose: true

@@ -5,8 +5,10 @@
 //  Created by Wikipedia Brown on 5/15/24.
 //
 
+#if canImport(UIKit)
 import UIKit
 
+@available(iOS 13, *)
 public extension UIImage {
     enum SFSymbols {
         static let squareAndArrowUp = getSystemImage(named: SFSymbol.squareAndArrowUp.rawValue)
@@ -5375,6 +5377,6 @@ public extension UIImage {
             else { return UIImage() }
             return image
         }
-
     }
 }
+#endif

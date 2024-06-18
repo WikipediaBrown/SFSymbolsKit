@@ -5,37 +5,52 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000345">
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000361">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000115">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000121">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios create_next_version lane" time="9.8e-05">
+      <testcase classname="fastlane.lanes" name="2: Switch to ios unit_test_iOS lane" time="0.000109">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: last_git_tag" time="0.03025">
+      <testcase classname="fastlane.lanes" name="3: clear_derived_data" time="0.030843">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: add_git_tag" time="0.016358">
+      <testcase classname="fastlane.lanes" name="4: run_tests" time="157.106215">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: changelog_from_git_commits" time="0.036039">
+      <testcase classname="fastlane.lanes" name="5: xcov" time="4.336992">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: set_github_release" time="17.852884">
+      <testcase classname="fastlane.lanes" name="6: Switch to ios unit_test_macOS lane" time="0.000133">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: clear_derived_data" time="0.087471">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="8: run_tests" time="122.676296">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="9: xcov" time="3.209736">
         
       </testcase>
     
