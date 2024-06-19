@@ -6,7 +6,7 @@ on:
     - master
 jobs:
   tests:
-    name: Unit Tests
+    name: Release Tests
     runs-on: macOS-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -15,7 +15,7 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_15.3.app
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Dependenies with Bundler
         run: bundle install
       - name: Unit Tests
