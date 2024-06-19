@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Dependenies with Bundler
         run: bundle install
-      - name: Unit Tests
+      - name: Perform Unit Tests
         run: bundle exec fastlane unit_test
       - name: Create Release Tag
         run: bundle exec fastlane release_to_github

@@ -11,3 +11,9 @@ warn("Big PR") if git.lines_of_code > 500
 # Don't let testing shortcuts get into master by accident
 #fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 #fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+
+# This is for Danger's xcov plugin to show code coverage.
+xcov.report(
+   is_swift_package: true,
+   xccov_file_direct_path: "fastlane/xcov_output/xccovreport-0.xccovreport"
+)
