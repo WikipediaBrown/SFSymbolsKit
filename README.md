@@ -1,11 +1,11 @@
 
 # SFSymbolsKit
 
-# Now Supporting ***SFSymbols 5.1***
+# Now Supporting ***macOS***
 
 ![Release Workflow](https://github.com/WikipediaBrown/SFSymbolsKit/actions/workflows/Release.yml/badge.svg)
 
-SFSymbolsKit is a tiny ***Swift*** package that provides extensions to `String` and `UIImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
+SFSymbolsKit is a tiny ***Swift*** package that provides extensions to `String`, `UIImage` and `NSImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
 
 
 ## Installation
@@ -25,9 +25,9 @@ The preferred way of installing **SFSymbolsKit** is via the [Swift Package Manag
 ## Usage
 
 ### String
-You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this
+You can use the `String` extension to get the name of all of the `SFSymbols` available. You can add an image like this:
 ``` Swift
-Image(systemName: .SFSymbols.plusApp)
+Image(systemName: String.SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -35,9 +35,19 @@ Image(systemName: .SFSymbols.plusApp)
 ```
 
 ### UIImage
-You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this
+You can use the `UIImage` extension to get the image of all of the `SFSymbols` available. You can add an image like this:
 ``` Swift
-Image(uiImage: .SFSymbols.plusApp)
+Image(uiImage: UIImage.SFSymbols.plusApp)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+```
+
+### NSImage
+Uou can use the `NSImage` estnsion to get the image of all of the `SFSymbols` available. You can add an image like this:
+``` Swift
+Image(nsImage: NSImage.SFSymbols.plusApp)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -48,6 +58,16 @@ Image(uiImage: .SFSymbols.plusApp)
 Additionally, there is an enum that is `CaseIterable` that provides access to all of the strings in the `String` extension and access to all of the images through an `image` property.
 ``` Swift
 Image(uiImage: SFSymbol.plusApp.image)
+    .resizable()
+    .scaledToFit()
+    .aspectRatio(contentMode: .fit)
+    .foregroundColor(.primary)
+```
+
+or 
+
+``` Swift
+Image(nsImage: SFSymbol.plusApp.image)
     .resizable()
     .scaledToFit()
     .aspectRatio(contentMode: .fit)
@@ -81,7 +101,11 @@ Run the command `bash generateSymbols.sh`. This command runs a bash script that 
 
 ## Test
 
-Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later. Some symbols are not included in earlier builds.
+Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later or `macOS 14.5` or later. Some symbols are not included in earlier versions. Releases of `SFSymbolsKit` support ***SFSymbols 5.1***.
+
+### Fastlane Scan
+
+You can also run tests on both `iOS` & `macOS` using [fastlane](https://fastlane.tools). This requires installing `fastlane` which in turn requires installing [`Homebrew`](https://brew.sh). With `Homebrew` and `fastlane` installed you can open a terminal and navigate to the `SFSymbolsKit`'s root folder and run the command `fastlane unit_test`. This will run the unit tests for both `iOS` & `macOS` in succession. You should expect to see 100% code coverage for both test runs.
 
 
 ## Versioning
