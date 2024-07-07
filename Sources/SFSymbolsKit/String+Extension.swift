@@ -6,6 +6,7 @@
 //
 
 public extension String {
+    /// This enum provides static properties, each corresponding to an SFSymbol and returning a `String`. The corresponding SFSybmol to each property can be found in the SFSybmols App.
     enum SFSymbols {
         static let squareAndArrowUp: String = SFSymbol.squareAndArrowUp.rawValue
         static let squareAndArrowUpFill: String = SFSymbol.squareAndArrowUpFill.rawValue
