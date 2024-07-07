@@ -9,12 +9,10 @@ As a <user type>, I want to <task> so that <goal>.
 
 **Example:** As a [buyer persona], I want to [see my final items and charges] so I can [make sure I have what I wanted, and agree with the applicable charges.]
 
-
 **What will we learn about the user from implementing this feature?**
-We will measure <metric> to confirm or reject our hypothesis.
+We will measure (***insert metric here***) to confirm or reject our hypothesis.
 
 **Example:** We will measure [image selection] to confirm or reject our hypothesis [that users like color images more than black and white].
-
 
 **Acceptance Criteria**
 [ ] - criterion one

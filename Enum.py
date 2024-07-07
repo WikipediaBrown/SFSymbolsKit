@@ -46,22 +46,21 @@ file.write("\n")
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
         parts = line.split('.')
-        camelCaseName = ""
-        
+        camel_case_name = ""
         for part in parts:
             if part == parts[0]:
             
                 if part.rstrip() in numbers:
-                    camelCaseName += numbers[part.rstrip()]
+                    camel_case_name += numbers[part.rstrip()]
                     continue
                 elif part[0] in numbers:
-                    camelCaseName += numbers[part[0]] + part[1:]
+                    camel_case_name += numbers[part[0]] + part[1:]
                     continue
-                camelCaseName += part
+                camel_case_name += part
                 continue
-            camelCaseName += part.capitalize()
+            camel_case_name += part.capitalize()
             
-        result = "    case {} = \"{}\"\n".format(camelCaseName.rstrip(), line.rstrip())
+        result = "    case {} = \"{}\"\n".format(camel_case_name.rstrip(), line.rstrip())
         file.write(result)
 file.write("\n")
 file.write("#if canImport(UIKit)\n")
@@ -73,7 +72,6 @@ file.write("        else { return UIImage() }\n")
 file.write("        return image\n")
 file.write("    }\n")
 file.write("#endif\n")
-file.write("\n")
 file.write("#if canImport(AppKit)\n")
 file.write("    @available(macOS 11.0, *)\n")
 file.write("    /// The `image` property of the `SFSymbols` enum provides a `NSImage` corresponding to the `SFSymbols` case selected.\n")

@@ -41,27 +41,26 @@ file.write("final class NSImageExtensionTests: XCTestCase {\n\n")
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
         parts = line.split('.')
-        camelCaseName = ""
-        
+        camel_case_name = ""
         for part in parts:
             if part == parts[0]:
             
                 if part.rstrip() in numbers:
-                    camelCaseName += numbers[part.rstrip()]
+                    camel_case_name += numbers[part.rstrip()]
                     continue
                 elif part[0] in numbers:
-                    camelCaseName += numbers[part[0]] + part[1:]
+                    camel_case_name += numbers[part[0]] + part[1:]
                     continue
-                camelCaseName += part
+                camel_case_name += part
                 continue
-            camelCaseName += part.capitalize()
+            camel_case_name += part.capitalize()
 
-        result = "    func test_StringExtension_{}_returnsImage() ".format(camelCaseName.rstrip())
+        result = "    func test_StringExtension_{}_returnsImage() ".format(camel_case_name.rstrip())
         file.write(result)
         file.write("{\n")
 
         file.write("        // Arrange & Act\n")
-        arrange = "        let image = NSImage.SFSymbols.{}\n".format(camelCaseName.rstrip())
+        arrange = "        let image = NSImage.SFSymbols.{}\n".format(camel_case_name.rstrip())
         file.write(arrange)
         file.write("        // Assert\n")
         file.write("        XCTAssertNotEqual(image, NSImage())\n")

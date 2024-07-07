@@ -4,6 +4,7 @@ author: Wikipedia Brown
 ---
 
 **SFSymbols** can be installed with Swift Package Manager.
+
 ### Swift Package Manager (Xcode 15.3 or higher)
 
 The preferred way of installing **SFSymbols** is via the [Swift Package Manager](https://swift.org/package-manager/).
