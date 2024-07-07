@@ -40,28 +40,27 @@ file.write("final class StringExtensionTests: XCTestCase {\n\n")
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
         parts = line.split('.')
-        camelCaseName = ""
-        
+        camel_case_name = ""
         for part in parts:
             if part == parts[0]:
             
                 if part.rstrip() in numbers:
-                    camelCaseName += numbers[part.rstrip()]
+                    camel_case_name += numbers[part.rstrip()]
                     continue
                 elif part[0] in numbers:
-                    camelCaseName += numbers[part[0]] + part[1:]
+                    camel_case_name += numbers[part[0]] + part[1:]
                     continue
-                camelCaseName += part
+                camel_case_name += part
                 continue
-            camelCaseName += part.capitalize()
+            camel_case_name += part.capitalize()
 
-        result = "    func test_StringExtension_{}_returnsImage() ".format(camelCaseName.rstrip())
+        result = "    func test_StringExtension_{}_returnsImage() ".format(camel_case_name.rstrip())
         file.write("#if canImport(UIKit)\n")
         file.write(result)
         file.write("{\n")
 
         file.write("        // Arrange\n")
-        arrange = "        let string = String.SFSymbols.{}\n".format(camelCaseName.rstrip())
+        arrange = "        let string = String.SFSymbols.{}\n".format(camel_case_name.rstrip())
         file.write(arrange)
         file.write("        // Act\n")
         file.write("        let image = UIImage(systemName: string)\n")
@@ -74,7 +73,7 @@ with open('SFSymbols.txt') as topo_file:
         file.write("{\n")
 
         file.write("        // Arrange\n")
-        arrange = "        let string = String.SFSymbols.{}\n".format(camelCaseName.rstrip())
+        arrange = "        let string = String.SFSymbols.{}\n".format(camel_case_name.rstrip())
         file.write(arrange)
         file.write("        // Act\n")
         file.write("        let image = NSImage(systemSymbolName: string, accessibilityDescription:  \"This is the symbole for\\(string)\")\n")

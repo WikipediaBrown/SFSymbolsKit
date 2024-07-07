@@ -6,9 +6,7 @@
 
 ![Release Workflow](https://github.com/WikipediaBrown/SFSymbolsKit/actions/workflows/Release.yml/badge.svg) | [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit) | [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit)
 
-
 SFSymbolsKit is a tiny ***Swift*** package that provides extensions to `String`, `UIImage` and `NSImage` to make using **SFSymbols** easy peasy. The extensions and the accompanying `Enum` are all generated using the python scripts included in this package along with a list of all of the `SFSymbols` names. 
-
 
 ## Installation
 **SFSymbolsKit** can be installed with Swift Package Manager.
@@ -86,7 +84,6 @@ Image(systemName: SFSymbol.plusApp.string)
     .foregroundColor(.primary)
 ```
 
-
 ## Generation
 
 The scripts used to generate the extensions and enum are written in `Python 2.7.18`. Which means you'll need Python. 
@@ -100,7 +97,6 @@ Get list of names of `SFSymbols` by opening the SFSymbols App (you can get it fr
 ### Run Python Scripts
 Run the command `bash generateSymbols.sh`. This command runs a bash script that in turn runs the command `brew install python` and then the command `python3 UIImageExtension.py && python3 UIImageExtensionTests.py && python3 StringExtension.py && python3 StringExtensionTests.py && python3 Enum.py`. This runs the python scripts will regenerate the `String` and `UIImage` extensions and enum.
 
-
 ## Test
 
 Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically for all pull requests. When running tests locally, be sure to be using `iOS 17.2` or later or `macOS 14.5` or later. Some symbols are not included in earlier versions. Releases of `SFSymbolsKit` support ***SFSymbols 5.1***.
@@ -109,21 +105,17 @@ Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically
 
 You can also run tests on both `iOS` & `macOS` using [`fastlane`](https://fastlane.tools). This requires installing `fastlane` which in turn requires installing [`Homebrew`](https://brew.sh). With `Homebrew` and `fastlane` installed you can open a terminal and navigate to the `SFSymbolsKit`'s root folder and run the command `fastlane unit_test`. This will run the unit tests for both `iOS` & `macOS` in succession. You should expect to see 100% code coverage for both test runs.
 
-
 ## Versioning
 
 SFSymbolsKit releases a [new version on GitHub](https://github.com/WikipediaBrown/SFSymbolsKit/releases) automatically when a pull request is approved from the `develop` branch to the `master` branch.
-
 
 ## Contribute
 
 Send a pull request my dude... or create an issue.
 
+## Authors
 
-## Author
-
-Wikipedia Brown
-
+Wikipedia Brown, Adrianna
 
 ## License
 
