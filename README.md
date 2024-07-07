@@ -5,6 +5,7 @@
 # Now Supporting ***macOS***
 
 ![Release Workflow](https://github.com/WikipediaBrown/SFSymbolsKit/actions/workflows/Release.yml/badge.svg) 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3911ae688b54e498a2a2c7a1b749ead)](https://app.codacy.com/gh/WikipediaBrown/SFSymbolsKit?utm_source=github.com&utm_medium=referral&utm_content=WikipediaBrown/SFSymbolsKit&utm_campaign=Badge_Grade)
 [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit) 
 [![Platforms Supported](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit)
 
