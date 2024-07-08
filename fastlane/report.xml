@@ -5,52 +5,52 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000361">
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000254">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000121">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="7.3e-05">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios unit_test_iOS lane" time="0.000109">
+      <testcase classname="fastlane.lanes" name="2: Switch to ios unit_test_iOS lane" time="6.5e-05">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: clear_derived_data" time="0.030843">
+      <testcase classname="fastlane.lanes" name="3: clear_derived_data" time="0.13955">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: run_tests" time="157.106215">
+      <testcase classname="fastlane.lanes" name="4: run_tests" time="97.931427">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: xcov" time="4.336992">
+      <testcase classname="fastlane.lanes" name="5: xcov" time="3.093032">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: Switch to ios unit_test_macOS lane" time="0.000133">
+      <testcase classname="fastlane.lanes" name="6: Switch to ios unit_test_macOS lane" time="0.000105">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: clear_derived_data" time="0.087471">
+      <testcase classname="fastlane.lanes" name="7: clear_derived_data" time="0.009802">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="8: run_tests" time="122.676296">
+      <testcase classname="fastlane.lanes" name="8: run_tests" time="81.768231">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="9: xcov" time="3.209736">
+      <testcase classname="fastlane.lanes" name="9: xcov" time="1.870971">
         
       </testcase>
     
