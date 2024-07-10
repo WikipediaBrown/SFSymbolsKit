@@ -1,8 +1,8 @@
 ## Current coverage for SFSymbolsKit is `100.00%`
 Files changed | - | - 
 --- | --- | ---
-Enum.swift | `100.00%` | :white_check_mark:
 UIImage+Extension.swift | `100.00%` | :white_check_mark:
+Enum.swift | `100.00%` | :white_check_mark:
 
 ---
 ## Current coverage for SFSymbolsKitTests is `100.00%`

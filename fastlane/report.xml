@@ -5,52 +5,29 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000254">
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000269">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="7.3e-05">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="7.6e-05">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios unit_test_iOS lane" time="6.5e-05">
+      <testcase classname="fastlane.lanes" name="2: clear_derived_data" time="0.176426">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: clear_derived_data" time="0.13955">
+      <testcase classname="fastlane.lanes" name="3: run_tests" time="86.460009">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: run_tests" time="97.931427">
+      <testcase classname="fastlane.lanes" name="4: xcov" time="3.918455">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="5: xcov" time="3.093032">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="6: Switch to ios unit_test_macOS lane" time="0.000105">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="7: clear_derived_data" time="0.009802">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="8: run_tests" time="81.768231">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="9: xcov" time="1.870971">
+          <failure message="/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:229:in `chdir&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:229:in `execute_action&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing&apos;&#10;Fastfile:45:in `block (2 levels) in parsing_binding&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/lane.rb:41:in `call&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/lane_manager.rb:46:in `cruise_lane&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/command_line_handler.rb:34:in `handle&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/commands_generator.rb:363:in `run&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/gems/fastlane-2.221.0/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/bin/fastlane:25:in `load&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/bin/fastlane:25:in `&lt;main&gt;&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/bin/ruby_executable_hooks:22:in `eval&apos;&#10;/Users/nonplus/.rvm/gems/ruby-3.2.2/bin/ruby_executable_hooks:22:in `&lt;main&gt;&apos;&#10;&#10;[31mError creating your coverage report - see the log above[0m" />
         
       </testcase>
     
