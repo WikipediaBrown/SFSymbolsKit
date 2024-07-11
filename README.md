@@ -123,4 +123,4 @@ Wikipedia Brown, Adrianna
 
 **SFSymbolsKit** is available under the MIT license. See the LICENSE file for more info.
 
-Made with 🌲🌲🌲 in Cascadia
+<p style="text-align: center;">Made with 🌲🌲🌲 in Cascadia</p>
