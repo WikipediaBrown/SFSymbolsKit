@@ -38,7 +38,7 @@ file.write("\n")
 file.write("@available(iOS 13, *)\n")
 file.write("public extension UIImage {\n")
 file.write("    /// This enum provides static properties, each corresponding to an SFSymbol and returning a `UIImage`. The corresponding SFSybmol to each property can be found in the SFSybmols App.\n")
-file.write("    enum SFSymbols {\n")
+file.write("    public enum SFSymbols {\n")
 
 with open('SFSymbols.txt') as topo_file:
     for line in topo_file:
