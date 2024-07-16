@@ -131,4 +131,12 @@ platform :ios do
     return [major, minor, patch].join('.')
   end
 
+  before_all do
+    # FileUtils.remove_dir './code_coverage', true
+    # FileUtils.remove_dir './test_output', true
+    # FileUtils.remove_dir './report.xml', true
+    # FileUtils.remove_dir '.build', true
+    # FileUtils.remove_dir "./../#{project_name}.xcodeproj", true
+  end
+
 end
