@@ -53,7 +53,7 @@ with open('SFSymbols.txt') as topo_file:
                 continue
             camel_case_name += part.capitalize()
             
-        result = "        static let {}: String = SFSymbol.{}.rawValue\n".format(camel_case_name.rstrip(), camel_case_name.rstrip())
+        result = "        public static let {}: String = SFSymbol.{}.rawValue\n".format(camel_case_name.rstrip(), camel_case_name.rstrip())
         file.write(result)
 file.write("    }\n")
 file.write("}\n")
