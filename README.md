@@ -4,6 +4,8 @@
 
 # Now Supporting ***macOS***
 
+[**Installation**](#️-installation) | [**Documentation**](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/0.1.25/documentation/sfsymbolskit) | [**Usage**](#-usage)
+
 ![Release Workflow](https://github.com/WikipediaBrown/SFSymbolsKit/actions/workflows/Release.yml/badge.svg) 
 [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit) 
 [![Platforms Supported](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FWikipediaBrown%2FSFSymbolsKit%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit)
