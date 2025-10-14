@@ -8,7 +8,7 @@ jobs:
   release:
     name: Release SFSymbols
     runs-on:
-      - codebuild-CVS Demo-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-GitHub Actions Demo-${{ github.run_id }}-${{ github.run_attempt }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       REPOSITORY_NAME: ${{ github.repository }}
