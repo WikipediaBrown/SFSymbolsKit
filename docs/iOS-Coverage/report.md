@@ -10,8 +10,8 @@ Files changed | - | -
 --- | --- | ---
 SFSymbolsEnumTests.swift | `96.00%` | :white_check_mark:
 Enum.swift | `100.00%` | :white_check_mark:
-UIImageExtensionTests.swift | `100.00%` | :white_check_mark:
 UIImage+Extension.swift | `100.00%` | :white_check_mark:
+UIImageExtensionTests.swift | `100.00%` | :white_check_mark:
 StringExtensionTests.swift | `100.00%` | :white_check_mark:
 
 ---
