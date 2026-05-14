@@ -1,10 +1,11 @@
-- name: Home
-  link: /
-- name: About
-  link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html
-- name: Tests
-  link: /Coverage/report.html
+- name: Overview
+  link: "#overview"
+- name: Documentation
+  link: https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation
+  external: true
+- name: Install
+  link: "#install"
+- name: GitHub →
+  link: https://github.com/WikipediaBrown/SFSymbolsKit
+  external: true
+  cta: true

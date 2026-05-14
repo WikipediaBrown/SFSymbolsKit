@@ -24,3 +24,11 @@ fastlane/test_output
 fastlane/UnitTests
 fastlane/xcov_report
 fastlane/report
+
+# Brainstorming/mockup sessions from superpowers Visual Companion
+.superpowers/
+
+# Jekyll build output
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/

@@ -1,14 +1,52 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% feed_meta %}
-    {% seo %}
-  </head>
-  <body>
-    {% include navigation.html %}
-    {{ content }}
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('sfsk-theme');
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body id="top">
+  {% include navigation.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script>
+    function toggleTheme() {
+      var root = document.documentElement;
+      var current = root.getAttribute('data-theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var resolvedCurrent = current || (prefersDark ? 'dark' : 'light');
+      var next = resolvedCurrent === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('sfsk-theme', next); } catch (e) {}
+    }
+
+    // Replace the install snippet's version with the actual latest release.
+    // Falls back to the value already in the DOM if the API is unreachable.
+    (function () {
+      var targets = document.querySelectorAll('.latest-version');
+      if (!targets.length) return;
+      fetch('https://api.github.com/repos/WikipediaBrown/SFSymbolsKit/releases/latest')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data.tag_name) return;
+          targets.forEach(function (el) { el.textContent = data.tag_name; });
+        })
+        .catch(function () {});
+    })();
+  </script>
+</body>
 </html>
