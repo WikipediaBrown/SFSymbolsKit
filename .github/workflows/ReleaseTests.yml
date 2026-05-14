@@ -7,7 +7,7 @@ on:
 jobs:
   tests:
     name: Release Tests
-    runs-on: macOS-latest
+    runs-on: macos-26
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       REPOSITORY_NAME: ${{ github.event.repository.name }}

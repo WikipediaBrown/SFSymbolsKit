@@ -7,7 +7,7 @@ on:
 jobs:
   release:
     name: Release SFSymbols
-    runs-on: macOS-latest
+    runs-on: macos-26
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       REPOSITORY_NAME: ${{ github.repository }}
