@@ -88,17 +88,16 @@ platform :ios do
   lane :release_to_github do
     new_version = create_next_version
     day = Time.now.strftime("%A")
-    changelog = changelog_from_git_commits(
-      date_format: 'short',
-      merge_commit_filtering: 'exclude_merges',
-      pretty: "- (%ae) %s"
-    )
-    github_release = set_github_release(
-      repository_name: ENV['REPOSITORY_NAME'],
+    github_api(
+      server_url: 'https://api.github.com',
       api_bearer: ENV['GITHUB_TOKEN'],
-      name: "#{new_version} - This #{day}'s Version",
-      tag_name: new_version,
-      description: changelog
+      http_method: 'POST',
+      path: "/repos/#{ENV['REPOSITORY_NAME']}/releases",
+      body: {
+        tag_name: new_version,
+        name: "#{new_version} - This #{day}'s Version",
+        generate_release_notes: true
+      }
     )
   end
 
