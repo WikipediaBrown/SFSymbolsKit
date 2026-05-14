@@ -29,7 +29,3 @@ Use the appropriate issue template:
 - **Bug Report** — for things that don't work as expected
 - **Research** — for proposed investigations or technical questions
 - **User Story** — for new feature requests framed from a user perspective
-
-## Code of Conduct
-
-Participation in this project is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md). Be kind.
