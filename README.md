@@ -12,7 +12,7 @@ SFSymbolsKit is a tiny ***Swift*** package that provides extensions to `String`,
 
 ## 🛠️ Installation
 **SFSymbolsKit** can be installed with Swift Package Manager.
-### Swift Package Manager (Xcode 15.3 or higher)
+### Swift Package Manager (Xcode 15.3+)
 
 The preferred way of installing **SFSymbolsKit** is via the [Swift Package Manager](https://swift.org/package-manager/).
 
@@ -105,7 +105,7 @@ Run `command+u` in ***Xcode*** to run the unit tests. Test are run automatically
 
 ### 🏎️ Fastlane Scan
 
-You can also run tests on both `iOS` & `macOS` using [`fastlane`](https://fastlane.tools). This requires installing `fastlane` which in turn requires installing [`Homebrew`](https://brew.sh). With `Homebrew` and `fastlane` installed you can open a terminal and navigate to the `SFSymbolsKit`'s root folder and run the command `fastlane unit_test`. This will run the unit tests for both `iOS` & `macOS` in succession. You should expect to see 100% code coverage for both test runs.
+You can also run tests on both `iOS` & `macOS` using [`fastlane`](https://fastlane.tools). This requires installing `fastlane` which in turn requires installing [`Homebrew`](https://brew.sh). With `Homebrew` and `fastlane` installed you can open a terminal and navigate to the `SFSymbolsKit`'s root folder and run the command `bundle exec fastlane unit_test`. This will run the unit tests for both `iOS` & `macOS` in succession. You should expect to see 100% code coverage for both test runs.
 
 ## 🐁 Versioning
 
