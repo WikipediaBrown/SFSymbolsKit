@@ -8,16 +8,15 @@ author:
   name: WikipediaBrown
   url: https://github.com/WikipediaBrown
 
-# Keys read by jekyll-seo-tag
-twitter:
-  card: summary_large_image
+# jekyll-seo-tag reads social.name + social.links for org-ish profile.
+# It does NOT fall back to a top-level `image:` for og:image — that has
+# to be set on each page (or via defaults below).
 social:
   name: SFSymbolsKit
   links:
     - https://github.com/WikipediaBrown/SFSymbolsKit
-image: /assets/og-image.png
 
-# Keys read by jekyll-feed
+# Optional jekyll-feed logo
 logo: /assets/icon-512.png
 
 defaults:
@@ -25,6 +24,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+      image:
+        path: /assets/og-image.png
+        width: 1200
+        height: 630
+        alt: "SFSymbolsKit — every SF Symbol, typed. The typed Swift API Apple's SF Symbols are missing."
 
 plugins:
   - jekyll-feed
