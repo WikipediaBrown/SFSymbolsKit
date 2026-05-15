@@ -146,6 +146,60 @@
         })
         .catch(function () {});
     })();
+
+    // Give every .code-card a macOS-window bar: traffic-light dots
+    // (left) + a copy button (right). Idempotent.
+    (function () {
+      var cards = document.querySelectorAll('.code-card');
+      cards.forEach(function (card) {
+        if (card.querySelector('.code-card-bar')) return;
+        var pre = card.querySelector('pre');
+        if (!pre) return;
+
+        var bar = document.createElement('div');
+        bar.className = 'code-card-bar';
+
+        var dots = document.createElement('div');
+        dots.className = 'code-card-dots';
+        ['r', 'y', 'g'].forEach(function (c) {
+          var d = document.createElement('span');
+          d.className = 'dot ' + c;
+          dots.appendChild(d);
+        });
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'code-copy';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', function () {
+          var code = pre.innerText;
+          var done = function () {
+            btn.textContent = 'Copied ✓';
+            btn.classList.add('copied');
+            setTimeout(function () {
+              btn.textContent = 'Copy';
+              btn.classList.remove('copied');
+            }, 2000);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code).then(done).catch(function () {});
+          } else {
+            var ta = document.createElement('textarea');
+            ta.value = code;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
+            document.body.removeChild(ta);
+          }
+        });
+
+        bar.appendChild(dots);
+        bar.appendChild(btn);
+        card.insertBefore(bar, card.firstChild);
+      });
+    })();
   </script>
 </body>
 </html>

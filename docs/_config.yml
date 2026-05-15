@@ -29,6 +29,12 @@ defaults:
         width: 1200
         height: 630
         alt: "SFSymbolsKit — every SF Symbol, typed. The typed Swift API Apple's SF Symbols are missing."
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:slug/
 
 plugins:
   - jekyll-feed

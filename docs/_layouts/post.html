@@ -1,14 +1,31 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
+<section class="prose-page">
+<article class="prose">
 
-<p>
-  {{ page.date | date_to_string }}
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-</p>
+<header class="prose-header">
+  <div class="eyebrow">
+    <a href="{{ '/blog/' | relative_url }}" class="back-link">← All posts</a>
+  </div>
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">
+    {{ page.date | date: "%B %-d, %Y" }}
+    · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
+    · by <a href="https://github.com/WikipediaBrown">WikipediaBrown</a>
+  </p>
+</header>
 
 {{ content }}
+
+<aside class="post-cta">
+  <h3>Stop shipping stringly-typed icons.</h3>
+  <p>SFSymbolsKit turns every SF Symbol into a typed Swift property — autocompleted, refactor-safe, compile-checked. <a href="{{ '/tutorial/' | relative_url }}">Read the full tutorial</a> or grab it from <a href="https://github.com/WikipediaBrown/SFSymbolsKit">GitHub</a>.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="{{ '/#install' | relative_url }}">Get started</a>
+    <a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">More posts →</a>
+  </div>
+</aside>
+
+</article>
+</section>
