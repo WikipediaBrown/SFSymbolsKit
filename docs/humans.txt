@@ -1,0 +1,15 @@
+/* TEAM */
+Author: WikipediaBrown
+Site: https://github.com/WikipediaBrown
+From: Cascadia
+
+/* THANKS */
+The Swift community
+Apple — for SF Symbols
+Every developer who ever fought a stringly-typed icon name
+
+/* SITE */
+Last update: 2026/05/15
+Standards: HTML5, Schema.org, OpenGraph, jekyll-seo-tag
+Components: Jekyll, GitHub Pages
+Software: SF Pro, system fonts

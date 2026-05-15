@@ -1,0 +1,38 @@
+# SFSymbolsKit
+
+> Apple's entire SF Symbols catalog as a strongly-typed Swift API. SFSymbolsKit replaces Apple's stringly-typed `UIImage(systemName:)`, `Image(systemName:)`, and `NSImage(systemSymbolName:)` initializers with typed Swift properties for every symbol Apple ships — autocompleted in Xcode, refactor-safe, and compile-checked.
+
+Key facts:
+- License: MIT
+- Author: WikipediaBrown — https://github.com/WikipediaBrown
+- Source: https://github.com/WikipediaBrown/SFSymbolsKit
+- Documentation: https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation
+- Distribution: Swift Package Manager (`.package(url: "https://github.com/WikipediaBrown/SFSymbolsKit.git", from: "0.1.0")`)
+- Platforms: iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS
+- Catalog size: 7,007 SF Symbols
+- Dependencies: zero (no transitive deps)
+- Generated, not hand-written: Python scripts produce the Swift source from `SFSymbols.txt`
+
+What it provides:
+- `String.SFSymbols.<name>` — typed string for any `systemName:` argument
+- `UIImage.SFSymbols.<name>` — fully configured `UIImage` for UIKit on iOS, iPadOS, tvOS, watchOS, visionOS
+- `NSImage.SFSymbols.<name>` — fully configured `NSImage` for AppKit on macOS, with accessibility descriptions auto-set
+- `SFSymbol` enum — `CaseIterable` for picker UIs over all symbols
+
+Pages:
+- [Home](https://sfsymbolskit.com/) — overview, install, three-API comparison, code samples
+- [Tutorial](https://sfsymbolskit.com/tutorial/) — long-form guide covering the four approaches developers take to SF Symbols, with full code examples for SwiftUI, UIKit, AppKit, and FAQ
+
+Common questions:
+- Production-ready: yes, MIT licensed, generated deterministically.
+- Apple platforms: iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS.
+- Compile-time cost: negligible — 7,000 `static let` string literal bindings.
+- Custom symbols (your own asset-catalog ones): out of scope. Use `UIImage(named:)` for those; SFSymbolsKit wraps Apple's catalog only.
+- New SF Symbol releases: update `SFSymbols.txt` and rerun the Python generator. PRs welcome.
+
+Related Apple docs:
+- SF Symbols: https://developer.apple.com/sf-symbols/
+- SF Symbols HIG: https://developer.apple.com/design/human-interface-guidelines/sf-symbols
+- `UIImage(systemName:)`: https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)
+- `Image(systemName:)`: https://developer.apple.com/documentation/swiftui/image/init(systemname:)
+- `NSImage(systemSymbolName:accessibilityDescription:)`: https://developer.apple.com/documentation/appkit/nsimage/init(systemsymbolname:accessibilitydescription:)

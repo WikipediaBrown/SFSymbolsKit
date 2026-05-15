@@ -1,0 +1,38 @@
+---
+layout: default
+title: "Page not found"
+description: "The page you requested doesn't exist. Try the SFSymbolsKit overview, the tutorial, or the API documentation."
+permalink: /404.html
+sitemap: false
+---
+
+<section class="hero" id="not-found">
+  <div class="eyebrow">404</div>
+  <h1>Symbol not found.</h1>
+  <p class="lede">The page you requested doesn't exist — like a typo in <code>UIImage(systemName: "ths.doesnt.exist")</code>, except this one didn't silently render blank. We caught it for you.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="{{ '/' | relative_url }}">Back to home</a>
+    <a class="btn btn-ghost" href="{{ '/tutorial/' | relative_url }}">Read the tutorial →</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Where you might want to go.</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">→</div>
+      <h3>Overview</h3>
+      <p>The pitch, the three APIs, the install snippet. <a href="{{ '/' | relative_url }}">Take me there →</a></p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">→</div>
+      <h3>Tutorial</h3>
+      <p>The full guide to type-safe SF Symbols, with code for SwiftUI, UIKit, and AppKit. <a href="{{ '/tutorial/' | relative_url }}">Take me there →</a></p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">→</div>
+      <h3>API docs</h3>
+      <p>Full reference documentation on Swift Package Index. <a href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">Take me there →</a></p>
+    </div>
+  </div>
+</section>

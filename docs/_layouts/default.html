@@ -54,6 +54,59 @@
   }
   </script>
 
+  {%- comment -%}Organization + WebSite identity for Knowledge Graph{%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SFSymbolsKit",
+    "url": "https://sfsymbolskit.com",
+    "logo": "https://sfsymbolskit.com/assets/icon-512.png",
+    "sameAs": [
+      "https://github.com/WikipediaBrown/SFSymbolsKit",
+      "https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SFSymbolsKit",
+    "url": "https://sfsymbolskit.com",
+    "description": "Apple's entire SF Symbols catalog as a strongly-typed Swift API.",
+    "inLanguage": "en-US",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SFSymbolsKit",
+      "url": "https://sfsymbolskit.com"
+    }
+  }
+  </script>
+  {%- if page.url != "/" and page.url != "/404.html" -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sfsymbolskit.com/"
+      }{%- if page.title and page.title != site.title -%},
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ page.title | jsonify }},
+        "item": "https://sfsymbolskit.com{{ page.url }}"
+      }
+      {%- endif %}
+    ]
+  }
+  </script>
+  {%- endif -%}
+
   <script>
     (function () {
       try {
