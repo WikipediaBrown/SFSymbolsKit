@@ -71,4 +71,4 @@ You can also skip the `systemName:` round-trip entirely with the `Image` you act
 
 ---
 
-This is the SwiftUI-specific version of a broader argument. For UIKit, see [SF Symbols in UIKit: a practical guide]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}); for the full picture across every Apple framework, the [tutorial]({{ '/tutorial/' | relative_url }}) covers all three APIs.
+This is the SwiftUI-specific version of a broader argument. For UIKit, see [SF Symbols in UIKit: a practical guide]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}); for macOS, [SF Symbols in AppKit (NSImage)]({{ '/blog/sf-symbols-appkit-nsimage-guide/' | relative_url }}); for the full picture across every Apple framework, the [tutorial]({{ '/tutorial/' | relative_url }}) covers all three APIs.

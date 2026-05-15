@@ -76,4 +76,4 @@ The configuration story is unchanged; the symbol identity is now a compiler-chec
 
 ---
 
-The UIKit story and the [SwiftUI story]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}) are the same problem in different frameworks: a string where a type belongs. If you already have a codebase full of these strings, the [migration guide]({{ '/blog/migrating-off-hardcoded-sf-symbol-strings/' | relative_url }}) covers moving over without a big-bang rewrite.
+The UIKit story, the [SwiftUI story]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}), and the [AppKit story]({{ '/blog/sf-symbols-appkit-nsimage-guide/' | relative_url }}) are the same problem in different frameworks: a string where a type belongs. If you already have a codebase full of these strings, the [migration guide]({{ '/blog/migrating-off-hardcoded-sf-symbol-strings/' | relative_url }}) covers moving over without a big-bang rewrite.
