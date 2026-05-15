@@ -4,9 +4,9 @@ title: SFSymbolsKit
 ---
 
 <section class="hero" id="overview">
-  <div class="eyebrow">Swift Package</div>
+  <div class="eyebrow">Swift Package · iOS · macOS · watchOS · tvOS · visionOS</div>
   <h1>Every SF Symbol,<br>typed.</h1>
-  <p class="lede">Apple ships <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> — thousands of icons designed for every Apple platform. Apple doesn't ship a typed Swift API for them. SFSymbolsKit does. <a href="https://github.com/WikipediaBrown/SFSymbolsKit">Open source on GitHub</a>.</p>
+  <p class="lede">Apple ships <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> — over 7,000 icons built into every device they make. They ship one way to use them: as <strong>strings you type by hand</strong>. SFSymbolsKit gives you the typed Swift API Apple forgot.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="#install">Get started</a>
     <a class="btn btn-ghost" href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">Read the docs →</a>
@@ -36,23 +36,23 @@ title: SFSymbolsKit
 
 <section class="section" id="why">
   <h2 class="section-title">Apple ships the icons.<br>We ship the types.</h2>
-  <p class="section-sub">Apple's <a href="https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)"><code>UIImage(systemName:)</code></a> and SwiftUI's <a href="https://developer.apple.com/documentation/swiftui/image/init(systemname:)"><code>Image(systemName:)</code></a> initializers take a <strong>string</strong>. Mistype the name and you get a <code>nil</code> image at runtime — no compile error, no warning, no autocomplete. SFSymbolsKit replaces the string with a typed property for every symbol Apple ships, so the compiler catches what the runtime would have hidden.</p>
+  <p class="section-sub">Apple's <a href="https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)"><code>UIImage(systemName:)</code></a> and SwiftUI's <a href="https://developer.apple.com/documentation/swiftui/image/init(systemname:)"><code>Image(systemName:)</code></a> take a <strong>string</strong>. No autocomplete. No compiler check. No runtime warning if you typo a symbol name — the icon just silently doesn't render. That's fine in a hello-world demo. It's a quiet bug in a shipped app. SFSymbolsKit replaces every string with a typed property and erases a whole class of UI bugs at compile time.</p>
 
   <div class="features">
     <div class="feature">
-      <div class="feature-icon">!</div>
-      <h3>The Apple way</h3>
-      <p>Type the name. Hope it's correct. Find out at runtime when the icon doesn't render.</p>
+      <div class="feature-icon">×</div>
+      <h3>Without it</h3>
+      <p><code>UIImage(systemName: "plus.app")</code> — a hand-typed string with no spell-check. Apple renames a symbol? Silent failure. Hands it off to QA? Maybe they notice.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">✓</div>
-      <h3>The SFSymbolsKit way</h3>
-      <p>Pick the symbol from autocomplete. The compiler verifies it exists. Refactor-safe by construction.</p>
+      <h3>With it</h3>
+      <p><code>UIImage.SFSymbols.plusApp</code> — autocompleted in Xcode, refactor-safe, and physically unable to compile if Apple drops the symbol. The bug becomes impossible.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">↻</div>
-      <h3>Every release</h3>
-      <p>When Apple ships <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols">new symbols</a>, regeneration is one command away. Every name flows through to your code automatically.</p>
+      <h3>Forever current</h3>
+      <p>When Apple ships <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols">new symbols</a> in the next OS release, regeneration is one command. Day-one autocomplete for every new name.</p>
     </div>
   </div>
 </section>
@@ -60,43 +60,43 @@ title: SFSymbolsKit
 <section class="section section-elev" id="apis">
   <div class="section-elev-inner">
     <h2 class="section-title">Three APIs.<br>One package.</h2>
-    <p class="section-sub">Reach for the right type at the right layer — a plain <code>String</code> for <code>systemName</code>, a <code>UIImage</code> for iOS, or an <code>NSImage</code> for macOS. All of them autocomplete. None of them ever miss a symbol.</p>
+    <p class="section-sub">Reach for the right type at the right layer. Pass a typed <code>String</code> to any existing Apple function that takes <code>systemName</code>. Get a <code>UIImage</code> directly. Or an <code>NSImage</code> with accessibility wired up. All of them autocomplete. None of them break under rename.</p>
 
     <div class="features">
       <div class="feature">
         <div class="feature-icon">S</div>
         <h3>String</h3>
-        <p>Reference any symbol by a typed Swift property. Pass it to any Apple API that takes a <code>systemName</code> string.</p>
+        <p>A typed Swift property for every symbol Apple ships. Drop it into any API that expects a <code>systemName</code> string — nothing else about your code has to change.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">U</div>
         <h3>UIImage</h3>
-        <p>Skip the <code>systemName:</code> detour. Get a ready <a href="https://developer.apple.com/documentation/uikit/uiimage"><code>UIImage</code></a> anywhere on iOS, iPadOS, tvOS, watchOS, and visionOS.</p>
+        <p>Skip the <code>systemName:</code> detour. Get a fully-configured <a href="https://developer.apple.com/documentation/uikit/uiimage"><code>UIImage</code></a> for iOS, iPadOS, tvOS, watchOS, and visionOS.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">N</div>
         <h3>NSImage</h3>
-        <p>AppKit gets the same ergonomics, with <a href="https://developer.apple.com/documentation/appkit/nsimage/init(systemsymbolname:accessibilitydescription:)">accessibility descriptions</a> wired up automatically.</p>
+        <p>AppKit gets the same ergonomics, with <a href="https://developer.apple.com/documentation/appkit/nsimage/init(systemsymbolname:accessibilitydescription:)">accessibility descriptions</a> auto-generated from the symbol name.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="code">
-  <h2 class="section-title">Reads like Swift.</h2>
-  <p class="section-sub">Because every symbol is just a property — discoverable, refactor-safe, and indistinguishable from the rest of your code. See it in the <a href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">full API documentation</a>.</p>
+  <h2 class="section-title">Code that won't<br>lie to you.</h2>
+  <p class="section-sub">Every symbol is just a property — discoverable, refactor-safe, and indistinguishable from the rest of your code. <a href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">Read the API docs</a>.</p>
 
   <div class="code-card">
-<pre style="margin:0;"><span class="cm">// Apple's way: stringly-typed, fails silently at runtime</span>
+<pre style="margin:0;"><span class="cm">// Apple's API: stringly-typed, fails silently in production</span>
 Image(systemName: <span class="st">"plus.app"</span>)
 
 <span class="cm">// SFSymbolsKit: typed, autocompleted, compile-checked</span>
 Image(systemName: <span class="ty">String</span>.SFSymbols.<span class="fn">plusApp</span>)
 
-<span class="cm">// UIKit gets a UIImage directly</span>
+<span class="cm">// Or skip the detour and get a UIImage directly</span>
 <span class="kw">let</span> icon = <span class="ty">UIImage</span>.SFSymbols.<span class="fn">plusApp</span>
 
-<span class="cm">// Every symbol is also a CaseIterable enum</span>
+<span class="cm">// Every symbol is also a CaseIterable enum — perfect for pickers</span>
 <span class="ty">SFSymbol</span>.<span class="fn">allCases</span>.<span class="fn">forEach</span> { symbol <span class="kw">in</span>
     Image(uiImage: symbol.image)
 }</pre>
@@ -105,22 +105,33 @@ Image(systemName: <span class="ty">String</span>.SFSymbols.<span class="fn">plus
 
 <section class="section section-elev" id="generated">
   <div class="section-elev-inner">
-    <h2 class="section-title">Generated, never written.</h2>
-    <p class="section-sub">SFSymbolsKit is built from <code>SFSymbols.txt</code> by a Python generator. Every Swift file you see is reproducible from the symbol list — so when Apple ships <a href="https://developer.apple.com/sf-symbols/">new icons</a>, regeneration is one command away. <a href="https://github.com/WikipediaBrown/SFSymbolsKit/blob/develop/CONTRIBUTING.md">See the contribution guide</a>.</p>
+    <h2 class="section-title">Generated,<br>never written.</h2>
+    <p class="section-sub">SFSymbolsKit is built from <code>SFSymbols.txt</code> by a Python generator — 7,007 typed properties produced deterministically. A human writing those out by hand would introduce typos in dozens. A generator never does. When Apple ships new icons, you don't wait for a maintainer to type them in — you <a href="https://github.com/WikipediaBrown/SFSymbolsKit/blob/develop/CONTRIBUTING.md">regenerate</a>.</p>
   </div>
 </section>
 
 <section class="section" id="install">
   <div class="install-grid">
     <div>
-      <h3>Install in a minute.</h3>
-      <p>Add SFSymbolsKit through Swift Package Manager. No setup, no transitive dependencies, no maintenance burden. Source lives on <a href="https://github.com/WikipediaBrown/SFSymbolsKit">GitHub</a>.</p>
+      <h3>Ship it today.</h3>
+      <p>Add SFSymbolsKit through Swift Package Manager. No setup. No transitive dependencies. No maintenance burden. The next time you reach for <code>UIImage(systemName:)</code>, reach for a typed property instead.</p>
     </div>
     <div class="code-card" style="font-size:14px;">
 <pre style="margin:0;"><span class="kw">dependencies</span>: [
     .package(url: <span class="st">"https://github.com/WikipediaBrown/SFSymbolsKit.git"</span>,
              from: <span class="st">"<span class="latest-version" data-fallback="0.1.26">0.1.26</span>"</span>)
 ]</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section-cta" id="closer">
+  <div class="section-cta-inner">
+    <h2 class="section-title">Stop fighting<br>strings.</h2>
+    <p class="section-sub">Type-safe SF Symbols. Six Apple platforms. Zero dependencies. MIT licensed. <a href="https://github.com/WikipediaBrown/SFSymbolsKit">Open source on GitHub</a>.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#install">Install now</a>
+      <a class="btn btn-ghost" href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">Read the docs →</a>
     </div>
   </div>
 </section>
