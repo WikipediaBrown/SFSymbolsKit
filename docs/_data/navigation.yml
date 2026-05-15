@@ -1,10 +1,12 @@
 - name: Overview
-  link: "#overview"
+  link: "/#overview"
+- name: Tutorial
+  link: "/tutorial/"
 - name: Documentation
   link: https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation
   external: true
 - name: Install
-  link: "#install"
+  link: "/#install"
 - name: GitHub →
   link: https://github.com/WikipediaBrown/SFSymbolsKit
   external: true
