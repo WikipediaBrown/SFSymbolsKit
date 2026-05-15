@@ -4,10 +4,56 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  {%- comment -%}
+    jekyll-seo-tag emits the <title>, canonical, og:*, twitter:*,
+    description, and author/publisher metadata. Keep this directly
+    before {% feed_meta %} so the canonical resolves before the feed.
+  {%- endcomment -%}
+  {%- seo -%}
+  {%- feed_meta -%}
+
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-  {% feed_meta %}
-  {% seo %}
+
+  {%- comment -%}Icons, manifest, theme color{%- endcomment -%}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="512x512" href="{{ '/assets/icon-512.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-title" content="SFSymbolsKit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  {%- comment -%}Performance hints — we fetch from api.github.com on page load{%- endcomment -%}
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="preconnect" href="https://api.github.com" crossorigin>
+
+  {%- comment -%}Structured data: SoftwareSourceCode for the package itself{%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "SFSymbolsKit",
+    "description": "Apple's entire SF Symbols catalog as a strongly-typed Swift API. SwiftUI, UIKit, AppKit — autocompleted, refactor-safe, generated from the source.",
+    "url": "https://sfsymbolskit.com",
+    "codeRepository": "https://github.com/WikipediaBrown/SFSymbolsKit",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "Swift"
+    },
+    "license": "https://opensource.org/licenses/MIT",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "iOS, iPadOS, macOS, watchOS, tvOS, visionOS",
+    "author": {
+      "@type": "Person",
+      "name": "WikipediaBrown",
+      "url": "https://github.com/WikipediaBrown"
+    },
+    "keywords": "Swift, SF Symbols, SFSymbols, Swift Package Manager, SPM, SwiftUI, UIKit, AppKit, iOS, macOS, watchOS, tvOS, visionOS"
+  }
+  </script>
+
   <script>
     (function () {
       try {

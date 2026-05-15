@@ -28,6 +28,9 @@ fastlane/report
 # Brainstorming/mockup sessions from superpowers Visual Companion
 .superpowers/
 
+# Playwright MCP scratch directory (snapshots, screenshots from brainstorming)
+.playwright-mcp/
+
 # Jekyll build output
 docs/_site/
 docs/.jekyll-cache/

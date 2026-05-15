@@ -1,0 +1,23 @@
+{
+  "name": "SFSymbolsKit",
+  "short_name": "SFSymbolsKit",
+  "description": "Apple's entire SF Symbols catalog as a strongly-typed Swift API.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0a0a0b",
+  "icons": [
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
