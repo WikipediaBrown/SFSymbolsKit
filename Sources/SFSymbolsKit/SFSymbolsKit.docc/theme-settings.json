@@ -1,0 +1,21 @@
+{
+  "theme": {
+    "color": {
+      "documentation-intro-fill": "#0b0b0e",
+      "documentation-intro-accent": "#3b9eff",
+      "documentation-intro-figure": "#ececef",
+      "documentation-intro-eyebrow": "#9a9aa5",
+      "tutorials-overview-background": "#0b0b0e",
+      "tutorial-navbar-title": "#ececef",
+      "fill": "#0b0b0e",
+      "fill-secondary": "#131318",
+      "fill-tertiary": "#1a1a20",
+      "figure-blue": "#3b9eff",
+      "link": "#3b9eff"
+    },
+    "aurora": { "enabled": false }
+  },
+  "features": {
+    "docs": { "i18n": false }
+  }
+}

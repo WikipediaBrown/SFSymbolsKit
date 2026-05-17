@@ -5,8 +5,7 @@
 - name: Blog
   link: "/blog/"
 - name: Documentation
-  link: https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation
-  external: true
+  link: "/documentation/documentation/sfsymbolskit/"
 - name: Install
   link: "/#install"
 - name: GitHub →

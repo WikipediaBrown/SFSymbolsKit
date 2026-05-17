@@ -1,0 +1,65 @@
+@Tutorial(time: 10) {
+   @Intro(title: "Adopt SFSymbolsKit") {
+      Go from hand-typed symbol strings — which compile even when
+      they're wrong — to compile-checked properties.
+
+      @Image(source: "tutorial-hero.png", alt: "SFSymbolsKit")
+   }
+
+   @Section(title: "Add the package") {
+      @ContentAndMedia {
+         Add SFSymbolsKit through Swift Package Manager. It has zero
+         dependencies and works on every Apple platform.
+      }
+      @Steps {
+         @Step {
+            Add the dependency to your `Package.swift`.
+            @Code(name: "Package.swift", file: "Step1.swift")
+         }
+         @Step {
+            Import the module in any file that uses SFSymbols.
+            @Code(name: "ContentView.swift", file: "Step2.swift")
+         }
+      }
+   }
+
+   @Section(title: "Convert a stringly-typed icon") {
+      @ContentAndMedia {
+         Replace a raw `systemName` string with a typed property. The
+         behavior is identical — but a typo is now a build error.
+      }
+      @Steps {
+         @Step {
+            Here's the stringly-typed version. A misspelling here ships
+            a blank icon with no warning.
+            @Code(name: "ContentView.swift", file: "Step3.swift")
+         }
+         @Step {
+            Replace the string with the typed property. Autocomplete
+            lists every symbol; a wrong name won't compile.
+            @Code(name: "ContentView.swift", file: "Step4.swift")
+         }
+      }
+   }
+
+   @Assessments {
+      @MultipleChoice {
+         With SFSymbolsKit, what happens if you misspell a symbol name?
+
+         @Choice(isCorrect: true) {
+            The build fails with an unknown-member error.
+            @Justification(reaction: "Correct!") {
+               The catalog is typed, so a name that doesn't exist
+               can't compile — the bug is caught before it ships.
+            }
+         }
+         @Choice(isCorrect: false) {
+            The icon silently renders blank at runtime.
+            @Justification(reaction: "That's the stringly-typed behavior.") {
+               That's exactly the failure mode SFSymbolsKit converts
+               into a compile error.
+            }
+         }
+      }
+   }
+}

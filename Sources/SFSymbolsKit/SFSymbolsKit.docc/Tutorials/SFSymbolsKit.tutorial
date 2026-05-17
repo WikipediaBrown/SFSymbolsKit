@@ -1,0 +1,17 @@
+@Tutorials(name: "SFSymbolsKit") {
+   @Intro(title: "Adopt type-safe SFSymbols") {
+      Replace stringly-typed SFSymbol names with compile-checked Swift
+      properties, one icon at a time.
+
+      @Image(source: "tutorial-hero.png", alt: "SFSymbolsKit")
+   }
+
+   @Chapter(name: "Adopting SFSymbolsKit") {
+      Add the package, then convert your first hand-typed symbol
+      strings into typed, autocompleted, refactor-safe properties.
+
+      @Image(source: "tutorial-hero.png", alt: "SFSymbolsKit")
+
+      @TutorialReference(tutorial: "doc:AdoptSFSymbolsKit")
+   }
+}
