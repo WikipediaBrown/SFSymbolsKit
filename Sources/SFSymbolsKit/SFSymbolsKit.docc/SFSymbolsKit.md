@@ -6,7 +6,7 @@ Apple's entire SFSymbols catalog as a strongly-typed Swift API — autocompleted
 
 Apple ships SFSymbols, but the APIs that consume them — SwiftUI's `Image(systemName:)`, UIKit's `UIImage(systemName:)`, and AppKit's `NSImage(systemSymbolName:accessibilityDescription:)` — all take a `String`. The compiler can't tell a real symbol name from a typo, so a mistake isn't a build error: it's a blank icon discovered at runtime.
 
-SFSymbolsKit replaces those hand-typed strings with a typed Swift property for every symbol Apple ships. It's generated deterministically from Apple's catalog, ships with zero dependencies, and works on iOS, iPadOS, macOS, watchOS, tvOS, and visionOS.
+SFSymbolsKit replaces those hand-typed strings with a typed Swift property for every symbol Apple ships. It's generated deterministically from Apple's catalog, ships with zero dependencies, and works on iOS, iPadOS, macOS, watchOS, tvOS, visionOS, and CarPlay.
 
 ```swift
 import SFSymbolsKit

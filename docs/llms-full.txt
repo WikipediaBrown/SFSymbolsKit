@@ -16,7 +16,7 @@ SFSymbolsKit replaces Apple's stringly-typed system-symbol APIs — `Image(syste
 - Author: WikipediaBrown (https://github.com/WikipediaBrown)
 - Distribution: Swift Package Manager only
 - Latest version: see https://api.github.com/repos/WikipediaBrown/SFSymbolsKit/releases/latest
-- Platforms: iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS
+- Platforms: iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS, CarPlay
 - Dependencies: zero, no transitive dependencies
 - Catalog size: 7,007 symbols
 - Generated, not hand-written: Swift source is produced deterministically from SFSymbols.txt by Python scripts
@@ -75,7 +75,7 @@ Naming: an SFSymbol name like `square.and.arrow.up` becomes the camelCase proper
 ## FAQ
 
 - Production-ready? Yes. MIT, zero deps, generated deterministically.
-- Platforms? iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS.
+- Platforms? iOS 14+, iPadOS 14+, macOS 10.13+, watchOS, tvOS, visionOS, CarPlay.
 - Compile-time impact? Negligible.
 - Custom symbols? Out of scope; use UIImage(named:) for those.
 - New SFSymbols releases? Regenerate from SFSymbols.txt; consumers bump the dependency.
