@@ -1,13 +1,13 @@
 ---
-title: "How to list every SF Symbol in code (without hardcoding names)"
-description: "Apple doesn't give you a way to enumerate SF Symbols in Swift — because they're strings, and you can't iterate a string you never wrote down. Here's how to get all of them as a CaseIterable enum."
+title: "How to list every SFSymbol in code (without hardcoding names)"
+description: "Apple doesn't give you a way to enumerate SFSymbols in Swift — because they're strings, and you can't iterate a string you never wrote down. Here's how to get all of them as a CaseIterable enum."
 date: 2026-05-14
 tags: [sf-symbols, swift, swiftui]
 ---
 
-A question that comes up constantly: *"How do I get a list of all SF Symbols in code?"* — to build a symbol picker, a debug grid, a design-system gallery, whatever.
+A question that comes up constantly: *"How do I get a list of all SFSymbols in code?"* — to build a symbol picker, a debug grid, a design-system gallery, whatever.
 
-The uncomfortable answer with Apple's APIs: **you can't.** There is no `SFSymbol.allCases`, no `UIImage.allSystemSymbols`, no public enumeration. SF Symbols are referenced by string, and you cannot iterate a set of strings that was never written down anywhere in your code. This is the same root problem as a misspelled symbol — just viewed from the other side.
+The uncomfortable answer with Apple's APIs: **you can't.** There is no `SFSymbol.allCases`, no `UIImage.allSystemSymbols`, no public enumeration. SFSymbols are referenced by string, and you cannot iterate a set of strings that was never written down anywhere in your code. This is the same root problem as a misspelled symbol — just viewed from the other side.
 
 ## Why there's no built-in list
 
@@ -63,11 +63,11 @@ Every symbol Apple ships, enumerable, in a few lines. Build a searchable picker:
     }
 }</pre></div>
 
-No hand-maintained array. No "I only added the 40 we use." The picker covers the entire catalog and stays current when the package regenerates against a new SF Symbols release.
+No hand-maintained array. No "I only added the 40 we use." The picker covers the entire catalog and stays current when the package regenerates against a new SFSymbols release.
 
 ## The deeper point
 
-"There's no way to list SF Symbols" and "my symbol name was misspelled" are the same bug. Both exist because the catalog lives outside your program as opaque strings. Make the catalog *typed data in your program* and both problems disappear at once: you can enumerate it, and you can't misspell it.
+"There's no way to list SFSymbols" and "my symbol name was misspelled" are the same bug. Both exist because the catalog lives outside your program as opaque strings. Make the catalog *typed data in your program* and both problems disappear at once: you can enumerate it, and you can't misspell it.
 
 ## FAQ
 
@@ -75,7 +75,7 @@ No hand-maintained array. No "I only added the 40 we use." The picker covers the
 
 **Is iterating 7,000 symbols slow?** `allCases` is an array of enum cases; rendering is lazy via `LazyVGrid`/`List`. Filtering 7,000 short strings is trivial on-device.
 
-**Will the list include symbols added in the latest iOS?** It includes whatever the package's generated catalog contains — bump the dependency after a new SF Symbols release and the new symbols are in `allCases` automatically. See [keeping up with new SF Symbols]({{ '/blog/keeping-up-with-new-sf-symbols/' | relative_url }}).
+**Will the list include symbols added in the latest iOS?** It includes whatever the package's generated catalog contains — bump the dependency after a new SFSymbols release and the new symbols are in `allCases` automatically. See [keeping up with new SFSymbols]({{ '/blog/keeping-up-with-new-sf-symbols/' | relative_url }}).
 
 ---
 

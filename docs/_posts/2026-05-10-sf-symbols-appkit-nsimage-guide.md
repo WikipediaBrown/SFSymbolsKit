@@ -1,11 +1,11 @@
 ---
-title: "SF Symbols in AppKit (NSImage): a practical guide"
-description: "macOS apps reference SF Symbols through NSImage(systemSymbolName:accessibilityDescription:) — another string-keyed API with the same maintenance problem as its iOS counterparts."
+title: "SFSymbols in AppKit (NSImage): a practical guide"
+description: "macOS apps reference SFSymbols through NSImage(systemSymbolName:accessibilityDescription:) — another string-keyed API with the same maintenance problem as its iOS counterparts."
 date: 2026-05-10
 tags: [appkit, macos, sf-symbols, swift]
 ---
 
-SF Symbols aren't just an iOS thing. macOS has had them since Big Sur, and AppKit's entry point carries the same design — and the same liability — as the UIKit one:
+SFSymbols aren't just an iOS thing. macOS has had them since Big Sur, and AppKit's entry point carries the same design — and the same liability — as the UIKit one:
 
 <div class="code-card"><pre><span class="kw">let</span> image = <span class="ty">NSImage</span>(
     systemSymbolName: <span class="st">"externaldrive.badge.plus"</span>,

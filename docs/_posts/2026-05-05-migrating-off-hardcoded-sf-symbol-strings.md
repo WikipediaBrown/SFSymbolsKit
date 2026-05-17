@@ -1,6 +1,6 @@
 ---
-title: "Migrating off hardcoded SF Symbol strings"
-description: "A practical, incremental strategy for replacing hand-typed SF Symbol name strings with typed properties across an existing codebase — without a risky big-bang refactor."
+title: "Migrating off hardcoded SFSymbol strings"
+description: "A practical, incremental strategy for replacing hand-typed SFSymbol name strings with typed properties across an existing codebase — without a risky big-bang refactor."
 date: 2026-05-05
 tags: [refactoring, sf-symbols, swift]
 ---
@@ -69,4 +69,4 @@ A find-and-replace-everything PR touching 400 call sites is unreviewable, confli
 
 ---
 
-This is the cleanup path; the [SwiftUI]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}) and [UIKit]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}) posts cover the day-to-day usage once you're migrated. Staying current with Apple's releases is its own topic: [keeping up with new SF Symbols]({{ '/blog/keeping-up-with-new-sf-symbols/' | relative_url }}).
+This is the cleanup path; the [SwiftUI]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}) and [UIKit]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}) posts cover the day-to-day usage once you're migrated. Staying current with Apple's releases is its own topic: [keeping up with new SFSymbols]({{ '/blog/keeping-up-with-new-sf-symbols/' | relative_url }}).

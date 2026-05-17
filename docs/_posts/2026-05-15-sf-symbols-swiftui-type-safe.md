@@ -1,23 +1,23 @@
 ---
-title: "Using SF Symbols in SwiftUI: the type-safe way"
+title: "Using SFSymbols in SwiftUI: the type-safe way"
 description: "SwiftUI's Image(systemName:) takes a String, so every icon in your app is a hand-typed name with no compiler safety net. Here's why that's a maintenance liability and how to fix it."
 date: 2026-05-15
 tags: [swiftui, sf-symbols, swift]
 ---
 
-Every SF Symbol you put in a SwiftUI view goes through one initializer:
+Every SFSymbol you put in a SwiftUI view goes through one initializer:
 
 <div class="code-card"><pre><span class="ty">Image</span>(systemName: <span class="st">"square.and.arrow.up"</span>)</pre></div>
 
-That argument is a `String`. Not an enum, not a generated constant — a string literal you typed by hand or pasted from the SF Symbols app. SwiftUI will happily compile `Image(systemName: "square.and.arow.up")` and render *nothing* at runtime. No warning. No crash. Just a blank space where your share icon should be.
+That argument is a `String`. Not an enum, not a generated constant — a string literal you typed by hand or pasted from the SFSymbols app. SwiftUI will happily compile `Image(systemName: "square.and.arow.up")` and render *nothing* at runtime. No warning. No crash. Just a blank space where your share icon should be.
 
 In a toy project that's fine. In an app with a few hundred icons across dozens of screens, "is every one of these strings spelled correctly, today and after the next refactor" becomes a real, recurring maintenance cost.
 
 ## Why strings are the actual problem
 
-The issue isn't that SF Symbols are bad — they're great. The issue is the *interface*. A `String` parameter means:
+The issue isn't that SFSymbols are bad — they're great. The issue is the *interface*. A `String` parameter means:
 
-- **No autocomplete.** Xcode can't suggest symbol names. You context-switch to the SF Symbols app, search, copy, paste.
+- **No autocomplete.** Xcode can't suggest symbol names. You context-switch to the SFSymbols app, search, copy, paste.
 - **No compile-time validation.** The type system can't tell `"gear"` (valid) from `"gears"` (not a symbol). Both are `String`.
 - **No refactor safety.** Rename a symbol usage with find-and-replace and fat-finger it? The compiler shrugs.
 - **Silent runtime failure.** A wrong name doesn't throw. It renders empty. Your QA team finds it, or your users do.
@@ -71,4 +71,4 @@ You can also skip the `systemName:` round-trip entirely with the `Image` you act
 
 ---
 
-This is the SwiftUI-specific version of a broader argument. For UIKit, see [SF Symbols in UIKit: a practical guide]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}); for macOS, [SF Symbols in AppKit (NSImage)]({{ '/blog/sf-symbols-appkit-nsimage-guide/' | relative_url }}); for the full picture across every Apple framework, the [tutorial]({{ '/tutorial/' | relative_url }}) covers all three APIs.
+This is the SwiftUI-specific version of a broader argument. For UIKit, see [SFSymbols in UIKit: a practical guide]({{ '/blog/sf-symbols-uikit-practical-guide/' | relative_url }}); for macOS, [SFSymbols in AppKit (NSImage)]({{ '/blog/sf-symbols-appkit-nsimage-guide/' | relative_url }}); for the full picture across every Apple framework, the [tutorial]({{ '/tutorial/' | relative_url }}) covers all three APIs.

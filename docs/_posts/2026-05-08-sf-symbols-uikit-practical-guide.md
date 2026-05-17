@@ -1,11 +1,11 @@
 ---
-title: "SF Symbols in UIKit: a practical guide"
-description: "Using SF Symbols across UIKit — buttons, bar items, image views, configurations — and why every one of those call sites is a hand-typed string you have to keep correct forever."
+title: "SFSymbols in UIKit: a practical guide"
+description: "Using SFSymbols across UIKit — buttons, bar items, image views, configurations — and why every one of those call sites is a hand-typed string you have to keep correct forever."
 date: 2026-05-08
 tags: [uikit, sf-symbols, swift]
 ---
 
-UIKit has more surface area for SF Symbols than SwiftUI, and every entry point shares the same weakness: it's keyed by a string.
+UIKit has more surface area for SFSymbols than SwiftUI, and every entry point shares the same weakness: it's keyed by a string.
 
 <div class="code-card"><pre><span class="cm">// Image view</span>
 imageView.image = <span class="ty">UIImage</span>(systemName: <span class="st">"photo"</span>)
@@ -26,7 +26,7 @@ Three call sites, three hand-typed strings, three independent chances to misspel
 
 Think about the lifecycle of one icon string:
 
-1. A designer picks an icon. You find its name in the SF Symbols app, copy it, paste it.
+1. A designer picks an icon. You find its name in the SFSymbols app, copy it, paste it.
 2. Six months later someone refactors that view controller. The string survives the move — or gets mangled in a merge and nobody notices because it still *compiles*.
 3. A year later the icon should change. Someone updates the string. They get the new name slightly wrong. It ships blank.
 4. Apple deprecates or renames the symbol in a major release. Your string is now pointing at nothing on new OSes. Still compiles. Still ships.

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "SF Symbols in Swift: A Type-Safe Guide with Examples"
-description: "Step-by-step guide to using SF Symbols in Swift, SwiftUI, UIKit, and AppKit without stringly-typed APIs. Covers the four approaches developers take, why each falls short, and how SFSymbolsKit replaces them with autocompleted, refactor-safe typed properties."
+title: "SFSymbols in Swift: A Type-Safe Guide with Examples"
+description: "Step-by-step guide to using SFSymbols in Swift, SwiftUI, UIKit, and AppKit without stringly-typed APIs. Covers the four approaches developers take, why each falls short, and how SFSymbolsKit replaces them with autocompleted, refactor-safe typed properties."
 permalink: /tutorial/
 date: 2026-05-14
 last_modified_at: 2026-05-15
@@ -12,14 +12,14 @@ last_modified_at: 2026-05-15
 
 <header class="prose-header">
   <div class="eyebrow">Tutorial · 8 min read</div>
-  <h1>SF Symbols in Swift: A Type-Safe Guide</h1>
-  <p class="prose-lede">Apple ships SF Symbols as stringly-typed APIs across SwiftUI, UIKit, and AppKit. This guide walks through the four ways developers handle them today, why each one falls short, and how to make the whole problem go away with <a href="{{ '/' | relative_url }}">SFSymbolsKit</a>.</p>
+  <h1>SFSymbols in Swift: A Type-Safe Guide</h1>
+  <p class="prose-lede">Apple ships SFSymbols as stringly-typed APIs across SwiftUI, UIKit, and AppKit. This guide walks through the four ways developers handle them today, why each one falls short, and how to make the whole problem go away with <a href="{{ '/' | relative_url }}">SFSymbolsKit</a>.</p>
 </header>
 
 <nav class="toc" aria-label="Table of contents">
   <h2>On this page</h2>
   <ol>
-    <li><a href="#what-are-sf-symbols">What are SF Symbols?</a></li>
+    <li><a href="#what-are-sf-symbols">What are SFSymbols?</a></li>
     <li><a href="#the-problem">The problem with Apple's API</a></li>
     <li><a href="#approaches">The four approaches developers take</a></li>
     <li><a href="#examples">SFSymbolsKit by example</a></li>
@@ -29,11 +29,11 @@ last_modified_at: 2026-05-15
   </ol>
 </nav>
 
-<h2 id="what-are-sf-symbols">What are SF Symbols?</h2>
+<h2 id="what-are-sf-symbols">What are SFSymbols?</h2>
 
-<p><a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> is Apple's iconography system — a curated catalog of over 7,000 icons designed to integrate with the system font (SF Pro). Apple ships them with every operating system from iOS 13 onwards, and they're free to use in any app that ships on Apple platforms. Each symbol has a unique string name like <code>plus.app</code>, <code>xmark.circle.fill</code>, or <code>arrow.up.right</code>. You reference them through <code>systemName:</code> initializers on <code>Image</code>, <code>UIImage</code>, and <code>NSImage</code>.</p>
+<p><a href="https://developer.apple.com/sf-symbols/">SFSymbols</a> is Apple's iconography system — a curated catalog of over 7,000 icons designed to integrate with the system font (SF Pro). Apple ships them with every operating system from iOS 13 onwards, and they're free to use in any app that ships on Apple platforms. Each symbol has a unique string name like <code>plus.app</code>, <code>xmark.circle.fill</code>, or <code>arrow.up.right</code>. You reference them through <code>systemName:</code> initializers on <code>Image</code>, <code>UIImage</code>, and <code>NSImage</code>.</p>
 
-<p>The SF Symbols app (free on the Mac App Store) is the canonical browser. You search for the symbol you want, copy its name, and paste it into your code. That paste step is where the problems start.</p>
+<p>The SFSymbols app (free on the Mac App Store) is the canonical browser. You search for the symbol you want, copy its name, and paste it into your code. That paste step is where the problems start.</p>
 
 <h2 id="the-problem">The problem with Apple's API</h2>
 
@@ -53,7 +53,7 @@ Image(systemName: <span class="st">"plus.app"</span>)
 <p>Three things stand out:</p>
 
 <ol>
-  <li><strong>No autocomplete.</strong> Xcode can't suggest <code>"plus.app"</code> for you. You either remember it, copy it from the SF Symbols app, or hope you typed it right.</li>
+  <li><strong>No autocomplete.</strong> Xcode can't suggest <code>"plus.app"</code> for you. You either remember it, copy it from the SFSymbols app, or hope you typed it right.</li>
   <li><strong>No compile-time check.</strong> If you typo the name — <code>"pls.app"</code>, <code>"plus_app"</code>, <code>"plusapp"</code> — the compiler accepts it. It's a String. Strings are valid.</li>
   <li><strong>No runtime error.</strong> <a href="https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)"><code>UIImage(systemName:)</code></a> returns <code>UIImage?</code> when the symbol doesn't exist. <a href="https://developer.apple.com/documentation/swiftui/image/init(systemname:)"><code>Image(systemName:)</code></a> just renders blank. Neither tells you anything went wrong. Your icon is missing in production and the only signal is "hey, the button looks weird".</li>
 </ol>
@@ -106,9 +106,9 @@ Image(systemName: <span class="st">"plus.app"</span>)
   <li><strong>Incomplete.</strong> Your constants file covers the symbols you've thought to add. The 6,900 symbols you haven't are still stringly-typed when you eventually need them.</li>
 </ul>
 
-<h3 id="approach-3">Approach 3: Copy names from the SF Symbols app</h3>
+<h3 id="approach-3">Approach 3: Copy names from the SFSymbols app</h3>
 
-<p>The "visual lookup" approach. You open the SF Symbols app, search "settings", click the gear, hit ⌘C to copy the name, paste into your code. This solves the discoverability half of the problem but still produces stringly-typed code downstream. The typo bug doesn't disappear; it just moves from "you remembered wrong" to "you pasted from the wrong field". Still no compile-time check.</p>
+<p>The "visual lookup" approach. You open the SFSymbols app, search "settings", click the gear, hit ⌘C to copy the name, paste into your code. This solves the discoverability half of the problem but still produces stringly-typed code downstream. The typo bug doesn't disappear; it just moves from "you remembered wrong" to "you pasted from the wrong field". Still no compile-time check.</p>
 
 <h3 id="approach-4">Approach 4: Use SFSymbolsKit</h3>
 
@@ -120,7 +120,7 @@ Image(systemName: <span class="st">"plus.app"</span>)
 <span class="ty">Image</span>(systemName: <span class="ty">String</span>.SFSymbols.plusApp)</pre>
 </div>
 
-<p>SFSymbolsKit ships every SF Symbol Apple has ever shipped as a typed Swift property. Xcode autocompletes. The compiler catches typos. When Apple ships a new release with new symbols, regenerating the package picks them all up at once. You get all the benefits of Approach 2 with none of the maintenance burden.</p>
+<p>SFSymbolsKit ships every SFSymbol Apple has ever shipped as a typed Swift property. Xcode autocompletes. The compiler catches typos. When Apple ships a new release with new symbols, regenerating the package picks them all up at once. You get all the benefits of Approach 2 with none of the maintenance burden.</p>
 
 <h2 id="examples">SFSymbolsKit by example</h2>
 
@@ -312,7 +312,7 @@ Image(systemName: <span class="st">"plus.app"</span>)
 </details>
 
 <details>
-<summary>How are new SF Symbols added to SFSymbolsKit?</summary>
+<summary>How are new SFSymbols added to SFSymbolsKit?</summary>
 <p>The repository contains <code>SFSymbols.txt</code> — the canonical list of symbol names — and a set of Python scripts that generate the Swift source from it. When Apple ships new icons, update <code>SFSymbols.txt</code> and rerun the generator. Pull requests are welcome at the <a href="https://github.com/WikipediaBrown/SFSymbolsKit">GitHub repo</a>.</p>
 </details>
 
@@ -327,23 +327,23 @@ Image(systemName: <span class="st">"plus.app"</span>)
 </details>
 
 <details>
-<summary>How does SFSymbolsKit compare to other Swift packages that wrap SF Symbols?</summary>
+<summary>How does SFSymbolsKit compare to other Swift packages that wrap SFSymbols?</summary>
 <p>Most alternatives are either incomplete (covering a subset of symbols), hand-maintained (so they drift behind Apple's releases), or take a manual approach to <code>UIImage</code>/<code>NSImage</code>. SFSymbolsKit is generated from the full <code>SFSymbols.txt</code> list and ships <code>String</code>, <code>UIImage</code>, and <code>NSImage</code> APIs as a single coherent set.</p>
 </details>
 
 <details>
-<summary>Does using SFSymbolsKit affect my app's <a href="https://developer.apple.com/sf-symbols/">SF Symbols license</a> obligations?</summary>
-<p>No. SFSymbolsKit only wraps the names; it doesn't redistribute the symbol artwork itself. Apple's SF Symbols license terms apply to your app exactly as they would if you were using <code>Image(systemName:)</code> directly.</p>
+<summary>Does using SFSymbolsKit affect my app's <a href="https://developer.apple.com/sf-symbols/">SFSymbols license</a> obligations?</summary>
+<p>No. SFSymbolsKit only wraps the names; it doesn't redistribute the symbol artwork itself. Apple's SFSymbols license terms apply to your app exactly as they would if you were using <code>Image(systemName:)</code> directly.</p>
 </details>
 </div>
 
 <h2 id="get-started">Get started</h2>
 
-<p>Three steps to type-safe SF Symbols across your entire Apple-platform codebase:</p>
+<p>Three steps to type-safe SFSymbols across your entire Apple-platform codebase:</p>
 
 <ol>
   <li>Add the Swift Package dependency to your project (snippet below).</li>
-  <li>Add <code>import SFSymbolsKit</code> at the top of any file that uses SF Symbols.</li>
+  <li>Add <code>import SFSymbolsKit</code> at the top of any file that uses SFSymbols.</li>
   <li>Replace <code>Image(systemName: "name")</code> with <code>Image(systemName: String.SFSymbols.name)</code>. Or, for UIKit, replace <code>UIImage(systemName: "name")</code> with <code>UIImage.SFSymbols.name</code>. Same shape for AppKit.</li>
 </ol>
 
@@ -363,8 +363,8 @@ Image(systemName: <span class="st">"plus.app"</span>)
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "SF Symbols in Swift: A Type-Safe Guide with Examples",
-  "description": "Step-by-step guide to using SF Symbols in Swift, SwiftUI, UIKit, and AppKit without stringly-typed APIs. Covers the four approaches developers take, why each falls short, and how SFSymbolsKit replaces them with autocompleted, refactor-safe typed properties.",
+  "headline": "SFSymbols in Swift: A Type-Safe Guide with Examples",
+  "description": "Step-by-step guide to using SFSymbols in Swift, SwiftUI, UIKit, and AppKit without stringly-typed APIs. Covers the four approaches developers take, why each falls short, and how SFSymbolsKit replaces them with autocompleted, refactor-safe typed properties.",
   "datePublished": "2026-05-14",
   "dateModified": "2026-05-15",
   "author": {
@@ -393,7 +393,7 @@ Image(systemName: <span class="st">"plus.app"</span>)
     "programmingLanguage": "Swift"
   },
   "proficiencyLevel": "Beginner",
-  "keywords": "SF Symbols, Swift, SwiftUI, UIKit, AppKit, UIImage systemName, Image systemName, type-safe Swift, Swift Package Manager, SFSymbolsKit"
+  "keywords": "SFSymbols, Swift, SwiftUI, UIKit, AppKit, UIImage systemName, Image systemName, type-safe Swift, Swift Package Manager, SFSymbolsKit"
 }
 </script>
 
@@ -428,7 +428,7 @@ Image(systemName: <span class="st">"plus.app"</span>)
     },
     {
       "@type": "Question",
-      "name": "How are new SF Symbols added to SFSymbolsKit?",
+      "name": "How are new SFSymbols added to SFSymbolsKit?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The repository contains SFSymbols.txt — the canonical list of symbol names — and a set of Python scripts that generate the Swift source from it. When Apple ships new icons, update SFSymbols.txt and rerun the generator."
@@ -452,10 +452,10 @@ Image(systemName: <span class="st">"plus.app"</span>)
     },
     {
       "@type": "Question",
-      "name": "Does using SFSymbolsKit affect my app's SF Symbols license obligations?",
+      "name": "Does using SFSymbolsKit affect my app's SFSymbols license obligations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. SFSymbolsKit only wraps the names; it doesn't redistribute the symbol artwork itself. Apple's SF Symbols license terms apply to your app exactly as they would if you were using Image(systemName:) directly."
+        "text": "No. SFSymbolsKit only wraps the names; it doesn't redistribute the symbol artwork itself. Apple's SFSymbols license terms apply to your app exactly as they would if you were using Image(systemName:) directly."
       }
     }
   ]

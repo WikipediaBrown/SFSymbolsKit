@@ -1,6 +1,6 @@
 ---
-title: "Typed vs stringly-typed SF Symbols in Swift"
-description: "Comparing the ways to reference SF Symbols safely in Swift — raw strings, hand-rolled enums, SFSafeSymbols, and SFSymbolsKit — and what the maintenance cost of each actually is."
+title: "Typed vs stringly-typed SFSymbols in Swift"
+description: "Comparing the ways to reference SFSymbols safely in Swift — raw strings, hand-rolled enums, SFSafeSymbols, and SFSymbolsKit — and what the maintenance cost of each actually is."
 date: 2026-05-06
 tags: [sf-symbols, swift, comparison]
 ---
@@ -44,7 +44,7 @@ Whichever generated package you pick, the win is the same and it's large: the sy
 
 ## FAQ
 
-**Can I migrate between typed packages later?** Yes — both replace raw strings with typed references, so moving from one to the other is mechanical (and far easier than the original raw-string mess). The hard, valuable migration is getting off raw strings in the first place; see [migrating off hardcoded SF Symbol strings]({{ '/blog/migrating-off-hardcoded-sf-symbol-strings/' | relative_url }}).
+**Can I migrate between typed packages later?** Yes — both replace raw strings with typed references, so moving from one to the other is mechanical (and far easier than the original raw-string mess). The hard, valuable migration is getting off raw strings in the first place; see [migrating off hardcoded SFSymbol strings]({{ '/blog/migrating-off-hardcoded-sf-symbol-strings/' | relative_url }}).
 
 **Is a hand-rolled enum ever the right call?** For a toy app with five icons, sure. At any real scale, you're signing up to manually track Apple's catalog forever — the exact chore generated packages remove.
 

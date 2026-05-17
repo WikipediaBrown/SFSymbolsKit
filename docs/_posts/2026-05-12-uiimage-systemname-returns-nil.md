@@ -27,7 +27,7 @@ Quick triage when you hit a `nil`:
 
 <div class="code-card"><pre><span class="kw">let</span> name = <span class="st">"arrow.uturn.backward"</span>
 <span class="kw">if</span> <span class="ty">UIImage</span>(systemName: name) == <span class="kw">nil</span> {
-    <span class="ty">assertionFailure</span>(<span class="st">"SF Symbol '\(name)' did not resolve — check spelling and availability"</span>)
+    <span class="ty">assertionFailure</span>(<span class="st">"SFSymbol '\(name)' did not resolve — check spelling and availability"</span>)
 }</pre></div>
 
 That at least surfaces the failure in debug instead of shipping a blank button. But it's a band-aid: you're validating a string at runtime that should have been validated at compile time. You still have to *notice* the assertion, for *every* symbol, forever.
@@ -56,4 +56,4 @@ The deeper point: `UIImage(systemName:)` returning an optional is Apple acknowle
 
 ---
 
-Same root cause shows up everywhere SF Symbols touch a string API. The [SwiftUI version of this problem]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}) is the silent blank `Image`; the [tutorial]({{ '/tutorial/' | relative_url }}) walks through all three of Apple's stringly-typed symbol APIs and the fix.
+Same root cause shows up everywhere SFSymbols touch a string API. The [SwiftUI version of this problem]({{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}) is the silent blank `Image`; the [tutorial]({{ '/tutorial/' | relative_url }}) walks through all three of Apple's stringly-typed symbol APIs and the fix.

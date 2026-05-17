@@ -5,7 +5,7 @@ From: Cascadia
 
 /* THANKS */
 The Swift community
-Apple — for SF Symbols
+Apple — for SFSymbols
 Every developer who ever fought a stringly-typed icon name
 
 /* SITE */

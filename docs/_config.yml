@@ -1,5 +1,5 @@
 title: SFSymbolsKit
-description: Apple's entire SF Symbols catalog as a strongly-typed Swift API. SwiftUI, UIKit, AppKit — autocompleted, refactor-safe, generated from the source.
+description: Apple's entire SFSymbols catalog as a strongly-typed Swift API. SwiftUI, UIKit, AppKit — autocompleted, refactor-safe, generated from the source.
 url: https://sfsymbolskit.com
 github_username: WikipediaBrown
 lang: en_US
@@ -28,7 +28,7 @@ defaults:
         path: /assets/og-image.png
         width: 1200
         height: 630
-        alt: "SFSymbolsKit — every SF Symbol, typed. The typed Swift API Apple's SF Symbols are missing."
+        alt: "SFSymbolsKit — every SFSymbol, typed. The typed Swift API Apple's SFSymbols are missing."
   - scope:
       path: ""
       type: "posts"
