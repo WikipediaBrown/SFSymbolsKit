@@ -31,6 +31,12 @@
 }
 #sfsk-siteheader a.cta:hover{border-color:#3b9eff;background:rgba(59,158,255,.14)}
 @media (max-width:720px){#sfsk-siteheader nav a.lnk:not(.cta){display:none}}
+/* Constrain DocC's own layout to the same centered column the
+   rest of the site uses, so the docs page respects the same
+   margins as every other page (not full-bleed). */
+.documentation-nav .nav-content{max-width:1080px!important;margin:0 auto!important;padding:0 28px!important;box-sizing:border-box}
+.documentation-layout .adjustable-sidebar-width{max-width:1080px!important;margin:0 auto!important}
+#app footer.footer{max-width:1080px!important;margin:0 auto!important}
 </style>
 <div id="sfsk-siteheader">
   <div class="in">
