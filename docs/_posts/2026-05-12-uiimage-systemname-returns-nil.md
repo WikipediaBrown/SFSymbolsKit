@@ -3,6 +3,11 @@ title: "Why UIImage(systemName:) returns nil — and how to make it impossible"
 description: "UIImage(systemName:) returns an optional. When it's nil, it's almost always a misspelled or unavailable symbol name. Here's how to diagnose it and how to eliminate the failure mode entirely."
 date: 2026-05-12
 tags: [uikit, sf-symbols, swift, debugging]
+image:
+  path: /assets/og/uiimage-systemname-returns-nil.png
+  width: 1200
+  height: 630
+  alt: "Why UIImage(systemName:) returns nil — and how to make it impossible — SFSymbolsKit"
 ---
 
 You wrote this, ran the app, and the button is empty:

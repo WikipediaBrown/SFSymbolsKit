@@ -3,6 +3,11 @@ title: "Keeping up with new SFSymbols every iOS release"
 description: "Apple adds hundreds of SFSymbols every OS cycle. If your symbol names are hand-typed strings, your codebase silently falls behind every September. Here's how to stay current automatically."
 date: 2026-05-01
 tags: [sf-symbols, swift, maintenance]
+image:
+  path: /assets/og/keeping-up-with-new-sf-symbols.png
+  width: 1200
+  height: 630
+  alt: "Keeping up with new SFSymbols every iOS release — SFSymbolsKit"
 ---
 
 Every major OS release, Apple ships a new SFSymbols version with hundreds of new and revised glyphs. That's great for design — and a quiet, recurring tax on any codebase that references symbols as strings.

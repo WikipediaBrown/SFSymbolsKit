@@ -3,6 +3,11 @@ title: "Using SFSymbols in SwiftUI: the type-safe way"
 description: "SwiftUI's Image(systemName:) takes a String, so every icon in your app is a hand-typed name with no compiler safety net. Here's why that's a maintenance liability and how to fix it."
 date: 2026-05-15
 tags: [swiftui, sf-symbols, swift]
+image:
+  path: /assets/og/sf-symbols-swiftui-type-safe.png
+  width: 1200
+  height: 630
+  alt: "Using SFSymbols in SwiftUI: the type-safe way — SFSymbolsKit"
 ---
 
 Every SFSymbol you put in a SwiftUI view goes through one initializer:

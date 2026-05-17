@@ -3,6 +3,11 @@ title: "SFSymbols in UIKit: a practical guide"
 description: "Using SFSymbols across UIKit — buttons, bar items, image views, configurations — and why every one of those call sites is a hand-typed string you have to keep correct forever."
 date: 2026-05-08
 tags: [uikit, sf-symbols, swift]
+image:
+  path: /assets/og/sf-symbols-uikit-practical-guide.png
+  width: 1200
+  height: 630
+  alt: "SFSymbols in UIKit: a practical guide — SFSymbolsKit"
 ---
 
 UIKit has more surface area for SFSymbols than SwiftUI, and every entry point shares the same weakness: it's keyed by a string.

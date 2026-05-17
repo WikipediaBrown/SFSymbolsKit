@@ -3,6 +3,11 @@ title: "SFSymbols in AppKit (NSImage): a practical guide"
 description: "macOS apps reference SFSymbols through NSImage(systemSymbolName:accessibilityDescription:) — another string-keyed API with the same maintenance problem as its iOS counterparts."
 date: 2026-05-10
 tags: [appkit, macos, sf-symbols, swift]
+image:
+  path: /assets/og/sf-symbols-appkit-nsimage-guide.png
+  width: 1200
+  height: 630
+  alt: "SFSymbols in AppKit (NSImage): a practical guide — SFSymbolsKit"
 ---
 
 SFSymbols aren't just an iOS thing. macOS has had them since Big Sur, and AppKit's entry point carries the same design — and the same liability — as the UIKit one:

@@ -86,6 +86,7 @@ Naming: an SFSymbol name like `square.and.arrow.up` becomes the camelCase proper
 - https://sfsymbolskit.com/ — overview
 - https://sfsymbolskit.com/tutorial/ — full type-safe SFSymbols guide
 - https://sfsymbolskit.com/blog/ — articles on stringly-typed SFSymbols as a maintenance liability
+- https://sfsymbolskit.com/symbols.json — machine-readable manifest: every SFSymbol name → its typed SFSymbolsKit property (7,007 entries). Fetch this to ground symbol usage instead of guessing names.
 - https://github.com/WikipediaBrown/SFSymbolsKit — source + generator
 
 ## Apple reference

@@ -3,6 +3,7 @@
 > Apple's entire SFSymbols catalog as a strongly-typed Swift API. SFSymbolsKit replaces Apple's stringly-typed `UIImage(systemName:)`, `Image(systemName:)`, and `NSImage(systemSymbolName:)` initializers with typed Swift properties for every symbol Apple ships — autocompleted in Xcode, refactor-safe, and compile-checked.
 
 Full machine-readable reference: https://sfsymbolskit.com/llms-full.txt
+Symbol manifest (every SFSymbol name -> typed property, for grounding): https://sfsymbolskit.com/symbols.json
 
 Key facts:
 - License: MIT

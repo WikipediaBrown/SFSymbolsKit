@@ -3,6 +3,11 @@ title: "Migrating off hardcoded SFSymbol strings"
 description: "A practical, incremental strategy for replacing hand-typed SFSymbol name strings with typed properties across an existing codebase — without a risky big-bang refactor."
 date: 2026-05-05
 tags: [refactoring, sf-symbols, swift]
+image:
+  path: /assets/og/migrating-off-hardcoded-sf-symbol-strings.png
+  width: 1200
+  height: 630
+  alt: "Migrating off hardcoded SFSymbol strings — SFSymbolsKit"
 ---
 
 If your app already has hundreds of `systemName:` strings scattered across it, you don't have a typo problem — you have a *maintenance* problem. Every one of those strings is a small unverified assertion ("this is a real symbol name") that no tool is checking. Migration is about converting those assertions into compiler-checked facts, incrementally, without freezing feature work.

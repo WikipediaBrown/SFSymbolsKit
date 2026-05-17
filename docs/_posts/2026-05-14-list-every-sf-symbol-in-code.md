@@ -3,6 +3,11 @@ title: "How to list every SFSymbol in code (without hardcoding names)"
 description: "Apple doesn't give you a way to enumerate SFSymbols in Swift — because they're strings, and you can't iterate a string you never wrote down. Here's how to get all of them as a CaseIterable enum."
 date: 2026-05-14
 tags: [sf-symbols, swift, swiftui]
+image:
+  path: /assets/og/list-every-sf-symbol-in-code.png
+  width: 1200
+  height: 630
+  alt: "How to list every SFSymbol in code (without hardcoding names) — SFSymbolsKit"
 ---
 
 A question that comes up constantly: *"How do I get a list of all SFSymbols in code?"* — to build a symbol picker, a debug grid, a design-system gallery, whatever.

@@ -3,6 +3,11 @@ title: "Typed vs stringly-typed SFSymbols in Swift"
 description: "Comparing the ways to reference SFSymbols safely in Swift — raw strings, hand-rolled enums, SFSafeSymbols, and SFSymbolsKit — and what the maintenance cost of each actually is."
 date: 2026-05-06
 tags: [sf-symbols, swift, comparison]
+image:
+  path: /assets/og/typed-vs-stringly-typed-sf-symbols.png
+  width: 1200
+  height: 630
+  alt: "Typed vs stringly-typed SFSymbols in Swift — SFSymbolsKit"
 ---
 
 If you've decided hand-typed symbol strings are a liability (they are — that's the rest of this blog), the next question is *which* typed approach to use. There are a few, they're not equivalent, and the differences are about maintenance, not syntax.

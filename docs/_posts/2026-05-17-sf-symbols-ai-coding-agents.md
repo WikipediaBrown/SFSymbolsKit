@@ -3,6 +3,11 @@ title: "SFSymbols, AI coding agents, and hallucinated icon names"
 description: "AI coding assistants confidently generate SFSymbol names that don't exist. Because Apple's APIs are stringly-typed, the hallucination compiles and ships a blank icon. SFSymbolsKit turns it into a build error."
 date: 2026-05-17
 tags: [ai, sf-symbols, swift, swiftui]
+image:
+  path: /assets/og/sf-symbols-ai-coding-agents.png
+  width: 1200
+  height: 630
+  alt: "SFSymbols, AI coding agents, and hallucinated icon names — SFSymbolsKit"
 ---
 
 Ask any AI coding assistant for "a SwiftUI button with a trash icon" and you'll often get something like:
