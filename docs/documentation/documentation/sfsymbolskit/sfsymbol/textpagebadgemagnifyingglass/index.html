@@ -1,1 +1,73 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/documentation/favicon.ico"><link rel="mask-icon" href="/documentation/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/documentation/"</script><script defer="defer" src="/documentation/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/documentation/js/index.b232e9de.js"></script><link href="/documentation/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/documentation/favicon.ico"><link rel="mask-icon" href="/documentation/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/documentation/"</script><script defer="defer" src="/documentation/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/documentation/js/index.b232e9de.js"></script><link href="/documentation/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><template id="custom-footer"><style>
+#sfsk-sitefooter{
+  background:#0b0b0e;border-top:1px solid rgba(255,255,255,.09);
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+}
+#sfsk-sitefooter .in{
+  max-width:1080px;margin:0 auto;padding:26px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;font-size:12px;letter-spacing:.03em;
+}
+#sfsk-sitefooter .links{display:flex;gap:18px;flex-wrap:wrap}
+#sfsk-sitefooter a{color:#9a9aa5;text-decoration:none}
+#sfsk-sitefooter a:hover{color:#ececef}
+#sfsk-sitefooter .trees{color:#6b6b76}
+</style>
+<div id="sfsk-sitefooter">
+  <div class="in">
+    <div class="links">
+      <a href="https://sfsymbolskit.com/tutorial/">Tutorial</a>
+      <a href="https://sfsymbolskit.com/blog/">Blog</a>
+      <a href="https://github.com/WikipediaBrown/SFSymbolsKit">GitHub</a>
+      <a href="https://github.com/WikipediaBrown/SFSymbolsKit/blob/develop/LICENSE.md">MIT License</a>
+    </div>
+    <div class="trees">Made with 🌲🌲🌲 in Cascadia</div>
+  </div>
+</div>
+</template><template id="custom-header"><style>
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@500;600&display=swap");
+#sfsk-siteheader{
+  background:#0b0b0e;border-bottom:1px solid rgba(255,255,255,.09);
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+}
+#sfsk-siteheader .in{
+  max-width:1080px;margin:0 auto;padding:0 28px;height:54px;
+  display:flex;align-items:center;gap:26px;
+}
+#sfsk-siteheader .brand{
+  display:flex;align-items:center;gap:9px;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:16px;letter-spacing:-.02em;color:#ececef;text-decoration:none;
+}
+#sfsk-siteheader .dot{
+  width:10px;height:10px;border-radius:50%;background:#3b9eff;
+  box-shadow:0 0 0 4px rgba(59,158,255,.16);
+}
+#sfsk-siteheader nav{display:flex;gap:22px;margin-left:auto;align-items:center}
+#sfsk-siteheader a.lnk{
+  color:#9a9aa5;font-size:12.5px;font-weight:500;text-decoration:none;
+  text-transform:lowercase;letter-spacing:.01em;
+}
+#sfsk-siteheader a.lnk:hover{color:#ececef}
+#sfsk-siteheader a.lnk.active{color:#3b9eff}
+#sfsk-siteheader a.cta{
+  color:#ececef;border:1px solid rgba(255,255,255,.16);
+  padding:6px 13px;border-radius:6px;
+}
+#sfsk-siteheader a.cta:hover{border-color:#3b9eff;background:rgba(59,158,255,.14)}
+@media (max-width:720px){#sfsk-siteheader nav a.lnk:not(.active){display:none}}
+</style>
+<div id="sfsk-siteheader">
+  <div class="in">
+    <a class="brand" href="https://sfsymbolskit.com/"><span class="dot"></span>SFSymbolsKit</a>
+    <nav>
+      <a class="lnk" href="https://sfsymbolskit.com/#overview">overview</a>
+      <a class="lnk" href="https://sfsymbolskit.com/tutorial/">tutorial</a>
+      <a class="lnk" href="https://sfsymbolskit.com/blog/">blog</a>
+      <a class="lnk active" href="https://sfsymbolskit.com/documentation/documentation/sfsymbolskit/">documentation</a>
+      <a class="lnk" href="https://sfsymbolskit.com/#install">install</a>
+      <a class="lnk cta" href="https://github.com/WikipediaBrown/SFSymbolsKit">GitHub →</a>
+    </nav>
+  </div>
+</div>
+</template><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
