@@ -35,3 +35,5 @@ fastlane/report
 docs/_site/
 docs/.jekyll-cache/
 docs/.sass-cache/
+# MCP server (Node) deps — source only, not part of the Swift package
+mcp/node_modules/

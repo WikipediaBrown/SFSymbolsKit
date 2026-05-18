@@ -1,0 +1,38 @@
+{
+  "name": "sfsymbolskit-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that lets AI coding agents search and validate Apple SFSymbol names so they stop hallucinating them. Backed by SFSymbolsKit's generated catalog (SFSymbols 7.2, 7,007 symbols).",
+  "type": "module",
+  "bin": {
+    "sfsymbolskit-mcp": "index.js"
+  },
+  "files": [
+    "index.js",
+    "symbols.json",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sf-symbols",
+    "sfsymbols",
+    "swift",
+    "swiftui",
+    "ai-agents"
+  ],
+  "homepage": "https://sfsymbolskit.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WikipediaBrown/SFSymbolsKit",
+    "directory": "mcp"
+  },
+  "license": "MIT",
+  "author": "WikipediaBrown",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  }
+}
