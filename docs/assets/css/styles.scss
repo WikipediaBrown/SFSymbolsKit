@@ -493,22 +493,11 @@ h1, h2, h3, h4 {
 @media (min-width: 640px) {
   body { font-size: 18px; }
 
+  /* bar sizing only — nav stays a hamburger here; the inline row needs
+     more room than 640px gives (7 mono links don't fit → overflow), so
+     the inline switch is deferred to ≥860px below. */
   .nav-inner { padding: 0 28px; height: 60px; gap: 28px; }
-  .nav-burger { display: none; }
-  .nav-links {
-    position: static; flex-direction: row; align-items: center;
-    gap: 26px; margin-left: auto;
-    background: none; border-bottom: 0; padding: 0;
-    display: flex;
-  }
-  .nav-links a {
-    font-size: 13px; padding: 0; border-bottom: 0;
-  }
-  .nav-cta {
-    padding: 7px 14px !important; margin-top: 0; text-align: left;
-  }
-  .theme-toggle { width: 32px; height: 32px; margin-top: 0; }
-  .theme-toggle svg { width: 15px; height: 15px; }
+  .nav-links { top: 60px; }
 
   .hero { padding: 96px 0 80px; }
   .hero-inner, .section-inner, .stats-inner, .section-cta-inner, .foot-inner { padding-left: 28px; padding-right: 28px; }
@@ -539,6 +528,24 @@ h1, h2, h3, h4 {
   .sym-dot { font-size: 14px; }
   .sym-prop { font-size: 12.5px; }
   .sym-copy { padding: 7px 13px; }
+}
+
+/* ============================================================
+   NAV — inline row only once the full link set fits (≥860px);
+   below this the hamburger handles navigation.
+   ============================================================ */
+@media (min-width: 860px) {
+  .nav-burger { display: none; }
+  .nav-links {
+    position: static; flex-direction: row; align-items: center;
+    gap: 26px; margin-left: auto;
+    background: none; border-bottom: 0; padding: 0;
+    display: flex;
+  }
+  .nav-links a { font-size: 13px; padding: 0; border-bottom: 0; }
+  .nav-cta { padding: 7px 14px !important; margin-top: 0; text-align: left; }
+  .theme-toggle { width: 32px; height: 32px; margin-top: 0; }
+  .theme-toggle svg { width: 15px; height: 15px; }
 }
 
 /* ============================================================
