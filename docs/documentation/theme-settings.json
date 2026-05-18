@@ -1,12 +1,12 @@
 {
   "theme": {
     "color": {
-      "documentation-intro-fill": "#0b0b0e",
+      "documentation-intro-fill": { "light": "#f5f5f7", "dark": "#0b0b0e" },
       "documentation-intro-accent": "#3b9eff",
-      "documentation-intro-figure": "#ececef",
-      "documentation-intro-eyebrow": "#9a9aa5",
-      "tutorials-overview-background": "#0b0b0e",
-      "tutorial-navbar-title": "#ececef",
+      "documentation-intro-figure": { "light": "#1d1d1f", "dark": "#ececef" },
+      "documentation-intro-eyebrow": { "light": "#6e6e78", "dark": "#9a9aa5" },
+      "tutorials-overview-background": { "light": "#f5f5f7", "dark": "#0b0b0e" },
+      "tutorial-navbar-title": { "light": "#1d1d1f", "dark": "#ececef" },
       "fill": { "light": "#ffffff", "dark": "#0b0b0e" },
       "fill-secondary": { "light": "#f5f5f7", "dark": "#131318" },
       "fill-tertiary": { "light": "#fbfbfd", "dark": "#1a1a20" },
