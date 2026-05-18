@@ -1,0 +1,134 @@
+---
+layout: default
+title: "SFSymbols browser — search every SFSymbol name + its typed Swift API"
+description: "Search all 7,007 Apple SFSymbols by name and copy the typed SFSymbolsKit accessor (String.SFSymbols, UIImage, NSImage, SFSymbol enum). SFSymbols 7.2. No guessing, no hallucinated names."
+permalink: /symbols/
+---
+
+<section class="prose-page">
+<div class="prose" style="max-width:1080px;">
+
+  <header class="prose-header">
+    <div class="eyebrow">Tool</div>
+    <h1>SFSymbols browser</h1>
+    <p class="prose-lede">Search every SFSymbol name and copy its typed <code>SFSymbolsKit</code> accessor. 7,007 symbols, SFSymbols&nbsp;{{ site.data.sfsymbols.version }}. Type a name, get code that compiles.</p>
+    <p class="post-meta" style="margin-top:14px;">Names and the typed API only — SFSymbol artwork is Apple-licensed and isn't displayed here. Backed by <a href="{{ '/symbols.json' | relative_url }}">symbols.json</a>.</p>
+  </header>
+
+  <div class="sym-toolbar">
+    <input id="sym-q" class="sym-input" type="search" autocomplete="off" autocapitalize="off" spellcheck="false"
+           placeholder="Search 7,007 symbols  ·  e.g. trash, arrow up, gear" autofocus>
+    <div class="sym-count" id="sym-count">Loading catalog…</div>
+  </div>
+
+  <div id="sym-list" class="sym-list" aria-live="polite"></div>
+
+</div>
+</section>
+
+<script>
+(function () {
+  var Q = document.getElementById('sym-q');
+  var LIST = document.getElementById('sym-list');
+  var COUNT = document.getElementById('sym-count');
+  var CAP = 250;
+  var data = [];
+
+  function norm(s) { return s.toLowerCase().replace(/[.\s_\-]/g, ''); }
+
+  // Build each row with safe DOM APIs (textContent), never innerHTML.
+  function rowEl(s) {
+    var swift = 'String.SFSymbols.' + s.property;
+    var row = document.createElement('div');
+    row.className = 'sym-row';
+    row.setAttribute('data-copy', swift);
+
+    var name = document.createElement('div');
+    name.className = 'sym-name';
+    var dot = document.createElement('span');
+    dot.className = 'sym-dot';
+    dot.textContent = s.name;
+    var prop = document.createElement('span');
+    prop.className = 'sym-prop';
+    prop.textContent = swift;
+    name.appendChild(dot);
+    name.appendChild(prop);
+
+    var btn = document.createElement('button');
+    btn.className = 'sym-copy';
+    btn.type = 'button';
+    btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy ' + swift);
+
+    row.appendChild(name);
+    row.appendChild(btn);
+    return row;
+  }
+
+  function render(items, total) {
+    LIST.replaceChildren();
+    if (!items.length) {
+      var empty = document.createElement('div');
+      empty.className = 'sym-empty';
+      empty.textContent =
+        "No symbol matches that. SFSymbolsKit only wraps real Apple symbols — if it's not here, it isn't one.";
+      LIST.appendChild(empty);
+      COUNT.textContent = '0 matches';
+      return;
+    }
+    var frag = document.createDocumentFragment();
+    var shown = items.slice(0, CAP);
+    for (var i = 0; i < shown.length; i++) frag.appendChild(rowEl(shown[i]));
+    LIST.appendChild(frag);
+    COUNT.textContent = total.toLocaleString() + ' match' + (total === 1 ? '' : 'es') +
+      (total > CAP ? ' · showing ' + CAP + ', keep typing to narrow' : '');
+  }
+
+  function search(q) {
+    if (!data.length) return;
+    if (!q) { render(data, data.length); return; }
+    var n = norm(q), pre = [], inc = [];
+    for (var i = 0; i < data.length; i++) {
+      var s = data[i], kn = norm(s.name), kp = s.property.toLowerCase();
+      if (kn.indexOf(n) === 0 || kp.indexOf(n) === 0) pre.push(s);
+      else if (kn.indexOf(n) > -1 || kp.indexOf(n) > -1) inc.push(s);
+    }
+    var hits = pre.concat(inc);
+    render(hits, hits.length);
+  }
+
+  var t;
+  Q.addEventListener('input', function () {
+    clearTimeout(t);
+    t = setTimeout(function () { search(Q.value.trim()); }, 110);
+  });
+
+  LIST.addEventListener('click', function (e) {
+    var row = e.target.closest('.sym-row');
+    if (!row) return;
+    var text = row.getAttribute('data-copy');
+    var b = row.querySelector('.sym-copy');
+    var done = function () {
+      b.textContent = 'Copied ✓'; b.classList.add('copied');
+      setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('copied'); }, 1500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () {});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  fetch('{{ "/symbols.json" | relative_url }}')
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      data = (j && j.symbols) ? j.symbols : (Array.isArray(j) ? j : []);
+      render(data, data.length);
+    })
+    .catch(function () { COUNT.textContent = 'Could not load the catalog.'; });
+})();
+</script>

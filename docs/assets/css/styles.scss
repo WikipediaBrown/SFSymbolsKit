@@ -410,3 +410,68 @@ h1, h2, h3, h4 {
   .diff { font-size: 12.5px; }
   .prose { padding: 56px 22px 72px; }
 }
+
+/* ===== Symbol browser (/symbols/) ===== */
+.sym-toolbar {
+  position: sticky; top: 60px; z-index: 20;
+  background: var(--ink);
+  padding: 18px 0 14px;
+  border-bottom: 1px solid var(--hair);
+  margin-bottom: 18px;
+}
+.sym-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--hair-strong);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 15px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color .15s ease;
+}
+.sym-input::placeholder { color: var(--text-faint); }
+.sym-input:focus { border-color: var(--accent); }
+.sym-count {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px; letter-spacing: .04em;
+  color: var(--text-faint);
+  margin-top: 10px;
+}
+.sym-list { display: flex; flex-direction: column; }
+.sym-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 12px 4px;
+  border-bottom: 1px solid var(--hair);
+  cursor: pointer;
+}
+.sym-row:hover { background: var(--surface); }
+.sym-name {
+  display: flex; flex-direction: column; gap: 3px; min-width: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+.sym-dot { color: var(--text); font-size: 14px; overflow-wrap: anywhere; }
+.sym-prop { color: var(--accent); font-size: 12.5px; overflow-wrap: anywhere; }
+.sym-copy {
+  flex: none;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-faint);
+  background: transparent;
+  border: 1px solid var(--hair);
+  border-radius: 6px;
+  padding: 7px 13px; cursor: pointer;
+  transition: color .15s ease, border-color .15s ease;
+}
+.sym-row:hover .sym-copy { color: var(--text); border-color: var(--hair-strong); }
+.sym-copy.copied { color: var(--add); border-color: var(--add); }
+.sym-empty {
+  color: var(--text-muted);
+  padding: 40px 4px;
+  font-size: 16px;
+}
+@media (max-width: 720px) {
+  .sym-toolbar { top: 0; }
+  .sym-copy { padding: 6px 10px; }
+}
