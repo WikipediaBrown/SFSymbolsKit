@@ -1,38 +1,318 @@
 ---
 layout: default
-title: "Page not found"
-description: "The page you requested doesn't exist. Try the SFSymbolsKit overview, the tutorial, or the API documentation."
+title: "404 — build failed"
+description: "That page doesn't exist. But unlike a stringly-typed SFSymbol, this one didn't fail silently — we caught it. Apply the Fix-it to find your way back."
 permalink: /404.html
 sitemap: false
 ---
 
-<section class="hero" id="not-found">
-  <div class="eyebrow">404</div>
-  <h1>Symbol not found.</h1>
-  <p class="lede">The page you requested doesn't exist — like a typo in <code>UIImage(systemName: "ths.doesnt.exist")</code>, except this one didn't silently render blank. We caught it for you.</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="{{ '/' | relative_url }}">Back to home</a>
-    <a class="btn btn-ghost" href="{{ '/tutorial/' | relative_url }}">Read the tutorial →</a>
+<section class="nf-wrap" aria-labelledby="nf-title">
+  <p class="nf-eyebrow">HTTP 404 · <span id="nf-eyebrow-tail">no such page</span></p>
+  <h1 id="nf-title" class="nf-h1">You hit a <span class="nf-red">stringly-typed</span> URL.</h1>
+  <p class="nf-lede">It doesn't exist — but it didn't fail <em>silently</em> like
+    <code>UIImage(systemName:)</code> would. The compiler caught it. Apply the
+    Fix-it to type your way out.</p>
+
+  <div class="nf-window" role="group" aria-label="Swift compiler diagnostic">
+    <div class="nf-bar">
+      <span class="nf-dot nf-dot-r"></span>
+      <span class="nf-dot nf-dot-y"></span>
+      <span class="nf-dot nf-dot-g"></span>
+      <span class="nf-file" id="nf-file">NotFound.swift</span>
+    </div>
+
+    <div class="nf-editor" id="nf-editor">
+      <div class="nf-line">
+        <span class="nf-gut">1</span><span class="nf-code"><span class="k">import</span> SwiftUI</span>
+      </div>
+      <div class="nf-line">
+        <span class="nf-gut">2</span><span class="nf-code"></span>
+      </div>
+      <div class="nf-line">
+        <span class="nf-gut">3</span><span class="nf-code"><span class="k">var</span> body: <span class="t">some</span> <span class="t">View</span> {</span>
+      </div>
+
+      <!-- the live, mutating line -->
+      <div class="nf-line nf-broken" id="nf-codeline">
+        <span class="nf-gut" id="nf-gut4">4</span><span class="nf-code"
+          >  <span class="t">Image</span>(systemName: <span class="s" id="nf-typed"><span id="nf-str">"&nbsp;"</span></span>)<span class="caret" id="nf-caret"></span></span>
+      </div>
+      <div class="nf-line nf-squiggle-row" id="nf-squigrow">
+        <span class="nf-gut"></span><span class="nf-code" id="nf-squiggle"></span>
+      </div>
+
+      <div class="nf-line">
+        <span class="nf-gut">5</span><span class="nf-code">}</span>
+      </div>
+
+      <div class="nf-diag" id="nf-diag" aria-live="polite">
+        <span class="nf-diag-ico" id="nf-diag-ico">✗</span>
+        <span id="nf-diag-msg">building…</span>
+      </div>
+    </div>
+
+    <div class="nf-actions">
+      <button type="button" class="nf-fixit" id="nf-fixit" disabled>
+        <span class="nf-fixit-spark">✦</span>
+        <span id="nf-fixit-label">Apply Fix-it</span>
+        <kbd class="nf-kbd">⌥⌘F</kbd>
+      </button>
+      <button type="button" class="nf-replay" id="nf-replay" hidden>↻ break it again</button>
+    </div>
   </div>
+
+  <nav class="nf-cards" id="nf-cards" aria-label="Where to go instead" aria-hidden="true">
+    <a class="nf-card" href="{{ '/' | relative_url }}">
+      <span class="nf-card-k">.home</span>
+      <strong>Overview</strong>
+      <span>The pitch, the typed APIs, the install snippet.</span>
+    </a>
+    <a class="nf-card" href="{{ '/tutorial/' | relative_url }}">
+      <span class="nf-card-k">.tutorial</span>
+      <strong>Tutorial</strong>
+      <span>Type-safe SFSymbols in SwiftUI, UIKit &amp; AppKit.</span>
+    </a>
+    <a class="nf-card" href="{{ '/symbols/' | relative_url }}">
+      <span class="nf-card-k">.browse</span>
+      <strong>Symbol browser</strong>
+      <span>Search all {{ site.data.sfsymbols.count | default: "7,007" }} names + typed accessors.</span>
+    </a>
+    <a class="nf-card" href="{{ '/blog/' | relative_url }}">
+      <span class="nf-card-k">.blog</span>
+      <strong>Blog</strong>
+      <span>Why stringly-typed symbols are a liability.</span>
+    </a>
+  </nav>
 </section>
 
-<section class="section">
-  <h2 class="section-title">Where you might want to go.</h2>
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">→</div>
-      <h3>Overview</h3>
-      <p>The pitch, the three APIs, the install snippet. <a href="{{ '/' | relative_url }}">Take me there →</a></p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">→</div>
-      <h3>Tutorial</h3>
-      <p>The full guide to type-safe SFSymbols, with code for SwiftUI, UIKit, and AppKit. <a href="{{ '/tutorial/' | relative_url }}">Take me there →</a></p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">→</div>
-      <h3>API docs</h3>
-      <p>Full reference documentation on Swift Package Index. <a href="https://swiftpackageindex.com/WikipediaBrown/SFSymbolsKit/documentation">Take me there →</a></p>
-    </div>
-  </div>
-</section>
+<style>
+  /* ── 404 scoped styles ───────────────────────────────────────────
+     The editor pane stays Xcode-dark in both site themes on purpose:
+     code is always dark on this site, and the red→green flip only
+     reads if the surface is constant. */
+  .nf-wrap{max-width:880px;margin:0 auto;padding:clamp(48px,9vw,104px) 0 96px}
+  .nf-eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+  .nf-h1{font-family:"Bricolage Grotesque","Hanken Grotesk",sans-serif;font-weight:800;
+    font-size:clamp(38px,6.6vw,68px);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px}
+  .nf-red{color:#FC6A5D}
+  .nf-lede{font-size:clamp(16px,1.7vw,19px);line-height:1.6;max-width:54ch;
+    color:var(--muted,#8a8a93);margin:0 0 40px}
+  .nf-lede code{font-family:"JetBrains Mono",monospace;font-size:.86em;
+    color:#FC6A5D;background:rgba(252,106,93,.10);padding:.12em .42em;border-radius:5px}
+
+  .nf-window{border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden;
+    background:#0d0d11;box-shadow:0 32px 80px -32px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02)}
+  .nf-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;
+    background:#16161c;border-bottom:1px solid rgba(255,255,255,.07)}
+  .nf-dot{width:12px;height:12px;border-radius:50%}
+  .nf-dot-r{background:#ff5f57}.nf-dot-y{background:#febc2e}.nf-dot-g{background:#28c840}
+  .nf-file{margin-left:12px;font-family:"JetBrains Mono",monospace;font-size:12.5px;
+    color:#6f6f7b;letter-spacing:.02em}
+
+  .nf-editor{padding:22px 0 0;font-family:"JetBrains Mono",ui-monospace,monospace;
+    font-size:15px;line-height:1.85}
+  .nf-line{display:flex;white-space:pre}
+  .nf-gut{flex:0 0 56px;text-align:right;padding-right:20px;color:#3f3f49;
+    user-select:none;font-variant-numeric:tabular-nums}
+  .nf-code{color:#d8d8e0}
+  .nf-code .k{color:#FF7AB2}      /* keyword */
+  .nf-code .t{color:#6BDF8E}      /* type — site green */
+  .nf-code .s{color:#FC6A5D}      /* string — site red */
+  .nf-broken.fixed .nf-code .s{color:#6BDF8E}     /* string → typed (green) */
+  #nf-gut4{transition:color .25s}
+  .nf-broken.fixed #nf-gut4{color:#28c840}
+
+  .caret{display:inline-block;width:8px;height:1.05em;vertical-align:-2px;
+    background:var(--accent);margin-left:1px;animation:nf-blink 1s steps(1) infinite}
+  .nf-typing-done .caret{display:none}
+  @keyframes nf-blink{50%{opacity:0}}
+
+  .nf-squiggle-row{height:14px}
+  #nf-squiggle{color:#FC6A5D;font-size:13px;letter-spacing:-1px;opacity:0;
+    transition:opacity .2s}
+  #nf-squiggle.on{opacity:1}
+  .nf-broken.fixed ~ * #nf-squiggle,.fixed #nf-squiggle{opacity:0!important}
+
+  .nf-diag{display:flex;align-items:center;gap:11px;margin-top:16px;
+    padding:13px 22px;background:rgba(252,106,93,.09);
+    border-top:1px solid rgba(255,255,255,.06);
+    font-family:"JetBrains Mono",monospace;font-size:13.5px;color:#FC6A5D;
+    transition:background .35s,color .35s}
+  .nf-diag-ico{font-size:15px}
+  .nf-diag.ok{background:rgba(40,200,64,.12);color:#6BDF8E}
+
+  .nf-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    padding:18px 22px 22px;background:#101015}
+  .nf-fixit{display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:650;font-size:15px;
+    color:#fff;background:var(--accent);border:0;border-radius:10px;
+    padding:12px 18px;transition:transform .12s,box-shadow .2s,opacity .2s;
+    box-shadow:0 0 0 0 rgba(59,158,255,.5)}
+  .nf-fixit:not(:disabled):hover{transform:translateY(-1px);
+    box-shadow:0 10px 28px -10px var(--accent)}
+  .nf-fixit:not(:disabled){animation:nf-pulse 2.4s ease-out infinite}
+  .nf-fixit:disabled{opacity:.4;cursor:progress;animation:none}
+  .nf-fixit-spark{font-size:14px}
+  @keyframes nf-pulse{0%{box-shadow:0 0 0 0 rgba(59,158,255,.45)}
+    70%{box-shadow:0 0 0 14px rgba(59,158,255,0)}100%{box-shadow:0 0 0 0 rgba(59,158,255,0)}}
+  .nf-kbd{font-family:"JetBrains Mono",monospace;font-size:11px;
+    background:rgba(255,255,255,.16);padding:3px 7px;border-radius:5px;
+    letter-spacing:.02em}
+  .nf-replay{background:none;border:0;cursor:pointer;font-size:13px;
+    color:#6f6f7b;font-family:"JetBrains Mono",monospace}
+  .nf-replay:hover{color:var(--accent)}
+
+  .nf-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px;
+    opacity:0;transform:translateY(14px);pointer-events:none;
+    transition:opacity .5s,transform .5s}
+  .nf-cards.show{opacity:1;transform:none;pointer-events:auto}
+  .nf-card{display:flex;flex-direction:column;gap:5px;padding:20px 22px;
+    border:1px solid rgba(128,128,140,.22);border-radius:12px;text-decoration:none;
+    transition:border-color .2s,transform .2s,background .2s}
+  .nf-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .nf-card-k{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+  .nf-card strong{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;
+    color:var(--ink,inherit)}
+  .nf-card span:last-child{font-size:13.5px;color:var(--muted,#8a8a93);line-height:1.5}
+  .nf-cards.show .nf-card{animation:nf-rise .5s both}
+  .nf-cards.show .nf-card:nth-child(1){animation-delay:.05s}
+  .nf-cards.show .nf-card:nth-child(2){animation-delay:.12s}
+  .nf-cards.show .nf-card:nth-child(3){animation-delay:.19s}
+  .nf-cards.show .nf-card:nth-child(4){animation-delay:.26s}
+  @keyframes nf-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+  /* git-add style "+" burst on success */
+  .nf-spark{position:fixed;font-family:"JetBrains Mono",monospace;font-weight:700;
+    color:#6BDF8E;pointer-events:none;z-index:60;animation:nf-fly .9s ease-out forwards}
+  @keyframes nf-fly{0%{opacity:1;transform:translate(0,0) scale(1)}
+    100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.4)}}
+
+  @media (max-width:680px){.nf-cards{grid-template-columns:1fr}
+    .nf-gut{flex-basis:38px;padding-right:12px}.nf-editor{font-size:13px}}
+
+  @media (prefers-reduced-motion:reduce){
+    .caret{animation:none;display:none}
+    .nf-fixit{animation:none!important}
+    .nf-cards,.nf-card{transition:none!important;animation:none!important}
+    .nf-spark{display:none}
+  }
+</style>
+
+<script>
+(function(){
+  var REAL = [
+    ["square.and.arrow.up","squareAndArrowUp"],
+    ["sparkles","sparkles"],
+    ["bolt.fill","boltFill"],
+    ["paperplane.fill","paperplaneFill"],
+    ["arrow.uturn.backward","arrowUturnBackward"],
+    ["wand.and.stars","wandAndStars"],
+    ["trash","trash"]
+  ];
+
+  // The bogus "symbol" = the path the visitor tried. textContent only — never innerHTML.
+  var raw = decodeURIComponent((location.pathname || "").replace(/^\/+|\/+$/g,""))
+              .replace(/[^\w.\-\/]/g,"") || "this.page.doesnt.exist";
+  raw = raw.replace(/\//g,".").slice(0,52);
+
+  var strEl   = document.getElementById("nf-str"),
+      caret   = document.getElementById("nf-caret"),
+      codeline= document.getElementById("nf-codeline"),
+      editor  = document.getElementById("nf-editor"),
+      squig   = document.getElementById("nf-squiggle"),
+      diag    = document.getElementById("nf-diag"),
+      diagIco = document.getElementById("nf-diag-ico"),
+      diagMsg = document.getElementById("nf-diag-msg"),
+      fixit   = document.getElementById("nf-fixit"),
+      fxLabel = document.getElementById("nf-fixit-label"),
+      replay  = document.getElementById("nf-replay"),
+      cards   = document.getElementById("nf-cards"),
+      fileEl  = document.getElementById("nf-file"),
+      tail    = document.getElementById("nf-eyebrow-tail");
+
+  fileEl.textContent = "NotFound.swift";
+  tail.textContent   = "/" + raw.replace(/\./g,"/");
+
+  var full = '"' + raw + '"';
+  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  function setBroken(){
+    codeline.classList.remove("fixed");
+    editor.classList.remove("nf-typing-done");
+    strEl.textContent = "";
+    squig.classList.remove("on"); squig.textContent = "";
+    diag.classList.remove("ok"); diagIco.textContent = "✗";
+    diagMsg.textContent = "building…";
+    fixit.disabled = true; fixit.classList.remove("done");
+    fxLabel.textContent = "Apply Fix-it";
+    cards.classList.remove("show"); cards.setAttribute("aria-hidden","true");
+    replay.hidden = true;
+  }
+
+  function armError(){
+    editor.classList.add("nf-typing-done");
+    squig.textContent = " ".repeat(("  Image(systemName: ").length) +
+                        "^" + "~".repeat(Math.max(full.length-1,1));
+    squig.classList.add("on");
+    diagIco.textContent = "✗";
+    diagMsg.textContent = 'error: SFSymbol ' + full +
+      ' does not exist — stringly-typed names fail silently at runtime';
+    fixit.disabled = false;
+  }
+
+  function type(i){
+    if(i>full.length){ armError(); return; }
+    strEl.textContent = full.slice(0,i);
+    setTimeout(function(){ type(i+1); }, 34 + Math.random()*26);
+  }
+
+  function spark(btn){
+    if(reduce) return;
+    var r = btn.getBoundingClientRect(),
+        cx = r.left+r.width/2, cy = r.top+r.height/2;
+    for(var n=0;n<12;n++){
+      var s=document.createElement("span");
+      s.className="nf-spark"; s.textContent = n%3? "+":"✓";
+      s.style.left=cx+"px"; s.style.top=cy+"px";
+      var a=Math.random()*6.28, d=60+Math.random()*90;
+      s.style.setProperty("--dx",(Math.cos(a)*d)+"px");
+      s.style.setProperty("--dy",(Math.sin(a)*d-40)+"px");
+      s.style.fontSize=(11+Math.random()*9)+"px";
+      document.body.appendChild(s);
+      setTimeout(function(el){return function(){el.remove();};}(s),950);
+    }
+  }
+
+  function applyFix(){
+    if(fixit.disabled || codeline.classList.contains("fixed")) return;
+    var pick = REAL[Math.floor(Math.random()*REAL.length)];
+    strEl.textContent = "String.SFSymbols." + pick[1];
+    codeline.classList.add("fixed");
+    squig.classList.remove("on");
+    diag.classList.add("ok"); diagIco.textContent = "✓";
+    diagMsg.textContent = "Build succeeded — typed, autocompleted, refactor-safe ("
+                        + pick[0] + ")";
+    fixit.disabled = true; fxLabel.textContent = "Fixed ✓";
+    spark(fixit);
+    cards.classList.add("show"); cards.setAttribute("aria-hidden","false");
+    replay.hidden = false;
+  }
+
+  fixit.addEventListener("click", applyFix);
+  replay.addEventListener("click", function(){ setBroken(); start(); });
+  document.addEventListener("keydown", function(e){
+    var k = e.key.toLowerCase();
+    if((k==="f" && e.altKey && (e.metaKey||e.ctrlKey)) ||
+       (k==="enter" && !fixit.disabled)){ e.preventDefault(); applyFix(); }
+  });
+
+  function start(){
+    if(reduce){ strEl.textContent = full; armError(); return; }
+    setTimeout(function(){ type(0); }, 380);
+  }
+
+  setBroken();
+  start();
+})();
+</script>
