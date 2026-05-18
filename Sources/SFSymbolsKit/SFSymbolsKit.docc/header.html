@@ -26,8 +26,8 @@ body[data-color-scheme="light"] #sfsk-siteheader{
   }
 }
 #sfsk-siteheader .in{
-  max-width:1080px;margin:0 auto;padding:0 28px;height:60px;
-  display:flex;align-items:center;gap:28px;box-sizing:border-box;
+  max-width:1080px;margin:0 auto;padding:10px 20px;min-height:56px;
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;box-sizing:border-box;
 }
 #sfsk-siteheader .brand{
   display:flex;align-items:center;gap:10px;
@@ -38,7 +38,7 @@ body[data-color-scheme="light"] #sfsk-siteheader{
   width:11px;height:11px;border-radius:50%;background:var(--h-dot);
   box-shadow:0 0 0 4px rgba(59,158,255,.14);
 }
-#sfsk-siteheader nav{display:flex;gap:26px;margin-left:auto;align-items:center}
+#sfsk-siteheader nav{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;width:100%}
 #sfsk-siteheader a.lnk{
   color:var(--h-lnk);font-size:13px;font-weight:500;text-decoration:none;
   text-transform:lowercase;letter-spacing:.01em;
@@ -60,7 +60,12 @@ body[data-color-scheme="light"] #sfsk-siteheader{
 #sfsk-siteheader .sfsk-toggle svg{width:15px;height:15px;display:none}
 #sfsk-siteheader .sfsk-toggle[data-mode="dark"] .moon{display:block}
 #sfsk-siteheader .sfsk-toggle[data-mode="light"] .sun{display:block}
-@media (max-width:720px){#sfsk-siteheader nav a.lnk:not(.cta){display:none}}
+/* mobile-first: nav wraps below brand & stays reachable; tighten to a
+   single row on wider screens */
+@media (min-width:720px){
+  #sfsk-siteheader .in{padding:0 28px;min-height:60px;flex-wrap:nowrap;gap:28px}
+  #sfsk-siteheader nav{flex-wrap:nowrap;gap:26px;width:auto;margin-left:auto}
+}
 /* Constrain DocC's own layout to the same centered column the
    rest of the site uses, so the docs page respects the same
    margins as every other page (not full-bleed). */

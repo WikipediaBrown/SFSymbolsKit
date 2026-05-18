@@ -18,9 +18,15 @@ body[data-color-scheme="light"] #sfsk-sitefooter{
   }
 }
 #sfsk-sitefooter .in{
-  max-width:1080px;margin:0 auto;padding:26px 28px;box-sizing:border-box;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  flex-wrap:wrap;font-size:12px;letter-spacing:.03em;
+  max-width:1080px;margin:0 auto;padding:22px 20px;box-sizing:border-box;
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  font-size:12px;letter-spacing:.03em;
+}
+@media (min-width:640px){
+  #sfsk-sitefooter .in{
+    padding:26px 28px;flex-direction:row;align-items:center;
+    justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
 }
 #sfsk-sitefooter .links{display:flex;gap:18px;flex-wrap:wrap}
 #sfsk-sitefooter a{color:var(--f-link);text-decoration:none}

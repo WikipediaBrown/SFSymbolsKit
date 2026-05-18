@@ -1,10 +1,18 @@
-<header class="nav">
+<header class="nav" id="siteNav">
   <div class="nav-inner">
     <div class="nav-brand">
       <div class="nav-brand-dot"></div>
       <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
     </div>
-    <nav class="nav-links">
+    <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleNav()">
+      <svg class="ico-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+      <svg class="ico-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M5 5l14 14M19 5L5 19"/>
+      </svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
       {% for item in site.data.navigation %}
         <a href="{{ item.link }}"{% if item.cta %} class="nav-cta"{% endif %}{% if item.external %} rel="noopener"{% endif %}>{{ item.name }}</a>
       {% endfor %}

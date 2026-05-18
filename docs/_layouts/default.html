@@ -137,6 +137,22 @@
       try { localStorage.setItem('sfsk-theme', next); } catch (e) {}
     }
 
+    // Mobile nav: toggle the collapsed link panel.
+    function toggleNav() {
+      var nav = document.getElementById('siteNav');
+      var burger = nav && nav.querySelector('.nav-burger');
+      if (!nav) return;
+      var open = nav.classList.toggle('nav-open');
+      if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    // Close the menu after navigating or tapping outside.
+    document.addEventListener('click', function (e) {
+      var nav = document.getElementById('siteNav');
+      if (!nav || !nav.classList.contains('nav-open')) return;
+      if (e.target.closest('.nav-links a')) { toggleNav(); return; }
+      if (!e.target.closest('#siteNav')) toggleNav();
+    });
+
     // Replace the install snippet's version with the actual latest release.
     // Falls back to the value already in the DOM if the API is unreachable.
     (function () {
