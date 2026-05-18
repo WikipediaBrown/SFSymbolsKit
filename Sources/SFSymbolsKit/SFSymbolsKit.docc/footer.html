@@ -1,7 +1,21 @@
 <style>
+/* Theme-aware, mirroring the header: dark by default, flips on DocC's
+   body[data-color-scheme] incl. system 'auto'. */
 #sfsk-sitefooter{
-  background:#0b0b0e;border-top:1px solid rgba(255,255,255,.09);
+  --f-bg:#0b0b0e; --f-bd:rgba(255,255,255,.09);
+  --f-link:#9a9aa5; --f-link-hover:#ececef; --f-trees:#6b6b76;
+  background:var(--f-bg);border-top:1px solid var(--f-bd);
   font-family:"JetBrains Mono",ui-monospace,monospace;
+}
+body[data-color-scheme="light"] #sfsk-sitefooter{
+  --f-bg:#f5f5f7; --f-bd:rgba(0,0,0,.10);
+  --f-link:#6e6e78; --f-link-hover:#1d1d1f; --f-trees:#9a9aa5;
+}
+@media (prefers-color-scheme:light){
+  body[data-color-scheme="auto"] #sfsk-sitefooter{
+    --f-bg:#f5f5f7; --f-bd:rgba(0,0,0,.10);
+    --f-link:#6e6e78; --f-link-hover:#1d1d1f; --f-trees:#9a9aa5;
+  }
 }
 #sfsk-sitefooter .in{
   max-width:1080px;margin:0 auto;padding:26px 28px;box-sizing:border-box;
@@ -9,9 +23,9 @@
   flex-wrap:wrap;font-size:12px;letter-spacing:.03em;
 }
 #sfsk-sitefooter .links{display:flex;gap:18px;flex-wrap:wrap}
-#sfsk-sitefooter a{color:#9a9aa5;text-decoration:none}
-#sfsk-sitefooter a:hover{color:#ececef}
-#sfsk-sitefooter .trees{color:#6b6b76}
+#sfsk-sitefooter a{color:var(--f-link);text-decoration:none}
+#sfsk-sitefooter a:hover{color:var(--f-link-hover)}
+#sfsk-sitefooter .trees{color:var(--f-trees)}
 </style>
 <div id="sfsk-sitefooter">
   <div class="in">

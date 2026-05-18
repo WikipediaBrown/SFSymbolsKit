@@ -1,9 +1,30 @@
 <!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/documentation/favicon.ico"><link rel="mask-icon" href="/documentation/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/documentation/"</script><script defer="defer" src="/documentation/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/documentation/js/index.b232e9de.js"></script><link href="/documentation/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto">
 <div data-sfsk-header><style>
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@500;600&display=swap");
+/* Theme-aware: dark by default; flips on DocC's body[data-color-scheme],
+   including system 'auto' via the prefers-color-scheme media query so the
+   header/footer never clash with the (now theme-aware) DocC content. */
 #sfsk-siteheader{
-  background:#0b0b0e;
-  border-bottom:1px solid rgba(255,255,255,.09);
+  --h-bg:#0b0b0e; --h-bd:rgba(255,255,255,.09);
+  --h-brand:#ececef; --h-dot:#3b9eff;
+  --h-lnk:#9a9aa5; --h-lnk-hover:#ececef; --h-active:#3b9eff;
+  --h-ctabd:rgba(255,255,255,.16); --h-cta-h-bd:#3b9eff; --h-cta-h-bg:rgba(59,158,255,.14);
+  background:var(--h-bg);
+  border-bottom:1px solid var(--h-bd);
+}
+body[data-color-scheme="light"] #sfsk-siteheader{
+  --h-bg:#ffffff; --h-bd:rgba(0,0,0,.10);
+  --h-brand:#1d1d1f; --h-dot:#0a6cff;
+  --h-lnk:#6e6e78; --h-lnk-hover:#1d1d1f; --h-active:#0a6cff;
+  --h-ctabd:rgba(0,0,0,.16); --h-cta-h-bd:#0a6cff; --h-cta-h-bg:rgba(10,108,255,.10);
+}
+@media (prefers-color-scheme:light){
+  body[data-color-scheme="auto"] #sfsk-siteheader{
+    --h-bg:#ffffff; --h-bd:rgba(0,0,0,.10);
+    --h-brand:#1d1d1f; --h-dot:#0a6cff;
+    --h-lnk:#6e6e78; --h-lnk-hover:#1d1d1f; --h-active:#0a6cff;
+    --h-ctabd:rgba(0,0,0,.16); --h-cta-h-bd:#0a6cff; --h-cta-h-bg:rgba(10,108,255,.10);
+  }
 }
 #sfsk-siteheader .in{
   max-width:1080px;margin:0 auto;padding:0 28px;height:60px;
@@ -12,31 +33,31 @@
 #sfsk-siteheader .brand{
   display:flex;align-items:center;gap:10px;
   font-family:"Bricolage Grotesque",ui-sans-serif,sans-serif;font-weight:800;
-  font-size:17px;letter-spacing:-.02em;color:#ececef;text-decoration:none;
+  font-size:17px;letter-spacing:-.02em;color:var(--h-brand);text-decoration:none;
 }
 #sfsk-siteheader .dot{
-  width:11px;height:11px;border-radius:50%;background:#3b9eff;
+  width:11px;height:11px;border-radius:50%;background:var(--h-dot);
   box-shadow:0 0 0 4px rgba(59,158,255,.14);
 }
 #sfsk-siteheader nav{display:flex;gap:26px;margin-left:auto;align-items:center}
 #sfsk-siteheader a.lnk{
-  color:#9a9aa5;font-size:13px;font-weight:500;text-decoration:none;
+  color:var(--h-lnk);font-size:13px;font-weight:500;text-decoration:none;
   text-transform:lowercase;letter-spacing:.01em;
   font-family:"JetBrains Mono",ui-monospace,monospace;
 }
-#sfsk-siteheader a.lnk:hover{color:#ececef}
-#sfsk-siteheader a.lnk.active{color:#3b9eff}
+#sfsk-siteheader a.lnk:hover{color:var(--h-lnk-hover)}
+#sfsk-siteheader a.lnk.active{color:var(--h-active)}
 #sfsk-siteheader a.cta{
-  color:#ececef;border:1px solid rgba(255,255,255,.16);
+  color:var(--h-brand);border:1px solid var(--h-ctabd);
   padding:7px 14px;border-radius:6px;
 }
-#sfsk-siteheader a.cta:hover{border-color:#3b9eff;background:rgba(59,158,255,.14)}
+#sfsk-siteheader a.cta:hover{border-color:var(--h-cta-h-bd);background:var(--h-cta-h-bg)}
 #sfsk-siteheader .sfsk-toggle{
   display:inline-flex;align-items:center;justify-content:center;
   width:30px;height:30px;padding:0;background:none;cursor:pointer;
-  color:#9a9aa5;border:1px solid rgba(255,255,255,.16);border-radius:6px;
+  color:var(--h-lnk);border:1px solid var(--h-ctabd);border-radius:6px;
 }
-#sfsk-siteheader .sfsk-toggle:hover{color:#ececef;border-color:#3b9eff}
+#sfsk-siteheader .sfsk-toggle:hover{color:var(--h-lnk-hover);border-color:var(--h-cta-h-bd)}
 #sfsk-siteheader .sfsk-toggle svg{width:15px;height:15px;display:none}
 #sfsk-siteheader .sfsk-toggle[data-mode="dark"] .moon{display:block}
 #sfsk-siteheader .sfsk-toggle[data-mode="light"] .sun{display:block}
@@ -110,9 +131,23 @@
 })();
 </script>
 </div><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div><div data-sfsk-footer><style>
+/* Theme-aware, mirroring the header: dark by default, flips on DocC's
+   body[data-color-scheme] incl. system 'auto'. */
 #sfsk-sitefooter{
-  background:#0b0b0e;border-top:1px solid rgba(255,255,255,.09);
+  --f-bg:#0b0b0e; --f-bd:rgba(255,255,255,.09);
+  --f-link:#9a9aa5; --f-link-hover:#ececef; --f-trees:#6b6b76;
+  background:var(--f-bg);border-top:1px solid var(--f-bd);
   font-family:"JetBrains Mono",ui-monospace,monospace;
+}
+body[data-color-scheme="light"] #sfsk-sitefooter{
+  --f-bg:#f5f5f7; --f-bd:rgba(0,0,0,.10);
+  --f-link:#6e6e78; --f-link-hover:#1d1d1f; --f-trees:#9a9aa5;
+}
+@media (prefers-color-scheme:light){
+  body[data-color-scheme="auto"] #sfsk-sitefooter{
+    --f-bg:#f5f5f7; --f-bd:rgba(0,0,0,.10);
+    --f-link:#6e6e78; --f-link-hover:#1d1d1f; --f-trees:#9a9aa5;
+  }
 }
 #sfsk-sitefooter .in{
   max-width:1080px;margin:0 auto;padding:26px 28px;box-sizing:border-box;
@@ -120,9 +155,9 @@
   flex-wrap:wrap;font-size:12px;letter-spacing:.03em;
 }
 #sfsk-sitefooter .links{display:flex;gap:18px;flex-wrap:wrap}
-#sfsk-sitefooter a{color:#9a9aa5;text-decoration:none}
-#sfsk-sitefooter a:hover{color:#ececef}
-#sfsk-sitefooter .trees{color:#6b6b76}
+#sfsk-sitefooter a{color:var(--f-link);text-decoration:none}
+#sfsk-sitefooter a:hover{color:var(--f-link-hover)}
+#sfsk-sitefooter .trees{color:var(--f-trees)}
 </style>
 <div id="sfsk-sitefooter">
   <div class="in">
