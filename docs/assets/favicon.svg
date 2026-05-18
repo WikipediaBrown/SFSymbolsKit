@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#7e3ff2"/>
-      <stop offset="0.5" stop-color="#c33fc4"/>
-      <stop offset="1" stop-color="#ff2d92"/>
-    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#3b9eff" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#3b9eff" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <text x="16" y="22" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica, Arial, sans-serif" font-weight="800" font-size="20" text-anchor="middle" fill="#ffffff" letter-spacing="-0.04em">S</text>
+  <rect width="32" height="32" rx="7" fill="#0b0b0e"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#ffffff" stroke-opacity="0.10"/>
+  <rect width="32" height="32" rx="7" fill="url(#glow)"/>
+  <text x="16" y="22.5" font-family="'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica, Arial, sans-serif" font-weight="800" font-size="21" text-anchor="middle" fill="#3b9eff" letter-spacing="-0.05em">S</text>
 </svg>
