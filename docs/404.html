@@ -128,9 +128,10 @@ sitemap: false
   .nf-typing-done .caret{display:none}
   @keyframes nf-blink{50%{opacity:0}}
 
-  .nf-squiggle-row{height:14px}
-  #nf-squiggle{color:#FC6A5D;font-size:13px;letter-spacing:-1px;opacity:0;
-    transition:opacity .2s}
+  .nf-squiggle-row{height:15px;line-height:1}
+  /* must share the editor's exact font metrics (15px, normal spacing) or the
+     monospace columns won't line up with the code line above it */
+  #nf-squiggle{color:#FC6A5D;line-height:1;opacity:0;transition:opacity .2s}
   #nf-squiggle.on{opacity:1}
   .nf-broken.fixed ~ * #nf-squiggle,.fixed #nf-squiggle{opacity:0!important}
 
