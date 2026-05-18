@@ -67,28 +67,44 @@
 </div>
 <script>
 (function(){
-  /* Drive DocC's own color scheme so this toggle matches the rest of the
-     site. DocC persists scheme in
-     localStorage['developer.setting.preferredColorScheme'] and styles off
-     <body data-color-scheme>. We also mirror to the main site's key
-     ('sfsk-theme') so the choice carries across both. */
-  var DKEY="developer.setting.preferredColorScheme", SKEY="sfsk-theme";
-  function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
-  function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
-  var pref=get(DKEY)||get(SKEY);
-  if(pref==="light"||pref==="dark"){ document.body.setAttribute("data-color-scheme",pref); }
-  function cur(){
+  /* Drive DocC's OWN color-scheme control. Faking <body data-color-scheme>
+     only flips the CSS that keys directly off that attribute (text) but
+     not DocC's reactive background — so we operate DocC's real radio
+     instead, giving a complete switch. We also mirror the choice to the
+     main site's key ('sfsk-theme') so it carries across both. */
+  var SKEY="sfsk-theme", DKEY="developer.setting.preferredColorScheme";
+  var btn=document.getElementById("sfsk-toggle");
+  function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function effective(){
     var a=document.body.getAttribute("data-color-scheme");
     if(a==="light"||a==="dark") return a;
+    var s=lsGet(DKEY)||lsGet(SKEY);
+    if(s==="light"||s==="dark") return s;
     return (window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
   }
-  var btn=document.getElementById("sfsk-toggle");
-  function sync(){ btn.setAttribute("data-mode",cur()); }
-  sync();
+  function sync(){ btn.setAttribute("data-mode",effective()); }
+  function setViaDocC(scheme){
+    var fs=document.querySelector(".color-scheme-toggle");
+    if(!fs) return false;
+    var inp=Array.prototype.slice.call(fs.querySelectorAll("input"))
+              .filter(function(i){return i.value===scheme;})[0];
+    if(!inp) return false;
+    inp.click();            // let DocC apply the full theme + persist
+    return true;
+  }
   btn.addEventListener("click",function(){
-    var next=cur()==="dark"?"light":"dark";
-    document.body.setAttribute("data-color-scheme",next);
-    set(DKEY,next); set(SKEY,next); sync();
+    var next=effective()==="dark"?"light":"dark";
+    if(!setViaDocC(next)){              // DocC app not mounted yet: best effort
+      lsSet(DKEY,next);
+      document.body.setAttribute("data-color-scheme",next);
+    }
+    lsSet(SKEY,next);                   // bridge to the rest of the site
+    sync(); setTimeout(sync,60);
   });
+  // keep the icon honest if DocC's own footer control changes the scheme
+  try{ new MutationObserver(sync).observe(document.body,
+       {attributes:true,attributeFilter:["data-color-scheme"]}); }catch(e){}
+  sync(); setTimeout(sync,60);
 })();
 </script>
