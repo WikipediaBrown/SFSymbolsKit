@@ -55,4 +55,4 @@ We even document this for the agents themselves: machine-readable summaries live
 
 ---
 
-This is the AI-specific edge of the same argument the rest of the blog makes: stringly-typed SFSymbols are a maintenance liability. See <a href="{{ '/blog/uiimage-systemname-returns-nil/' | relative_url }}">why <code>UIImage(systemName:)</code> returns nil</a> and <a href="{{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}">type-safe SFSymbols in SwiftUI</a>.
+This is the AI-specific edge of the same argument the rest of the blog makes: stringly-typed SFSymbols are a maintenance liability. We've since shipped this as agent infrastructure — see <a href="{{ '/blog/grounded-sf-symbols-mcp-clawhub/' | relative_url }}">the MCP server and ClawHub skill that ground agents against the real catalog</a>. Also: <a href="{{ '/blog/uiimage-systemname-returns-nil/' | relative_url }}">why <code>UIImage(systemName:)</code> returns nil</a> and <a href="{{ '/blog/sf-symbols-swiftui-type-safe/' | relative_url }}">type-safe SFSymbols in SwiftUI</a>.
