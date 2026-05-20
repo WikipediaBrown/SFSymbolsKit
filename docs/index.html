@@ -91,7 +91,7 @@ title: SFSymbolsKit
   <div class="section-inner">
     <div class="section-index"><b>03</b> — How it stays correct</div>
     <h2 class="section-title">Generated, never written.</h2>
-    <p class="section-sub">Every Swift file is produced from <code>SFSymbols.txt</code> (Apple's SFSymbols {{ site.data.sfsymbols.version }} catalog) by a generator — 7,007 properties, deterministically. A human transcribing that many names introduces typos in dozens. A generator introduces none. <a href="https://github.com/WikipediaBrown/SFSymbolsKit/blob/develop/CONTRIBUTING.md">See how it's built →</a></p>
+    <p class="section-sub">The catalog is sourced once: open Apple's SF Symbols {{ site.data.sfsymbols.version }} app, copy the full name list, paste it into <code>SFSymbols.txt</code> — 7,007 verbatim strings, no retyping. From that file a Python script then generates every <code>String</code>, <code>UIImage</code>, and <code>NSImage</code> extension and the <code>SFSymbol</code> enum, deterministically. A human transcribing 7,007 names would introduce typos in dozens; pasting from the source introduces none, and the generator introduces none. <a href="https://github.com/WikipediaBrown/SFSymbolsKit/blob/develop/CONTRIBUTING.md">See how it's built →</a></p>
   </div>
 </section>
 
